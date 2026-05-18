@@ -491,7 +491,6 @@ nav{padding:16px 28px;}
         <div class="sg-title"><div class="sg-icon">🧠</div>AI / ML</div>
         <div class="sg-tags">
           <span class="sg-tag">Scikit-learn</span>
-          <span class="sg-tag">Keras</span>
           <span class="sg-tag">OpenCV</span>
           <span class="sg-tag">SVM</span>
           <span class="sg-tag">Random Forest</span>
@@ -516,9 +515,11 @@ nav{padding:16px 28px;}
         <div class="sg-tags">
           <span class="sg-tag">Flask</span>
           <span class="sg-tag">REST API</span>
+          <span class="sg-tag">Nginx</span>
           <span class="sg-tag">HTML</span>
           <span class="sg-tag">CSS</span>
           <span class="sg-tag">JavaScript</span>
+          <span class="sg-tag">jQuery</span>
         </div>
       </div>
       <div class="skill-group reveal">
@@ -567,16 +568,16 @@ nav{padding:16px 28px;}
         <div class="project-num">Project 01</div>
         <div class="project-title">Celebrity Face Recognition</div>
         <div class="project-desc">
-          A full-stack Image Classification system using OpenCV Haar Cascades for face and eye detection, and Wavelet Transform for feature extraction. Trained SVM, Random Forest, and Logistic Regression models with GridSearchCV. Deployed via a Flask REST API with an interactive HTML/CSS/JS frontend for real-time image upload and prediction.
+          A full-stack Image Classification system using OpenCV Haar Cascades for face and eye detection, and Wavelet Transform for feature extraction. Trained SVM, Random Forest, and Logistic Regression models with GridSearchCV. Deployed via a Flask REST API with an interactive HTML/CSS/JS frontend for image upload and prediction display. Organized into modular components: model training (Jupyter Notebook), server (Flask), and UI.
         </div>
         <div class="project-stack">
           <span class="stack-pill">Python</span>
           <span class="stack-pill">OpenCV</span>
-          <span class="stack-pill">Keras</span>
           <span class="stack-pill">Scikit-learn</span>
           <span class="stack-pill">Flask</span>
           <span class="stack-pill">Wavelet Transform</span>
           <span class="stack-pill">HTML/CSS/JS</span>
+          <span class="stack-pill">Jupyter Notebook</span>
         </div>
         <div class="project-footer">
           <a href="https://github.com/Shashank17singh/CelebrityFaceRecognition" target="_blank" class="project-link">View on GitHub →</a>
@@ -584,16 +585,19 @@ nav{padding:16px 28px;}
       </div>
       <div class="project-card reveal">
         <div class="project-num">Project 02</div>
-        <div class="project-title">Bangalore Home Price Predictor</div>
+        <div class="project-title">Bangalore Home Price Prediction Suite</div>
         <div class="project-desc">
-          A production-ready ML web application for real estate price prediction using Linear Regression with feature engineering, EDA, outlier removal, and K-Fold cross-validation. Built a Flask REST API backend with an interactive HTML/CSS/JS frontend with dynamic location dropdowns.
+          A complete ML ecosystem with two deployments: a production-ready full-stack web app (Flask REST API + Nginx reverse proxy + HTML/CSS/JS + jQuery frontend) and a standalone Tkinter desktop GUI — both powered by a Scikit-learn Linear Regression model trained with feature engineering, EDA, outlier removal, and K-Fold cross-validation.
         </div>
         <div class="project-stack">
           <span class="stack-pill">Python</span>
           <span class="stack-pill">Scikit-learn</span>
           <span class="stack-pill">Flask</span>
+          <span class="stack-pill">Nginx</span>
           <span class="stack-pill">Pandas</span>
           <span class="stack-pill">HTML/CSS/JS</span>
+          <span class="stack-pill">jQuery</span>
+          <span class="stack-pill">Tkinter</span>
         </div>
         <div class="project-footer">
           <a href="https://github.com/Shashank17singh/Bangalore_Home_Prices" target="_blank" class="project-link">View on GitHub →</a>
@@ -603,7 +607,7 @@ nav{padding:16px 28px;}
         <div class="project-num">Project 03</div>
         <div class="project-title">House Price Predictor</div>
         <div class="project-desc">
-          A desktop GUI application built with Python Tkinter for real-time house price prediction using a Scikit-learn Linear Regression model. Features ttk Combobox-based UI with input validation, LabelEncoder for categorical features, and instant predictions.
+          A desktop GUI application built with Python Tkinter for real-time house price prediction using a Scikit-learn Linear Regression model. Features dropdown-based location and parking selection, input validation with error handling, and instant predictions from a trained model on sample data.
         </div>
         <div class="project-stack">
           <span class="stack-pill">Python</span>
@@ -722,7 +726,7 @@ window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
 });
 
-const phrases = ['AI & ML Enthusiast', 'Python Developer', 'Computer Vision Builder', 'Software Engineer'];
+const phrases = ['AI & ML Enthusiast', 'Python Developer', 'Computer Vision Builder', 'Software Engineer', 'Open Source Learner'];
 let pi = 0, ci = 0, deleting = false;
 const el = document.getElementById('typed');
 function type() {
