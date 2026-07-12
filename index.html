@@ -370,7 +370,7 @@ nav{padding:16px 28px;}
         <div class="card-sub">University of Lucknow · B.Tech CSE (AI)</div>
         <div class="card-stats">
           <div class="card-stat">
-            <div class="card-stat-num">3<span>+</span></div>
+            <div class="card-stat-num">5<span>+</span></div>
             <div class="card-stat-label">Projects</div>
           </div>
           <div class="card-stat">
@@ -388,11 +388,11 @@ nav{padding:16px 28px;}
         </div>
         <div class="card-chips">
           <span class="chip">Python</span>
+          <span class="chip">C++</span>
           <span class="chip">Scikit-learn</span>
           <span class="chip">OpenCV</span>
-          <span class="chip">Nginx</span>
+          <span class="chip amber">RAG</span>
           <span class="chip amber">Flask</span>
-          <span class="chip amber">ML</span>
         </div>
       </div>
     </div>
@@ -413,7 +413,7 @@ nav{padding:16px 28px;}
           I'm an <strong>AI &amp; ML Enthusiast</strong> pursuing my B.Tech in Computer Science with a specialization in Artificial Intelligence at the University of Lucknow (since October 2023), currently in my 3rd year.
         </p>
         <p>
-          My work spans machine learning, computer vision, and full-stack deployment — building predictive models and face recognition systems, then shipping them as web apps (Flask + REST API) and standalone desktop GUIs (Tkinter).
+          My work spans machine learning, computer vision, and full-stack deployment — building predictive models and face recognition systems, then shipping them as web apps (Flask + REST API) and standalone desktop GUIs (Tkinter). I've also built a Retrieval-Augmented Generation (RAG) chatbot that lets you have multi-turn conversations with your own PDFs.
         </p>
         <p>
           I hold certifications from <strong>Samsung Innovation Campus</strong> (Artificial Intelligence) and <strong>NIELIT, Gorakhpur</strong> (Python Programming &amp; Data Science), where I also completed a Data Science Internship. I'm actively looking for internships to apply my skills to real-world problems.
@@ -500,6 +500,19 @@ nav{padding:16px 28px;}
         </div>
       </div>
       <div class="skill-group reveal">
+        <div class="sg-title"><div class="sg-icon">🤖</div>Generative AI / RAG</div>
+        <div class="sg-tags">
+          <span class="sg-tag">LangChain</span>
+          <span class="sg-tag">Groq</span>
+          <span class="sg-tag">ChromaDB</span>
+          <span class="sg-tag">HuggingFace</span>
+          <span class="sg-tag">Streamlit</span>
+          <span class="sg-tag">Ollama</span>
+          <span class="sg-tag">Vector Databases</span>
+          <span class="sg-tag">HNSW</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
         <div class="sg-title"><div class="sg-icon">📊</div>Data Science</div>
         <div class="sg-tags">
           <span class="sg-tag">Pandas</span>
@@ -515,6 +528,7 @@ nav{padding:16px 28px;}
         <div class="sg-tags">
           <span class="sg-tag">Flask</span>
           <span class="sg-tag">REST API</span>
+          <span class="sg-tag">cpp-httplib</span>
           <span class="sg-tag">Nginx</span>
           <span class="sg-tag">HTML</span>
           <span class="sg-tag">CSS</span>
@@ -527,7 +541,6 @@ nav{padding:16px 28px;}
         <div class="sg-tags">
           <span class="sg-tag">Tkinter</span>
           <span class="sg-tag">ttk</span>
-          <span class="sg-tag">LabelEncoder</span>
           <span class="sg-tag">Wavelet Transform</span>
           <span class="sg-tag">Haar Cascade</span>
         </div>
@@ -566,6 +579,43 @@ nav{padding:16px 28px;}
     <div class="projects-grid">
       <div class="project-card reveal">
         <div class="project-num">Project 01</div>
+        <div class="project-title">VectorDB — Vector Database from Scratch</div>
+        <div class="project-desc">
+          A vector database built from scratch in C++, implementing HNSW, KD-Tree, and Brute-Force search side-by-side across 3 distance metrics (cosine, Euclidean, Manhattan), with a benchmark endpoint contrasting HNSW's O(log N) graph search against brute-force O(N) at scale. Wraps a full local RAG pipeline via Ollama — chunking documents into overlapping 250-word segments, embedding them with nomic-embed-text (768D), and retrieving context for a local LLM (Llama 3.2) to answer questions grounded in the uploaded data. Exposes a complete REST API (insert, delete, search, benchmark) built on cpp-httplib, paired with a web frontend that renders a live 2D PCA visualization of the vector space.
+        </div>
+        <div class="project-stack">
+          <span class="stack-pill">C++</span>
+          <span class="stack-pill">HNSW</span>
+          <span class="stack-pill">KD-Tree</span>
+          <span class="stack-pill">RAG</span>
+          <span class="stack-pill">Ollama</span>
+          <span class="stack-pill">cpp-httplib</span>
+          <span class="stack-pill">HTML/CSS/JS</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Shashank17singh/Your-Own-AI" target="_blank" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">Project 02</div>
+        <div class="project-title">Conversational RAG Chatbot with PDF Upload &amp; History</div>
+        <div class="project-desc">
+          A Retrieval-Augmented Generation (RAG) web app built with Streamlit, LangChain, and Groq. Users can upload one or more PDFs and hold a multi-turn conversation with their content — a history-aware retriever reformulates follow-up questions using the chat history for accurate, context-aware answers. Documents are chunked, embedded with HuggingFace's all-MiniLM-L6-v2, and indexed in ChromaDB for semantic search, with Groq's Gemma2-9b-it powering ultra-fast inference. Supports multiple isolated chat sessions.
+        </div>
+        <div class="project-stack">
+          <span class="stack-pill">Python</span>
+          <span class="stack-pill">Streamlit</span>
+          <span class="stack-pill">LangChain</span>
+          <span class="stack-pill">Groq</span>
+          <span class="stack-pill">ChromaDB</span>
+          <span class="stack-pill">HuggingFace</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Shashank17singh/Chatbot_with_PDF_upload_and_History" target="_blank" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">Project 03</div>
         <div class="project-title">Celebrity Face Recognition</div>
         <div class="project-desc">
           A full-stack Image Classification system using OpenCV Haar Cascades for face and eye detection, and Wavelet Transform for feature extraction. Trained SVM, Random Forest, and Logistic Regression models with GridSearchCV. Deployed via a Flask REST API with an interactive HTML/CSS/JS frontend for image upload and prediction display. Organized into modular components: model training (Jupyter Notebook), server (Flask), and UI.
@@ -584,7 +634,7 @@ nav{padding:16px 28px;}
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-num">Project 02</div>
+        <div class="project-num">Project 04</div>
         <div class="project-title">Bangalore Home Price Prediction Suite</div>
         <div class="project-desc">
           A complete ML ecosystem with two deployments: a production-ready full-stack web app (Flask REST API + Nginx reverse proxy + HTML/CSS/JS + jQuery frontend) and a standalone Tkinter desktop GUI — both powered by a Scikit-learn Linear Regression model trained with feature engineering, EDA, outlier removal, and K-Fold cross-validation.
@@ -604,7 +654,7 @@ nav{padding:16px 28px;}
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-num">Project 03</div>
+        <div class="project-num">Project 05</div>
         <div class="project-title">House Price Predictor</div>
         <div class="project-desc">
           A desktop GUI application built with Python Tkinter for real-time house price prediction using a Scikit-learn Linear Regression model. Features dropdown-based location and parking selection, input validation with error handling, and instant predictions from a trained model on sample data.
