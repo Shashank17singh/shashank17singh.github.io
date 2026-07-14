@@ -273,9 +273,10 @@ position: relative; overflow: hidden;
 .project-desc { font-size:14px; color:var(--mid); line-height:1.85; margin-bottom:22px; flex:1; }
 .project-stack { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px; }
 .stack-pill { background:var(--teal-pale); color:var(--teal); border:1px solid rgba(13,92,99,0.15); font-size:11px; font-weight:600; padding:4px 12px; border-radius:100px; }
-.project-footer { padding-top:18px; border-top:1px solid var(--border); }
+.project-footer { padding-top:18px; border-top:1px solid var(--border); display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
 .project-link { color:var(--teal); text-decoration:none; font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:6px; transition:gap 0.2s; }
 .project-link:hover { gap:10px; }
+.project-link.demo { color:var(--amber); }
 #experience { background: var(--warm-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .timeline { position:relative; padding-left:32px; }
 .timeline::before { content:''; position:absolute; left:0; top:8px; bottom:8px; width:2px; background:linear-gradient(to bottom,#2dd4bf,#fb923c,transparent); border-radius:2px; }
@@ -600,7 +601,7 @@ nav{padding:16px 28px;}
         <div class="project-num">Project 02</div>
         <div class="project-title">Conversational RAG Chatbot with PDF Upload &amp; History</div>
         <div class="project-desc">
-          A Retrieval-Augmented Generation (RAG) web app built with Streamlit, LangChain, and Groq. Users can upload one or more PDFs and hold a multi-turn conversation with their content — a history-aware retriever reformulates follow-up questions using the chat history for accurate, context-aware answers. Documents are chunked, embedded with HuggingFace's all-MiniLM-L6-v2, and indexed in ChromaDB for semantic search, with Groq's Gemma2-9b-it powering ultra-fast inference. Supports multiple isolated chat sessions.
+          A Retrieval-Augmented Generation (RAG) web app built with Streamlit, LangChain, and Groq. Users can upload one or more PDFs and hold a multi-turn conversation with their content — a history-aware retriever reformulates follow-up questions using the chat history for accurate, context-aware answers. Documents are chunked, embedded with HuggingFace's all-MiniLM-L6-v2, and indexed in ChromaDB for semantic search, with Groq's Llama 3.3 70B Versatile model powering fast inference. Supports multiple isolated chat sessions.
         </div>
         <div class="project-stack">
           <span class="stack-pill">Python</span>
@@ -612,6 +613,7 @@ nav{padding:16px 28px;}
         </div>
         <div class="project-footer">
           <a href="https://github.com/Shashank17singh/Chatbot_with_PDF_upload_and_History" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://chatbot-with-pdf-upload-and-history.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a>
         </div>
       </div>
       <div class="project-card reveal">
@@ -631,6 +633,7 @@ nav{padding:16px 28px;}
         </div>
         <div class="project-footer">
           <a href="https://github.com/Shashank17singh/CelebrityFaceRecognition" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://celebrity-face-recognition-xi.vercel.app/" target="_blank" class="project-link demo">Live Demo ↗</a>
         </div>
       </div>
       <div class="project-card reveal">
@@ -650,7 +653,8 @@ nav{padding:16px 28px;}
           <span class="stack-pill">Tkinter</span>
         </div>
         <div class="project-footer">
-          <a href="https://github.com/Shashank17singh/Bangalore_Home_Prices" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://github.com/Shashank17singh/Bangalore_Home_Prices_API" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="http://3.85.41.35/" target="_blank" class="project-link demo">Live Demo ↗</a>
         </div>
       </div>
       <div class="project-card reveal">
@@ -667,6 +671,7 @@ nav{padding:16px 28px;}
         </div>
         <div class="project-footer">
           <a href="https://github.com/Shashank17singh/NIELIT-Project" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://nielit-project.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a>
         </div>
       </div>
     </div>
