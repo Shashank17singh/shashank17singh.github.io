@@ -371,7 +371,7 @@ nav{padding:16px 28px;}
         <div class="card-sub">University of Lucknow · B.Tech CSE (AI)</div>
         <div class="card-stats">
           <div class="card-stat">
-            <div class="card-stat-num">5<span>+</span></div>
+            <div class="card-stat-num">6<span>+</span></div>
             <div class="card-stat-label">Projects</div>
           </div>
           <div class="card-stat">
@@ -414,7 +414,7 @@ nav{padding:16px 28px;}
           I'm an <strong>AI &amp; ML Enthusiast</strong> pursuing my B.Tech in Computer Science with a specialization in Artificial Intelligence at the University of Lucknow (since October 2023), currently in my final year.
         </p>
         <p>
-          My work spans machine learning, computer vision, and full-stack deployment — building predictive models and face recognition systems, then shipping them as web apps (Flask + REST API) and standalone desktop GUIs (Tkinter). I've also built a Retrieval-Augmented Generation (RAG) chatbot that lets you have multi-turn conversations with your own PDFs.
+          My work spans machine learning, computer vision, and full-stack deployment — building predictive models and face recognition systems, then shipping them as web apps (Flask + REST API) and standalone desktop GUIs (Tkinter). I've also built an LLM-powered resume screener and a Retrieval-Augmented Generation (RAG) chatbot that lets you have multi-turn conversations with your own PDFs.
         </p>
         <p>
           I hold certifications from <strong>Samsung Innovation Campus</strong> (Artificial Intelligence) and <strong>NIELIT, Gorakhpur</strong> (Python Programming &amp; Data Science), where I also completed a Data Science Internship. I'm actively looking for internships to apply my skills to real-world problems.
@@ -511,6 +511,7 @@ nav{padding:16px 28px;}
           <span class="sg-tag">Ollama</span>
           <span class="sg-tag">Vector Databases</span>
           <span class="sg-tag">HNSW</span>
+          <span class="sg-tag">Pydantic</span>
         </div>
       </div>
       <div class="skill-group reveal">
@@ -594,11 +595,30 @@ nav{padding:16px 28px;}
           <span class="stack-pill">HTML/CSS/JS</span>
         </div>
         <div class="project-footer">
-          <a href="https://github.com/Shashank17singh/Your-Own-AI" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://github.com/Shashank17singh/VectorDB" target="_blank" class="project-link">View on GitHub →</a>
         </div>
       </div>
       <div class="project-card reveal">
         <div class="project-num">Project 02</div>
+        <div class="project-title">AI Resume Screener</div>
+        <div class="project-desc">
+          An LLM-powered pipeline that parses resumes and job descriptions into structured Pydantic data, then ranks candidates by fit. Built with Streamlit, Groq (openai/gpt-oss-120b), and schema-driven extraction that handles varied resume formatting and section headings. Includes retry-with-backoff on LLM calls, resume caching by file hash to skip redundant re-parsing, and per-file error isolation so one corrupt resume doesn't crash a whole batch run — resulting in a ranked shortlist UI with matching and missing skills called out per candidate.
+        </div>
+        <div class="project-stack">
+          <span class="stack-pill">Python</span>
+          <span class="stack-pill">Streamlit</span>
+          <span class="stack-pill">Groq</span>
+          <span class="stack-pill">Pydantic</span>
+          <span class="stack-pill">pypdf</span>
+          <span class="stack-pill">python-docx</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Shashank17singh/Resume-Parser" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://resume-parsers.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">Project 03</div>
         <div class="project-title">Conversational RAG Chatbot with PDF Upload &amp; History</div>
         <div class="project-desc">
           A Retrieval-Augmented Generation (RAG) web app built with Streamlit, LangChain, and Groq. Users can upload one or more PDFs and hold a multi-turn conversation with their content — a history-aware retriever reformulates follow-up questions using the chat history for accurate, context-aware answers. Documents are chunked, embedded with HuggingFace's all-MiniLM-L6-v2, and indexed in ChromaDB for semantic search, with Groq's Llama 3.3 70B Versatile model powering fast inference. Supports multiple isolated chat sessions.
@@ -612,12 +632,12 @@ nav{padding:16px 28px;}
           <span class="stack-pill">HuggingFace</span>
         </div>
         <div class="project-footer">
-          <a href="https://github.com/Shashank17singh/Chatbot_with_PDF_upload_and_History" target="_blank" class="project-link">View on GitHub →</a>
-          <a href="https://chatbot-with-pdf-upload-and-history.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a>
+          <a href="https://github.com/Shashank17singh/Conversational-RAG-Chatbot" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://conversational-rag-chatbot-pdf.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a>
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-num">Project 03</div>
+        <div class="project-num">Project 04</div>
         <div class="project-title">Celebrity Face Recognition</div>
         <div class="project-desc">
           A full-stack Image Classification system using OpenCV Haar Cascades for face and eye detection, and Wavelet Transform for feature extraction. Trained SVM, Random Forest, and Logistic Regression models with GridSearchCV. Deployed via a Flask REST API with an interactive HTML/CSS/JS frontend for image upload and prediction display. Organized into modular components: model training (Jupyter Notebook), server (Flask), and UI.
@@ -637,7 +657,7 @@ nav{padding:16px 28px;}
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-num">Project 04</div>
+        <div class="project-num">Project 05</div>
         <div class="project-title">Bangalore Home Price Prediction Suite</div>
         <div class="project-desc">
           A complete ML ecosystem with two deployments: a production-ready full-stack web app (Flask REST API + Nginx reverse proxy + HTML/CSS/JS + jQuery frontend) and a standalone Tkinter desktop GUI — both powered by a Scikit-learn Linear Regression model trained with feature engineering, EDA, outlier removal, and K-Fold cross-validation.
@@ -653,12 +673,13 @@ nav{padding:16px 28px;}
           <span class="stack-pill">Tkinter</span>
         </div>
         <div class="project-footer">
-          <a href="https://github.com/Shashank17singh/Bangalore_Home_Prices_API" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://github.com/Shashank17singh/Bangalore_Home_Prices_API" target="_blank" class="project-link">API Repo →</a>
+          <a href="https://github.com/Shashank17singh/Bangalore_Home_Prices_Desktop_Client" target="_blank" class="project-link">Desktop Client Repo →</a>
           <a href="http://3.85.41.35/" target="_blank" class="project-link demo">Live Demo ↗</a>
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-num">Project 05</div>
+        <div class="project-num">Project 06</div>
         <div class="project-title">House Price Predictor</div>
         <div class="project-desc">
           A desktop GUI application built with Python Tkinter for real-time house price prediction using a Scikit-learn Linear Regression model. Features dropdown-based location and parking selection, input validation with error handling, and instant predictions from a trained model on sample data.
