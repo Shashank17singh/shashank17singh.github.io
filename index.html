@@ -221,7 +221,7 @@ transition: transform 0.25s, box-shadow 0.25s;
 .edu-year { font-size: 12px; color: var(--soft); }
 .edu-grade { display:inline-block; margin-top:8px; background:var(--teal-pale); color:var(--teal); font-size:11px; font-weight:700; padding:3px 10px; border-radius:100px; border:1px solid rgba(13,92,99,0.2); }
 #certifications { background: var(--cream); }
-.certs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
 .cert-card {
 background: var(--warm-white);
 border: 1px solid var(--border);
@@ -241,6 +241,7 @@ transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 .cert-accent { position: absolute; top:0; left:0; right:0; height:3px; }
 .cert-accent.samsung { background: linear-gradient(90deg, #1428a0, #00b0f0); }
 .cert-accent.nielit { background: linear-gradient(90deg, var(--teal), var(--amber)); }
+.cert-accent.aws { background: linear-gradient(90deg, #232f3e, #ff9900); }
 #skills { background: var(--warm-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 18px; }
 .skill-group {
@@ -379,7 +380,7 @@ nav{padding:16px 28px;}
             <div class="card-stat-label">Year</div>
           </div>
           <div class="card-stat">
-            <div class="card-stat-num">2<span>+</span></div>
+            <div class="card-stat-num">3<span>+</span></div>
             <div class="card-stat-label">Certificates</div>
           </div>
           <div class="card-stat">
@@ -417,7 +418,7 @@ nav{padding:16px 28px;}
           My work spans machine learning, computer vision, and full-stack deployment — building predictive models and face recognition systems, then shipping them as web apps (Flask + REST API) and standalone desktop GUIs (Tkinter). I've also built an LLM-powered resume screener and a Retrieval-Augmented Generation (RAG) chatbot that lets you have multi-turn conversations with your own PDFs.
         </p>
         <p>
-          I hold certifications from <strong>Samsung Innovation Campus</strong> (Artificial Intelligence) and <strong>NIELIT, Gorakhpur</strong> (Python Programming &amp; Data Science), where I also completed a Data Science Internship. I'm actively looking for internships to apply my skills to real-world problems.
+          I hold certifications from <strong>Samsung Innovation Campus</strong> (Artificial Intelligence), <strong>AWS</strong> (Fundamentals of ML &amp; AI), and <strong>NIELIT, Gorakhpur</strong> (Python Programming &amp; Data Science), where I also completed a Data Science Internship. I'm actively looking for internships to apply my skills to real-world problems.
         </p>
       </div>
       <div class="edu-stack reveal">
@@ -452,6 +453,16 @@ nav{padding:16px 28px;}
     </div>
     <h2 class="section-title reveal">What I've <em>earned</em></h2>
     <div class="certs-grid">
+      <div class="cert-card reveal">
+        <div class="cert-accent aws"></div>
+        <div class="cert-logo">Amazon Web Services</div>
+        <div class="cert-title">Fundamentals of ML &amp; AI</div>
+        <div class="cert-issuer">AWS Training &amp; Certification</div>
+        <div class="cert-meta">
+          <span class="cert-pill">June 2026</span>
+          <span class="cert-pill highlight">Certificate of Completion</span>
+        </div>
+      </div>
       <div class="cert-card reveal">
         <div class="cert-accent samsung"></div>
         <div class="cert-logo">Samsung</div>
