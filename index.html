@@ -6,7 +6,7 @@
 <title>Shashank Singh — AI & ML Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #07080c;
@@ -23,12 +23,14 @@
   --violet-pale: rgba(139,124,246,0.10);
   --cyan: #4dd8e6;
   --cyan-pale: rgba(77,216,230,0.10);
-  --gold: #f2b43f;
-  --gold-pale: rgba(242,180,63,0.10);
+  --rose: #d97a3f;
+  --rose-light: #f0a869;
+  --rose-pale: rgba(217,122,63,0.10);
   --grad-primary: linear-gradient(135deg, var(--violet), var(--cyan));
+  --grad-warm: linear-gradient(135deg, var(--rose), var(--violet));
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--violet) var(--bg); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -45,6 +47,18 @@ h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 ::selection { background: var(--violet); color: #07080c; }
 
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--violet), var(--cyan)); border-radius: 10px; border: 2px solid var(--bg); }
+
+/* cursor glow */
+.cursor-glow {
+  position: fixed; top: 0; left: 0; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,124,246,0.14), rgba(77,216,230,0.05) 45%, transparent 70%);
+  transform: translate(-50%,-50%); pointer-events: none; z-index: 3; opacity: 0; filter: blur(6px);
+  transition: opacity 0.4s ease;
+}
+
 /* ambient background */
 .mesh { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
 .mesh::before, .mesh::after {
@@ -52,7 +66,7 @@ h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
   animation: drift 24s ease-in-out infinite alternate;
 }
 .mesh::before { width: 640px; height: 640px; background: radial-gradient(circle, rgba(139,124,246,0.14), transparent 70%); top: -220px; right: -160px; }
-.mesh::after { width: 560px; height: 560px; background: radial-gradient(circle, rgba(77,216,230,0.10), transparent 70%); bottom: -180px; left: -180px; animation-delay: -10s; }
+.mesh::after { width: 560px; height: 560px; background: radial-gradient(circle, rgba(217,122,63,0.09), transparent 70%); bottom: -180px; left: -180px; animation-delay: -10s; }
 @keyframes drift { from { transform: translate(0,0) scale(1); } to { transform: translate(40px,30px) scale(1.08); } }
 .grain { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.035; mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
@@ -74,7 +88,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
 .nav-links a {
   color: var(--text-mid); text-decoration: none; font-size: 13.5px; font-weight: 500;
   padding: 8px 14px; border-radius: 100px; transition: color 0.2s, background 0.2s;
-  cursor: pointer;
+  cursor: pointer; position: relative;
 }
 .nav-links a:hover { color: var(--text); background: var(--surface); }
 
@@ -115,53 +129,75 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--grad-primary); color: #07080c; text-decoration: none;
   padding: 13px 26px; border-radius: 100px; font-size: 13.5px; font-weight: 700;
-  transition: transform 0.25s, box-shadow 0.25s; box-shadow: 0 4px 24px rgba(139,124,246,0.25);
-  border: none; cursor: pointer;
+  transition: box-shadow 0.25s; box-shadow: 0 4px 24px rgba(139,124,246,0.25);
+  border: none; cursor: pointer; will-change: transform;
 }
-.btn-fill:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(139,124,246,0.35); }
+.btn-fill:hover { box-shadow: 0 10px 36px rgba(139,124,246,0.35); }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   border: 1px solid var(--border-strong); background: var(--surface); color: var(--text);
   text-decoration: none; padding: 13px 26px; border-radius: 100px; font-size: 13.5px; font-weight: 500;
-  transition: all 0.25s;
+  transition: color 0.25s, border-color 0.25s; will-change: transform;
 }
-.btn-ghost:hover { border-color: var(--violet); color: var(--violet-light); transform: translateY(-3px); }
+.btn-ghost:hover { border-color: var(--violet); color: var(--violet-light); }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
+.hero-right { position: relative; }
 .hero-card {
   background: linear-gradient(180deg, var(--surface), var(--bg-soft));
   border: 1px solid var(--border); border-radius: 20px; padding: 34px;
   box-shadow: 0 30px 90px rgba(0,0,0,0.55);
-  position: relative; overflow: hidden;
+  position: relative; overflow: visible;
   animation: fadeUp 0.8s 0.24s ease both;
-  transform-style: preserve-3d; transition: transform 0.1s ease-out;
+  transform-style: preserve-3d; transition: transform 0.12s ease-out;
 }
-.hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad-primary); }
+.hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad-primary); border-radius: 20px 20px 0 0; }
+.hero-card::after { content: ''; position: absolute; inset: -1px; border-radius: 20px; background: radial-gradient(400px circle at var(--mx,50%) var(--my,0%), rgba(139,124,246,0.14), transparent 60%); pointer-events: none; opacity: var(--glow-op, 0); transition: opacity 0.3s; }
 .card-avatar {
   width: 60px; height: 60px; border-radius: 16px;
   background: var(--grad-primary);
   display: flex; align-items: center; justify-content: center;
   font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #07080c;
   margin-bottom: 20px; box-shadow: 0 8px 24px rgba(139,124,246,0.3);
+  transform: translateZ(48px);
 }
-.card-name { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
-.card-sub { font-size: 13px; color: var(--text-faint); margin-bottom: 24px; }
-.card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+.card-name { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 3px; transform: translateZ(32px); }
+.card-sub { font-size: 13px; color: var(--text-faint); margin-bottom: 24px; transform: translateZ(28px); }
+.card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; transform: translateZ(18px); }
 .card-stat { background: var(--bg-soft); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--border); }
-.card-stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 3px; }
-.card-stat-num span { color: var(--cyan); font-size: 16px; }
+.card-stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 3px; text-shadow: 0 0 20px rgba(139,124,246,0.3); }
+.card-stat-num span { color: var(--cyan); font-size: 16px; text-shadow: none; }
 .card-stat-label { font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; }
-.card-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.card-chips { display: flex; flex-wrap: wrap; gap: 7px; transform: translateZ(12px); }
 .chip { background: var(--violet-pale); color: var(--violet-light); font-size: 11.5px; font-weight: 500; padding: 5px 12px; border-radius: 100px; border: 1px solid rgba(139,124,246,0.2); }
 .chip.alt { background: var(--cyan-pale); color: var(--cyan); border-color: rgba(77,216,230,0.2); }
+
+/* orbiting 3D badge — signature element */
+.orbit-badge { position: absolute; top: -34px; right: -18px; width: 72px; height: 72px; perspective: 700px; z-index: 2; pointer-events: none; }
+.orbit-cube { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: cubeSpin 16s linear infinite; }
+.orbit-cube .face {
+  position: absolute; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--text);
+  background: linear-gradient(135deg, rgba(139,124,246,0.28), rgba(77,216,230,0.16));
+  border: 1px solid var(--border-strong); backdrop-filter: blur(6px); border-radius: 12px;
+}
+.face.front { transform: translateZ(36px); }
+.face.back { transform: rotateY(180deg) translateZ(36px); }
+.face.right { transform: rotateY(90deg) translateZ(36px); background: linear-gradient(135deg, rgba(217,122,63,0.22), rgba(139,124,246,0.16)); }
+.face.left { transform: rotateY(-90deg) translateZ(36px); background: linear-gradient(135deg, rgba(77,216,230,0.22), rgba(139,124,246,0.14)); }
+.face.top { transform: rotateX(90deg) translateZ(36px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(36px); background: linear-gradient(135deg, rgba(217,122,63,0.16), rgba(77,216,230,0.16)); }
+@keyframes cubeSpin { from { transform: rotateX(0) rotateY(0); } to { transform: rotateX(360deg) rotateY(360deg); } }
 
 /* section shell */
 .section-wrap { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 110px 64px; }
 .section-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 10px rgba(77,216,230,0.6); }
+.eyebrow-dot.rose { background: var(--rose); box-shadow: 0 0 10px rgba(217,122,63,0.6); }
+.eyebrow-dot.violet { background: var(--violet); box-shadow: 0 0 10px rgba(139,124,246,0.6); }
 .eyebrow-label { font-size: 12px; font-weight: 600; color: var(--text-mid); letter-spacing: 0.14em; text-transform: uppercase; }
 .section-title { font-size: clamp(30px, 3.6vw, 46px); font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin-bottom: 54px; line-height: 1.15; }
-.section-title em { font-style: normal; background: var(--grad-primary); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.section-title em { font-style: italic; font-family: 'Instrument Serif', serif; font-weight: 400; background: var(--grad-primary); -webkit-background-clip: text; background-clip: text; color: transparent; }
 #about, #skills, #experience { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
 .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: start; }
@@ -172,18 +208,18 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
   background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px;
   position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s;
 }
-.edu-card:hover { transform: translateX(4px); border-color: rgba(139,124,246,0.3); }
+.edu-card:hover { transform: translateX(4px) translateZ(0); border-color: rgba(139,124,246,0.3); }
 .edu-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--grad-primary); }
 .edu-degree { font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
 .edu-school { font-size: 12.5px; color: var(--cyan); font-weight: 500; margin-bottom: 6px; }
 .edu-year { font-size: 11.5px; color: var(--text-faint); }
-.edu-grade { display: inline-block; margin-top: 8px; background: var(--gold-pale); color: var(--gold); font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 100px; border: 1px solid rgba(242,180,63,0.25); }
+.edu-grade { display: inline-block; margin-top: 8px; background: var(--rose-pale); color: var(--rose-light); font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 100px; border: 1px solid rgba(217,122,63,0.25); }
 
 /* certifications */
 .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
 .cert-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 28px;
-  position: relative; overflow: hidden; transition: transform 0.12s ease-out, border-color 0.3s, box-shadow 0.3s;
+  position: relative; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s;
   transform-style: preserve-3d;
 }
 .cert-card:hover { border-color: rgba(139,124,246,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
@@ -191,12 +227,12 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
 .cert-accent.aws { background: linear-gradient(90deg, #232f3e, #ff9900); }
 .cert-accent.samsung { background: linear-gradient(90deg, #1428a0, #00b0f0); }
 .cert-accent.nielit { background: var(--grad-primary); }
-.cert-logo { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
-.cert-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+.cert-logo { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; transform: translateZ(22px); }
+.cert-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.3; transform: translateZ(16px); }
 .cert-issuer { font-size: 13px; color: var(--cyan); font-weight: 500; margin-bottom: 16px; }
 .cert-meta { display: flex; gap: 8px; flex-wrap: wrap; }
 .cert-pill { background: var(--bg-soft); border: 1px solid var(--border); color: var(--text-mid); font-size: 10.5px; font-weight: 500; padding: 4px 11px; border-radius: 100px; }
-.cert-pill.highlight { background: var(--gold-pale); border-color: rgba(242,180,63,0.25); color: var(--gold); }
+.cert-pill.highlight { background: var(--rose-pale); border-color: rgba(217,122,63,0.25); color: var(--rose-light); }
 .cert-id { margin-top: 18px; font-size: 10.5px; color: var(--text-faint); letter-spacing: 0.04em; font-family: 'JetBrains Mono', monospace; }
 
 /* skills */
@@ -214,19 +250,19 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
 .project-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 28px;
   display: flex; flex-direction: column; position: relative; overflow: hidden;
-  transition: transform 0.12s ease-out, border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
   transform-style: preserve-3d;
 }
 .project-card:hover { border-color: rgba(139,124,246,0.3); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
-.project-tag { display: inline-block; font-size: 10.5px; font-weight: 600; color: var(--cyan); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
-.project-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 12px; line-height: 1.3; }
+.project-tag { display: inline-block; font-size: 10.5px; font-weight: 600; color: var(--cyan); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; transform: translateZ(20px); }
+.project-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 12px; line-height: 1.3; transform: translateZ(14px); }
 .project-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.85; margin-bottom: 20px; flex: 1; }
 .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
 .stack-pill { background: var(--violet-pale); color: var(--violet-light); border: 1px solid rgba(139,124,246,0.18); font-size: 10.5px; font-weight: 600; padding: 4px 11px; border-radius: 100px; }
 .project-footer { padding-top: 16px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .project-link { color: var(--cyan); text-decoration: none; font-size: 12.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
 .project-link:hover { gap: 10px; }
-.project-link.demo { color: var(--gold); }
+.project-link.demo { color: var(--rose-light); }
 
 /* experience */
 .timeline { position: relative; padding-left: 30px; }
@@ -237,7 +273,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
 .tl-item:hover .tl-dot { background: var(--violet); transform: scale(1.3); box-shadow: 0 0 14px rgba(139,124,246,0.6); }
 .tl-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .tl-badge { display: inline-block; background: var(--violet-pale); color: var(--violet-light); font-size: 10.5px; font-weight: 700; padding: 3px 11px; border-radius: 100px; border: 1px solid rgba(139,124,246,0.2); text-transform: uppercase; letter-spacing: 0.06em; }
-.tl-badge.intern { background: var(--gold-pale); color: var(--gold); border-color: rgba(242,180,63,0.25); }
+.tl-badge.intern { background: var(--rose-pale); color: var(--rose-light); border-color: rgba(217,122,63,0.25); }
 .tl-period { font-size: 11.5px; color: var(--text-faint); font-family: 'JetBrains Mono', monospace; }
 .tl-role { font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
 .tl-org { font-size: 13px; color: var(--cyan); font-weight: 500; margin-bottom: 12px; }
@@ -245,22 +281,28 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
 
 /* contact */
 #contact { text-align: center; }
-.contact-inner { max-width: 560px; margin: 0 auto; }
+.contact-inner { max-width: 640px; margin: 0 auto; }
 .contact-desc { font-size: 16px; color: var(--text-mid); line-height: 1.85; margin-bottom: 38px; }
 .contact-email-wrap {
   display: inline-block; background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  padding: 20px 32px; margin-bottom: 34px; transition: transform 0.25s, border-color 0.25s; text-decoration: none;
+  padding: 20px 32px; margin-bottom: 44px; transition: transform 0.25s, border-color 0.25s; text-decoration: none;
 }
 .contact-email-wrap:hover { transform: translateY(-4px); border-color: rgba(139,124,246,0.3); }
 .contact-label { font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
 .contact-email { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); display: block; }
+
+.contact-group { margin-bottom: 36px; }
+.contact-group:last-child { margin-bottom: 0; }
+.cg-label { font-size: 11px; font-weight: 600; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 16px; }
+
 .socials { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 .social-btn { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); color: var(--text); text-decoration: none; padding: 11px 20px; border-radius: 100px; font-size: 12.5px; font-weight: 500; transition: all 0.25s; }
 .social-btn:hover { background: var(--grad-primary); color: #07080c; border-color: transparent; transform: translateY(-3px); }
+
 footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--text-faint); font-family: 'JetBrains Mono', monospace; }
 
-.reveal { opacity: 0; transform: translateY(28px) scale(0.98); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-.reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+.reveal { opacity: 0; transform: perspective(1200px) rotateX(-8deg) translateY(30px) scale(0.97); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: perspective(1200px) rotateX(0) translateY(0) scale(1); }
 
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
@@ -269,12 +311,14 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
   .hero-right { display: none; }
   .section-wrap { padding: 72px 24px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .cursor-glow { display: none; }
 }
 </style>
 </head>
 <body>
 <div class="mesh"></div>
 <div class="grain"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <nav id="nav">
   <div class="nav-logo">shashank<span class="dot">.</span>ai</div>
@@ -306,6 +350,16 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
   </div>
   <div class="hero-right">
     <div class="hero-card tilt">
+      <div class="orbit-badge" aria-hidden="true">
+        <div class="orbit-cube">
+          <div class="face front">AI</div>
+          <div class="face back">ML</div>
+          <div class="face right">CV</div>
+          <div class="face left">RAG</div>
+          <div class="face top">◆</div>
+          <div class="face bottom">◇</div>
+        </div>
+      </div>
       <div class="card-avatar">S</div>
       <div class="card-name">Shashank Singh</div>
       <div class="card-sub">University of Lucknow · B.Tech CSE (AI)</div>
@@ -361,7 +415,7 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
 
 <section id="certifications">
   <div class="section-wrap">
-    <div class="section-eyebrow reveal"><span class="eyebrow-dot"></span><span class="eyebrow-label">Certifications</span></div>
+    <div class="section-eyebrow reveal"><span class="eyebrow-dot rose"></span><span class="eyebrow-label">Certifications</span></div>
     <h2 class="section-title reveal">What I've <em>earned</em></h2>
     <div class="certs-grid">
       <div class="cert-card reveal tilt">
@@ -403,7 +457,7 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
 
 <section id="skills">
   <div class="section-wrap">
-    <div class="section-eyebrow reveal"><span class="eyebrow-dot"></span><span class="eyebrow-label">Skills</span></div>
+    <div class="section-eyebrow reveal"><span class="eyebrow-dot violet"></span><span class="eyebrow-label">Skills</span></div>
     <h2 class="section-title reveal">My <em>tech stack</em></h2>
     <div class="skills-grid">
       <div class="skill-group reveal">
@@ -491,7 +545,7 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
 
 <section id="experience">
   <div class="section-wrap">
-    <div class="section-eyebrow reveal"><span class="eyebrow-dot"></span><span class="eyebrow-label">Experience</span></div>
+    <div class="section-eyebrow reveal"><span class="eyebrow-dot rose"></span><span class="eyebrow-label">Experience</span></div>
     <h2 class="section-title reveal">My <em>journey</em> so far</h2>
     <div class="timeline">
       <div class="tl-item reveal">
@@ -522,24 +576,41 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
 <section id="contact">
   <div class="section-wrap">
     <div class="contact-inner">
-      <div class="section-eyebrow reveal" style="justify-content:center;"><span class="eyebrow-dot"></span><span class="eyebrow-label">Contact</span></div>
+      <div class="section-eyebrow reveal" style="justify-content:center;"><span class="eyebrow-dot violet"></span><span class="eyebrow-label">Contact</span></div>
       <h2 class="section-title reveal">Let's <em>connect</em></h2>
       <p class="contact-desc reveal">I'm actively looking for internship opportunities, research collaborations, and exciting projects in AI &amp; ML. If you're working on something interesting — let's talk.</p>
       <a href="mailto:shashanksingh1709@gmail.com" class="contact-email-wrap reveal">
         <div class="contact-label">Email me at</div>
         <span class="contact-email">shashanksingh1709@gmail.com</span>
       </a>
-      <div class="socials reveal">
-        <a href="https://github.com/Shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
-        <a href="https://linkedin.com/in/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-        <a href="https://leetcode.com/u/Shashank17singh/" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>Leetcode</a>
-        <a href="https://x.com/Shashank_017" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</a>
-        <a href="https://instagram.com/shashank.17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
-        <a href="https://discord.gg/F82y2p7sp" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.0991.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>Discord</a>
-        <a href="https://reddit.com/user/u/Ok-Jelly-6146" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 013.11 12.42c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.437 4.744-1.5l.885-4.17a.36.36 0 01.43-.281l2.86.603a1.24 1.24 0 011.01-.564zM9.25 12.203a1.264 1.264 0 100 2.528 1.264 1.264 0 000-2.528zm5.516 0a1.264 1.264 0 100 2.528 1.264 1.264 0 000-2.528zm-5.51 3.667c-.219.219-.219.578 0 .797.997.997 2.807.998 3.802 0a.564.564 0 00-.797-.797c-.622.622-1.786.622-2.408 0a.563.563 0 00-.797 0z"/></svg>Reddit</a>
-        <a href="https://pinterest.com/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 00-4.373 23.178c-.035-.947-.006-2.083.235-3.113.263-1.11 1.746-7.395 1.746-7.395s-.446-.892-.446-2.207c0-2.067 1.198-3.612 2.69-3.612 1.269 0 1.881.951 1.881 2.09 0 1.274-.811 3.18-1.229 4.947-.35 1.48.742 2.687 2.201 2.687 2.641 0 4.678-2.785 4.678-6.804 0-3.557-2.556-6.045-6.204-6.045-4.226 0-6.708 3.17-6.708 6.446 0 1.276.492 2.645 1.106 3.39a.445.445 0 01.103.427c-.113.47-.365 1.48-.414 1.686-.065.273-.215.331-.496.199-1.849-.86-3.005-3.564-3.005-5.735 0-4.67 3.393-8.958 9.786-8.958 5.14 0 9.14 3.662 9.14 8.556 0 5.106-3.219 9.216-7.687 9.216-1.5 0-2.912-.78-3.394-1.7l-.923 3.522c-.334 1.286-1.238 2.897-1.844 3.879A12 12 0 1012 0z"/></svg>Pinterest</a>
-        <a href="https://quora.com/profile/Shashank-Singh-1352" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.006 3.763c-4.756 0-8.005 3.234-8.005 7.909v.688c0 4.675 3.309 7.877 8.005 7.877 1.416 0 2.616-.323 3.612-.849l-1.145-1.588a5.099 5.099 0 01-.865.104c-2.335 0-3.686-1.844-3.686-4.99v-.688c0-3.146 1.351-4.99 3.686-4.99 2.336 0 3.687 1.844 3.687 4.99v.688c0 1.088-.166 1.994-.478 2.716l-1.457-2.022h-2.427l2.478 3.437c-.354.166-.746.25-1.174.25-.163 0-.315-.011-.462-.033l1.803 2.5c3.09-.774 5.174-3.596 5.174-7.706v-.688c0-4.675-3.25-7.909-8.006-7.909h.26z"/></svg>Quora</a>
-        <a href="https://youtube.com/@Shashank17Singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+
+      <div class="contact-group reveal">
+        <div class="cg-label">Social</div>
+        <div class="socials">
+          <a href="https://github.com/Shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+          <a href="https://linkedin.com/in/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+          <a href="https://x.com/Shashank_017" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</a>
+          <a href="https://youtube.com/@Shashank17Singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+          <a href="https://instagram.com/shashank.17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
+          <a href="https://discord.gg/F82y2p7sp" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.0991.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>Discord</a>
+          <a href="https://reddit.com/user/u/Ok-Jelly-6146" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 013.11 12.42c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.437 4.744-1.5l.885-4.17a.36.36 0 01.43-.281l2.86.603a1.24 1.24 0 011.01-.564zM9.25 12.203a1.264 1.264 0 100 2.528 1.264 1.264 0 000-2.528zm5.516 0a1.264 1.264 0 100 2.528 1.264 1.264 0 000-2.528zm-5.51 3.667c-.219.219-.219.578 0 .797.997.997 2.807.998 3.802 0a.564.564 0 00-.797-.797c-.622.622-1.786.622-2.408 0a.563.563 0 00-.797 0z"/></svg>Reddit</a>
+          <a href="https://quora.com/profile/Shashank-Singh-1352" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.006 3.763c-4.756 0-8.005 3.234-8.005 7.909v.688c0 4.675 3.309 7.877 8.005 7.877 1.416 0 2.616-.323 3.612-.849l-1.145-1.588a5.099 5.099 0 01-.865.104c-2.335 0-3.686-1.844-3.686-4.99v-.688c0-3.146 1.351-4.99 3.686-4.99 2.336 0 3.687 1.844 3.687 4.99v.688c0 1.088-.166 1.994-.478 2.716l-1.457-2.022h-2.427l2.478 3.437c-.354.166-.746.25-1.174.25-.163 0-.315-.011-.462-.033l1.803 2.5c3.09-.774 5.174-3.596 5.174-7.706v-.688c0-4.675-3.25-7.909-8.006-7.909h.26z"/></svg>Quora</a>
+          <a href="https://pinterest.com/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 00-4.373 23.178c-.035-.947-.006-2.083.235-3.113.263-1.11 1.746-7.395 1.746-7.395s-.446-.892-.446-2.207c0-2.067 1.198-3.612 2.69-3.612 1.269 0 1.881.951 1.881 2.09 0 1.274-.811 3.18-1.229 4.947-.35 1.48.742 2.687 2.201 2.687 2.641 0 4.678-2.785 4.678-6.804 0-3.557-2.556-6.045-6.204-6.045-4.226 0-6.708 3.17-6.708 6.446 0 1.276.492 2.645 1.106 3.39a.445.445 0 01.103.427c-.113.47-.365 1.48-.414 1.686-.065.273-.215.331-.496.199-1.849-.86-3.005-3.564-3.005-5.735 0-4.67 3.393-8.958 9.786-8.958 5.14 0 9.14 3.662 9.14 8.556 0 5.106-3.219 9.216-7.687 9.216-1.5 0-2.912-.78-3.394-1.7l-.923 3.522c-.334 1.286-1.238 2.897-1.844 3.879A12 12 0 1012 0z"/></svg>Pinterest</a>
+        </div>
+      </div>
+
+      <div class="contact-group reveal">
+        <div class="cg-label">Coding Profiles</div>
+        <div class="socials">
+          <a href="https://leetcode.com/u/Shashank17singh/" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>LeetCode</a>
+          <a href="https://codeforces.com/profile/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 7.5A1.5 1.5 0 016 9v10.5A1.5 1.5 0 014.5 21h-1A1.5 1.5 0 012 19.5V9a1.5 1.5 0 011.5-1.5h1zm8-4.5A1.5 1.5 0 0114 4.5v15a1.5 1.5 0 01-1.5 1.5h-1a1.5 1.5 0 01-1.5-1.5v-15A1.5 1.5 0 0111.5 3h1zm8 8A1.5 1.5 0 0122 12.5v7a1.5 1.5 0 01-1.5 1.5h-1a1.5 1.5 0 01-1.5-1.5v-7a1.5 1.5 0 011.5-1.5h1z"/></svg>Codeforces</a>
+          <a href="https://www.codechef.com/users/Shashank7Singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.257.004C10.876.041 8.024.322 5.629 2.61c-.312.312-.61.66-.87 1.01-.187.259-1.204 1.87-1.204 4.116v.298c.037.797.187 1.484.42 2.08a5.72 5.72 0 0 0-1.11 1.63c-.383.87-.646 2.043-.646 3.68v.298c.06 1.394.42 2.379.782 3.09.36.71 1.05 1.673 1.98 2.53.933.855 2.06 1.53 3.28 1.965 1.222.435 2.535.652 3.855.652 1.32 0 2.633-.217 3.855-.652 1.22-.435 2.347-1.11 3.28-1.965.93-.857 1.62-1.82 1.98-2.53.362-.711.722-1.696.782-3.09v-.298c0-1.637-.263-2.81-.646-3.68a5.72 5.72 0 0 0-1.11-1.63c.233-.596.383-1.283.42-2.08v-.298c0-2.246-1.017-3.857-1.204-4.116a7.95 7.95 0 0 0-.87-1.01C15.976.322 13.124.04 12.743.004a13.36 13.36 0 0 0-1.486 0z"/></svg>CodeChef</a>
+          <a href="https://www.geeksforgeeks.org/user/Shashank17Singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.691 3.691 0 01-1.104.695 4.51 4.51 0 01-1.65.291h-3.15a.563.563 0 01-.563-.563v-1.688c0-.31.252-.562.563-.562h2.813a1.688 1.688 0 001.687-1.688v-.562a1.688 1.688 0 00-1.687-1.688h-3.376a1.688 1.688 0 00-1.687 1.688v6.75a1.688 1.688 0 001.687 1.688h3.376c.885 0 1.752-.148 2.579-.44a6.732 6.732 0 001.978-1.14c.44-.377.804-.83 1.08-1.34a.563.563 0 00-.98-.555zM7.716 10.16a4.5 4.5 0 00-4.5 4.5v.844a4.5 4.5 0 004.5 4.5h1.126a.563.563 0 00.562-.563v-1.687a.563.563 0 00-.562-.563H7.716a2.25 2.25 0 01-2.25-2.25v-.281a2.25 2.25 0 012.25-2.25h.844a.563.563 0 00.562-.562v-1.125a.563.563 0 00-.562-.563H7.716zM12 1.5c-1.42 0-2.677.727-3.406 1.828a.844.844 0 001.406.938A2.246 2.246 0 0112 3.187c1.243 0 2.25 1.008 2.25 2.25a.844.844 0 001.688 0A3.938 3.938 0 0012 1.5z"/></svg>GeeksForGeeks</a>
+          <a href="https://www.hackerrank.com/profile/shashanksingh172" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zM6.9 6.9h1.63c.09 0 .16.07.16.16v3.05h3.62v-3.05c0-.09.07-.16.16-.16h1.63c.09 0 .16.07.16.16v9.88c0 .09-.07.16-.16.16h-1.63c-.09 0-.16-.07-.16-.16v-4.33H8.69v4.33c0 .09-.07.16-.16.16H6.9c-.09 0-.16-.07-.16-.16V7.06c0-.09.07-.16.16-.16z"/></svg>HackerRank</a>
+          <a href="https://www.interviewbit.com/profile/shashank-singh_401" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>InterviewBit</a>
+          <a href="https://www.naukri.com/code360/profile/66d93f30-c8d5-4bf2-b875-84ca0e8ac742" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 16 22 12 18 8"/><polyline points="6 8 2 12 6 16"/><line x1="14.5" y1="4" x2="9.5" y2="20"/></svg>CodeStudio</a>
+          <a href="https://atcoder.jp/users/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="12"/><line x1="22" y1="8.5" x2="12" y2="12"/><line x1="2" y1="8.5" x2="12" y2="12"/></svg>AtCoder</a>
+        </div>
       </div>
     </div>
   </div>
@@ -553,11 +624,12 @@ window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
 });
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // typing effect
 const phrases = ['AI & ML Engineer', 'Python Developer', 'Computer Vision Builder', 'RAG Pipeline Builder', 'Open Source Learner'];
 let pi = 0, ci = 0, deleting = false;
 const typedEl = document.getElementById('typed');
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function type() {
   const word = phrases[pi];
   typedEl.textContent = deleting ? word.substring(0, ci--) : word.substring(0, ci++);
@@ -575,19 +647,43 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// 3D tilt on cards
+// 3D tilt on cards (with layered translateZ children for real depth)
 if (!reduceMotion) {
   document.querySelectorAll('.tilt').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width - 0.5;
       const y = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(900px) rotateX(${-y * 7}deg) rotateY(${x * 7}deg) translateZ(4px)`;
+      card.style.transform = `perspective(900px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateZ(6px)`;
+      card.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
+      card.style.setProperty('--my', `${(y + 0.5) * 100}%`);
+      card.style.setProperty('--glow-op', '1');
     });
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateZ(0)';
+      card.style.setProperty('--glow-op', '0');
     });
   });
+
+  // magnetic buttons
+  document.querySelectorAll('.btn-fill, .btn-ghost').forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const r = el.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      el.style.transform = `translate(${x * 0.25}px, ${y * 0.25 - 3}px)`;
+    });
+    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+  });
+
+  // cursor glow
+  const glow = document.getElementById('cursorGlow');
+  window.addEventListener('mousemove', (e) => {
+    glow.style.opacity = '1';
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+  document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
 }
 
 // neural network canvas — hero signature element
