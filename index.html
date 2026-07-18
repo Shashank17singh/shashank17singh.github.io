@@ -489,69 +489,76 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
     <div class="section-eyebrow reveal"><span class="eyebrow-dot"></span><span class="eyebrow-label">Projects</span></div>
     <h2 class="section-title reveal">Things I've <em>built</em></h2>
     <div class="projects-grid">
-      <div class="project-card reveal tilt">
+<div class="project-card reveal tilt">
         <div class="project-tag">Vector Search Engine</div>
         <div class="project-title">Your-Own-AI — Vector Database from Scratch</div>
         <div class="project-desc">A vector database built from scratch in C++, implementing HNSW, KD-Tree, and Brute-Force search side-by-side across 3 distance metrics (cosine, Euclidean, Manhattan), with a benchmark endpoint contrasting HNSW's O(log N) graph search against brute-force O(N) at scale. Wraps a full local RAG pipeline via Ollama — chunking documents into overlapping 250-word segments, embedding them with nomic-embed-text (768D), and retrieving context for a local LLM (Llama 3.2). Exposes a complete REST API paired with a live 2D PCA visualization frontend.</div>
         <div class="project-stack"><span class="stack-pill">C++</span><span class="stack-pill">HNSW</span><span class="stack-pill">KD-Tree</span><span class="stack-pill">RAG</span><span class="stack-pill">Ollama</span><span class="stack-pill">cpp-httplib</span></div>
         <div class="project-footer"><a href="https://github.com/Shashank17singh/Your-Own-AI" target="_blank" class="project-link">View on GitHub →</a></div>
       </div>
-      <div class="project-card reveal tilt">
+      
+<div class="project-card reveal tilt">
         <div class="project-tag">Systems / Networking</div>
         <div class="project-title">DPI Engine — Deep Packet Inspector</div>
         <div class="project-desc">A C++17 packet analyzer that reads PCAP captures, reconstructs TCP/UDP flows, and classifies traffic by application via TLS SNI / HTTP Host inspection. Selectively blocks traffic by app, IP, or domain. Features both single-threaded and multi-threaded (load-balancer + fast-path) implementations for high-throughput deep packet inspection.</div>
         <div class="project-stack"><span class="stack-pill">C++17</span><span class="stack-pill">libpcap</span><span class="stack-pill">TLS/SNI</span><span class="stack-pill">Multithreading</span></div>
         <div class="project-footer"><a href="https://github.com/Shashank17singh/DPI-Engine" target="_blank" class="project-link">View on GitHub →</a></div>
       </div>
-      <div class="project-card reveal tilt">
+      
+<div class="project-card reveal tilt">
+        <div class="project-tag">ML Deployment</div>
+        <div class="project-title">Home Price Suite</div>
+        <div class="project-desc">A complete ML ecosystem with two deployments: a production-ready full-stack web app (Flask REST API + Nginx reverse proxy + jQuery frontend) and a standalone Tkinter desktop GUI — both powered by a Scikit-learn Linear Regression model trained with feature engineering, EDA, outlier removal, and K-Fold cross-validation.</div>
+        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Flask</span><span class="stack-pill">Nginx</span><span class="stack-pill">Docker</span><span class="stack-pill">AWS</span><span class="stack-pill">GitHub Actions</span></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/Home-Prices-API" target="_blank" class="project-link">API Repo →</a><a href="https://home-prices-api.duckdns.org/" target="_blank" class="project-link" style="color: var(--accent); margin-left: 15px; font-weight: bold;">Live Demo 🔴</a></div>
+      </div>
+    
+<div class="project-card reveal tilt">
         <div class="project-tag">Fintech / Backend</div>
         <div class="project-title">UPI Mesh — Offline-First Payments</div>
         <div class="project-desc">A payment backend that settles UPI-style transactions with zero internet — hybrid RSA/AES-GCM encryption, a Bluetooth mesh simulator, and idempotent settlement engine served through a FastAPI dashboard. Includes comprehensive test suites for crypto, settlement, mesh simulation, and idempotency services.</div>
         <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">FastAPI</span><span class="stack-pill">RSA/AES-GCM</span><span class="stack-pill">SQLite</span><span class="stack-pill">SQLAlchemy</span></div>
         <div class="project-footer">
-          <a href="https://home-prices-api.duckdns.org/upi/" target="_blank" class="project-link" style="color: var(--accent); margin-right: 15px; font-weight: bold;">🔴 Live Demo</a>
+          <a href="https://home-prices-api.duckdns.org/upi/" target="_blank" class="project-link" style="color: var(--accent); margin-right: 15px; font-weight: bold;">Live Demo 🔴</a>
           <a href="https://github.com/Shashank17singh/UPI_Mesh" target="_blank" class="project-link">View on GitHub →</a>
         </div>
       </div>
-      <div class="project-card reveal tilt">
+      
+<div class="project-card reveal tilt">
         <div class="project-tag">Medical AI / RAG</div>
         <div class="project-title">Medbot-RAG — Medical Symptom Assistant</div>
         <div class="project-desc">A retrieval-augmented medical assistant that answers general health questions grounded in a curated corpus. Features rule-based emergency triage sitting in front of the RAG pipeline, with hnswlib's HNSW index for fast vector retrieval. Includes evaluation harness and guardrails to prevent hallucinations.</div>
         <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">hnswlib</span><span class="stack-pill">RAG</span><span class="stack-pill">Streamlit</span><span class="stack-pill">Groq</span></div>
         <div class="project-footer">
           <a href="https://github.com/Shashank17singh/Medbot-RAG" target="_blank" class="project-link">View on GitHub →</a>
-          <a href="https://medbot-rag.streamlit.app/" target="_blank" class="project-link" style="margin-left: 1rem;">Live Demo 🔴</a>
+          <a href="https://medbot-rag.streamlit.app/" target="_blank" class="project-link" style="color: var(--accent); margin-left: 15px; font-weight: bold;">Live Demo 🔴</a>
         </div>
       </div>
-      <div class="project-card reveal tilt">
+      
+<div class="project-card reveal tilt">
         <div class="project-tag">LLM Pipeline</div>
         <div class="project-title">AI Resume Screener</div>
         <div class="project-desc">An LLM-powered pipeline that parses resumes and job descriptions into structured Pydantic data, then ranks candidates by fit. Built with Streamlit, Groq (openai/gpt-oss-120b), and schema-driven extraction that handles varied resume formatting. Includes retry-with-backoff on LLM calls, resume caching by file hash, and per-file error isolation — resulting in a ranked shortlist UI with matching and missing skills called out per candidate.</div>
         <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Streamlit</span><span class="stack-pill">Groq</span><span class="stack-pill">Pydantic</span></div>
-        <div class="project-footer"><a href="https://github.com/Shashank17singh/Resume-Parser" target="_blank" class="project-link">View on GitHub →</a><a href="https://resume-parsers.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/Resume-Parser" target="_blank" class="project-link">View on GitHub →</a><a href="https://resume-parsers.streamlit.app/" target="_blank" class="project-link" style="color: var(--accent); margin-left: 15px; font-weight: bold;">Live Demo 🔴</a></div>
       </div>
-      <div class="project-card reveal tilt">
+      
+<div class="project-card reveal tilt">
         <div class="project-tag">RAG Application</div>
         <div class="project-title">Conversational RAG Chatbot</div>
         <div class="project-desc">A Retrieval-Augmented Generation web app built with Streamlit, LangChain, and Groq. Users upload one or more PDFs and hold a multi-turn conversation with their content — a history-aware retriever reformulates follow-up questions using chat history. Documents are chunked, embedded with HuggingFace's all-MiniLM-L6-v2, and indexed in ChromaDB, with Groq's Llama 3.3 70B model powering fast inference across multiple isolated chat sessions.</div>
         <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Streamlit</span><span class="stack-pill">LangChain</span><span class="stack-pill">ChromaDB</span></div>
-        <div class="project-footer"><a href="https://github.com/Shashank17singh/Conversational-RAG-Chatbot" target="_blank" class="project-link">View on GitHub →</a><a href="https://conversational-rag-chatbot-pdf.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/Conversational-RAG-Chatbot" target="_blank" class="project-link">View on GitHub →</a><a href="https://conversational-rag-chatbot-pdf.streamlit.app/" target="_blank" class="project-link" style="color: var(--accent); margin-left: 15px; font-weight: bold;">Live Demo 🔴</a></div>
       </div>
-      <div class="project-card reveal tilt">
+      
+<div class="project-card reveal tilt">
         <div class="project-tag">Computer Vision</div>
         <div class="project-title">Sports Person Classifier</div>
         <div class="project-desc">A full-stack image classification system using OpenCV Haar Cascades for face and eye detection, and Wavelet Transform for feature extraction. Trained SVM, Random Forest, and Logistic Regression models with GridSearchCV, achieving 87%+ accuracy. Deployed via a Flask REST API with an interactive frontend for real-time image upload and prediction.</div>
         <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">OpenCV</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Flask</span></div>
-        <div class="project-footer"><a href="https://github.com/Shashank17singh/Sports-Person-Classifier" target="_blank" class="project-link">View on GitHub →</a><a href="https://sports-person-classifier-xi.vercel.app/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/Sports-Person-Classifier" target="_blank" class="project-link">View on GitHub →</a><a href="https://sports-person-classifier-xi.vercel.app/" target="_blank" class="project-link" style="color: var(--accent); margin-left: 15px; font-weight: bold;">Live Demo 🔴</a></div>
       </div>
-      <div class="project-card reveal tilt">
-        <div class="project-tag">ML Deployment</div>
-        <div class="project-title">Home Price Suite</div>
-        <div class="project-desc">A complete ML ecosystem with two deployments: a production-ready full-stack web app (Flask REST API + Nginx reverse proxy + jQuery frontend) and a standalone Tkinter desktop GUI — both powered by a Scikit-learn Linear Regression model trained with feature engineering, EDA, outlier removal, and K-Fold cross-validation.</div>
-        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Flask</span><span class="stack-pill">Nginx</span></div>
-        <div class="project-footer"><a href="https://github.com/Shashank17singh/Home-Prices-API" target="_blank" class="project-link">API Repo →</a><a href="https://home-prices-api.duckdns.org/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
       </div>
-    </div>
   </div>
 </section>
 
