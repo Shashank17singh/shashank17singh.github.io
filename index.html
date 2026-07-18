@@ -337,7 +337,7 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
       <div class="card-name">Shashank Singh</div>
       <div class="card-sub">University of Lucknow · B.Tech CSE (AI)</div>
       <div class="card-stats">
-        <div class="card-stat"><div class="card-stat-num">6<span>+</span></div><div class="card-stat-label">Projects</div></div>
+        <div class="card-stat"><div class="card-stat-num">9<span>+</span></div><div class="card-stat-label">Projects</div></div>
         <div class="card-stat"><div class="card-stat-num">4<span>th</span></div><div class="card-stat-label">Year</div></div>
         <div class="card-stat"><div class="card-stat-num">2</div><div class="card-stat-label">Internships</div></div>
         <div class="card-stat"><div class="card-stat-num" style="font-size:16px;">Oct<span>'23</span></div><div class="card-stat-label">Started</div></div>
@@ -446,11 +446,11 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
       </div>
       <div class="skill-group reveal">
         <div class="sg-title"><div class="sg-icon">🗄️</div>Database</div>
-        <div class="sg-tags"><span class="sg-tag">MySQL</span></div>
+        <div class="sg-tags"><span class="sg-tag">SQLite</span><span class="sg-tag">SQLAlchemy</span></div>
       </div>
       <div class="skill-group reveal">
         <div class="sg-title"><div class="sg-icon">🌐</div>Web &amp; Deployment</div>
-        <div class="sg-tags"><span class="sg-tag">Flask</span><span class="sg-tag">REST API</span><span class="sg-tag">cpp-httplib</span><span class="sg-tag">Nginx</span><span class="sg-tag">jQuery</span></div>
+        <div class="sg-tags"><span class="sg-tag">Flask</span><span class="sg-tag">FastAPI</span><span class="sg-tag">REST API</span><span class="sg-tag">cpp-httplib</span><span class="sg-tag">Nginx</span><span class="sg-tag">Docker</span></div>
       </div>
       <div class="skill-group reveal">
         <div class="sg-title"><div class="sg-icon">🖥️</div>Desktop / GUI</div>
@@ -473,8 +473,12 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
         <div class="sg-tags"><span class="sg-tag">Excel</span><span class="sg-tag">PowerPoint</span><span class="sg-tag">Word</span></div>
       </div>
       <div class="skill-group reveal">
+        <div class="sg-title"><div class="sg-icon">🔒</div>Systems &amp; Security</div>
+        <div class="sg-tags"><span class="sg-tag">C++17</span><span class="sg-tag">Multithreading</span><span class="sg-tag">RSA/AES-GCM</span><span class="sg-tag">libpcap</span><span class="sg-tag">TCP/UDP Flows</span><span class="sg-tag">HNSW</span></div>
+      </div>
+      <div class="skill-group reveal">
         <div class="sg-title"><div class="sg-icon">🔧</div>Tools</div>
-        <div class="sg-tags"><span class="sg-tag">Git</span><span class="sg-tag">GitHub</span></div>
+        <div class="sg-tags"><span class="sg-tag">Git</span><span class="sg-tag">GitHub</span><span class="sg-tag">Linux</span><span class="sg-tag">Docker</span><span class="sg-tag">Postman</span></div>
       </div>
     </div>
   </div>
@@ -487,10 +491,31 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
     <div class="projects-grid">
       <div class="project-card reveal tilt">
         <div class="project-tag">Vector Search Engine</div>
-        <div class="project-title">VectorDB — Built From Scratch</div>
+        <div class="project-title">Your-Own-AI — Vector Database from Scratch</div>
         <div class="project-desc">A vector database built from scratch in C++, implementing HNSW, KD-Tree, and Brute-Force search side-by-side across 3 distance metrics (cosine, Euclidean, Manhattan), with a benchmark endpoint contrasting HNSW's O(log N) graph search against brute-force O(N) at scale. Wraps a full local RAG pipeline via Ollama — chunking documents into overlapping 250-word segments, embedding them with nomic-embed-text (768D), and retrieving context for a local LLM (Llama 3.2). Exposes a complete REST API paired with a live 2D PCA visualization frontend.</div>
         <div class="project-stack"><span class="stack-pill">C++</span><span class="stack-pill">HNSW</span><span class="stack-pill">KD-Tree</span><span class="stack-pill">RAG</span><span class="stack-pill">Ollama</span><span class="stack-pill">cpp-httplib</span></div>
-        <div class="project-footer"><a href="https://github.com/Shashank17singh/VectorDB" target="_blank" class="project-link">View on GitHub →</a></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/Your-Own-AI" target="_blank" class="project-link">View on GitHub →</a></div>
+      </div>
+      <div class="project-card reveal tilt">
+        <div class="project-tag">Systems / Networking</div>
+        <div class="project-title">DPI Engine — Deep Packet Inspector</div>
+        <div class="project-desc">A C++17 packet analyzer that reads PCAP captures, reconstructs TCP/UDP flows, and classifies traffic by application via TLS SNI / HTTP Host inspection. Selectively blocks traffic by app, IP, or domain. Features both single-threaded and multi-threaded (load-balancer + fast-path) implementations for high-throughput deep packet inspection.</div>
+        <div class="project-stack"><span class="stack-pill">C++17</span><span class="stack-pill">libpcap</span><span class="stack-pill">TLS/SNI</span><span class="stack-pill">Multithreading</span></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/DPI-Engine" target="_blank" class="project-link">View on GitHub →</a></div>
+      </div>
+      <div class="project-card reveal tilt">
+        <div class="project-tag">Fintech / Backend</div>
+        <div class="project-title">UPI Mesh — Offline-First Payments</div>
+        <div class="project-desc">A payment backend that settles UPI-style transactions with zero internet — hybrid RSA/AES-GCM encryption, a Bluetooth mesh simulator, and idempotent settlement engine served through a FastAPI dashboard. Includes comprehensive test suites for crypto, settlement, mesh simulation, and idempotency services.</div>
+        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">FastAPI</span><span class="stack-pill">RSA/AES-GCM</span><span class="stack-pill">SQLite</span><span class="stack-pill">SQLAlchemy</span></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/UPI_Mesh" target="_blank" class="project-link">View on GitHub →</a></div>
+      </div>
+      <div class="project-card reveal tilt">
+        <div class="project-tag">Medical AI / RAG</div>
+        <div class="project-title">Medbot-RAG — Medical Symptom Assistant</div>
+        <div class="project-desc">A retrieval-augmented medical assistant that answers general health questions grounded in a curated corpus. Features rule-based emergency triage sitting in front of the RAG pipeline, with hnswlib's HNSW index for fast vector retrieval. Includes evaluation harness and guardrails to prevent hallucinations.</div>
+        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">hnswlib</span><span class="stack-pill">RAG</span><span class="stack-pill">Streamlit</span><span class="stack-pill">Groq</span></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/Medbot-RAG" target="_blank" class="project-link">View on GitHub →</a></div>
       </div>
       <div class="project-card reveal tilt">
         <div class="project-tag">LLM Pipeline</div>
