@@ -34,6 +34,7 @@ for c in cards:
 # 5. AI Resume Screener
 # 6. Conversational RAG Chatbot
 # 7. Sports Person Classifier
+# 8. Posture Checker
 
 order = [
     "Your-Own-AI",
@@ -42,7 +43,8 @@ order = [
     "UPI Mesh",
     "AI Resume Screener",
     "Conversational RAG Chatbot",
-    "Sports Person Classifier"
+    "Sports Person Classifier",
+    "Posture Checker — AI Physiotherapy"
 ]
 
 new_grid_content = "\n".join([card_dict[title] for title in order])
