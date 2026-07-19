@@ -329,7 +329,6 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
       <button class="btn-fill" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects ↓</button>
       <a href="https://github.com/Shashank17singh" target="_blank" class="btn-ghost">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/shashank17singh/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
-      <a href="https://mail.google.com/mail/u/0/?fs=1&to=shashanksingh1709@gmail.com&tf=cm" target="_blank" class="btn-ghost">Email ↗</a>
     </div>
   </div>
   <div class="hero-right">
@@ -490,67 +489,60 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
     <div class="section-eyebrow reveal"><span class="eyebrow-dot"></span><span class="eyebrow-label">Projects</span></div>
     <h2 class="section-title reveal">Things I've <em>built</em></h2>
     <div class="projects-grid">
-<div class="project-card reveal tilt">
+      <div class="project-card reveal tilt">
         <div class="project-tag">Vector Search Engine</div>
         <div class="project-title">Your-Own-AI — Vector Database from Scratch</div>
         <div class="project-desc">A vector database built from scratch in C++, implementing HNSW, KD-Tree, and Brute-Force search side-by-side across 3 distance metrics (cosine, Euclidean, Manhattan), with a benchmark endpoint contrasting HNSW's O(log N) graph search against brute-force O(N) at scale. Wraps a full local RAG pipeline via Ollama — chunking documents into overlapping 250-word segments, embedding them with nomic-embed-text (768D), and retrieving context for a local LLM (Llama 3.2). Exposes a complete REST API paired with a live 2D PCA visualization frontend.</div>
         <div class="project-stack"><span class="stack-pill">C++</span><span class="stack-pill">HNSW</span><span class="stack-pill">KD-Tree</span><span class="stack-pill">RAG</span><span class="stack-pill">Ollama</span><span class="stack-pill">cpp-httplib</span></div>
         <div class="project-footer"><a href="https://github.com/Shashank17singh/Your-Own-AI" target="_blank" class="project-link">View on GitHub →</a></div>
       </div>
-      
-<div class="project-card reveal tilt">
+      <div class="project-card reveal tilt">
         <div class="project-tag">Systems / Networking</div>
         <div class="project-title">DPI Engine — Deep Packet Inspector</div>
         <div class="project-desc">A C++17 packet analyzer that reads PCAP captures, reconstructs TCP/UDP flows, and classifies traffic by application via TLS SNI / HTTP Host inspection. Selectively blocks traffic by app, IP, or domain. Features both single-threaded and multi-threaded (load-balancer + fast-path) implementations for high-throughput deep packet inspection.</div>
         <div class="project-stack"><span class="stack-pill">C++17</span><span class="stack-pill">libpcap</span><span class="stack-pill">TLS/SNI</span><span class="stack-pill">Multithreading</span></div>
         <div class="project-footer"><a href="https://github.com/Shashank17singh/DPI-Engine" target="_blank" class="project-link">View on GitHub →</a></div>
       </div>
-      
-<div class="project-card reveal tilt">
-        <div class="project-tag">ML Deployment</div>
-        <div class="project-title">Home Price Suite</div>
-        <div class="project-desc">A complete ML ecosystem with two deployments: a production-ready full-stack web app (Flask REST API + Nginx reverse proxy + jQuery frontend) and a standalone Tkinter desktop GUI — both powered by a Scikit-learn Linear Regression model trained with feature engineering, EDA, outlier removal, and K-Fold cross-validation.</div>
-        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Flask</span><span class="stack-pill">Nginx</span><span class="stack-pill">Docker</span><span class="stack-pill">AWS</span><span class="stack-pill">GitHub Actions</span></div>
-        <div class="project-footer"><a href="https://github.com/Shashank17singh/Home-Prices-API" target="_blank" class="project-link">API Repo →</a><a href="https://home-prices-api.duckdns.org/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
-      </div>
-    
-<div class="project-card reveal tilt">
+      <div class="project-card reveal tilt">
         <div class="project-tag">Fintech / Backend</div>
         <div class="project-title">UPI Mesh — Offline-First Payments</div>
         <div class="project-desc">A payment backend that settles UPI-style transactions with zero internet — hybrid RSA/AES-GCM encryption, a Bluetooth mesh simulator, and idempotent settlement engine served through a FastAPI dashboard. Includes comprehensive test suites for crypto, settlement, mesh simulation, and idempotency services.</div>
-        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">FastAPI</span><span class="stack-pill">RSA/AES-GCM</span><span class="stack-pill">SQLite</span><span class="stack-pill">Docker</span><span class="stack-pill">Nginx</span><span class="stack-pill">AWS</span><span class="stack-pill">GitHub Actions</span></div>
+        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">FastAPI</span><span class="stack-pill">RSA/AES-GCM</span><span class="stack-pill">SQLite</span><span class="stack-pill">SQLAlchemy</span></div>
         <div class="project-footer">
+          <a href="https://home-prices-api.duckdns.org/upi/" target="_blank" class="project-link" style="color: var(--accent); margin-right: 15px; font-weight: bold;">🔴 Live Demo</a>
           <a href="https://github.com/Shashank17singh/UPI_Mesh" target="_blank" class="project-link">View on GitHub →</a>
-          <a href="https://upi-mesh.duckdns.org/" target="_blank" class="project-link demo">Live Demo ↗</a>
         </div>
       </div>
       
-
-      
-<div class="project-card reveal tilt">
+      <div class="project-card reveal tilt">
         <div class="project-tag">LLM Pipeline</div>
         <div class="project-title">AI Resume Screener</div>
         <div class="project-desc">An LLM-powered pipeline that parses resumes and job descriptions into structured Pydantic data, then ranks candidates by fit. Built with Streamlit, Groq (openai/gpt-oss-120b), and schema-driven extraction that handles varied resume formatting. Includes retry-with-backoff on LLM calls, resume caching by file hash, and per-file error isolation — resulting in a ranked shortlist UI with matching and missing skills called out per candidate.</div>
         <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Streamlit</span><span class="stack-pill">Groq</span><span class="stack-pill">Pydantic</span></div>
         <div class="project-footer"><a href="https://github.com/Shashank17singh/Resume-Parser" target="_blank" class="project-link">View on GitHub →</a><a href="https://resume-parsers.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
       </div>
-      
-<div class="project-card reveal tilt">
+      <div class="project-card reveal tilt">
         <div class="project-tag">RAG Application</div>
         <div class="project-title">Conversational RAG Chatbot</div>
         <div class="project-desc">A Retrieval-Augmented Generation web app built with Streamlit, LangChain, and Groq. Users upload one or more PDFs and hold a multi-turn conversation with their content — a history-aware retriever reformulates follow-up questions using chat history. Documents are chunked, embedded with HuggingFace's all-MiniLM-L6-v2, and indexed in ChromaDB, with Groq's Llama 3.3 70B model powering fast inference across multiple isolated chat sessions.</div>
-        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Streamlit</span><span class="stack-pill">LangChain</span><span class="stack-pill">ChromaDB</span><span class="stack-pill">Groq</span><span class="stack-pill">HuggingFace</span></div>
+        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Streamlit</span><span class="stack-pill">LangChain</span><span class="stack-pill">ChromaDB</span></div>
         <div class="project-footer"><a href="https://github.com/Shashank17singh/Conversational-RAG-Chatbot" target="_blank" class="project-link">View on GitHub →</a><a href="https://conversational-rag-chatbot-pdf.streamlit.app/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
       </div>
-      
-<div class="project-card reveal tilt">
+      <div class="project-card reveal tilt">
         <div class="project-tag">Computer Vision</div>
         <div class="project-title">Sports Person Classifier</div>
         <div class="project-desc">A full-stack image classification system using OpenCV Haar Cascades for face and eye detection, and Wavelet Transform for feature extraction. Trained SVM, Random Forest, and Logistic Regression models with GridSearchCV, achieving 87%+ accuracy. Deployed via a Flask REST API with an interactive frontend for real-time image upload and prediction.</div>
         <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">OpenCV</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Flask</span></div>
         <div class="project-footer"><a href="https://github.com/Shashank17singh/Sports-Person-Classifier" target="_blank" class="project-link">View on GitHub →</a><a href="https://sports-person-classifier-xi.vercel.app/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
       </div>
+      <div class="project-card reveal tilt">
+        <div class="project-tag">ML Deployment</div>
+        <div class="project-title">Home Price Suite</div>
+        <div class="project-desc">A complete ML ecosystem with two deployments: a production-ready full-stack web app (Flask REST API + Nginx reverse proxy + jQuery frontend) and a standalone Tkinter desktop GUI — both powered by a Scikit-learn Linear Regression model trained with feature engineering, EDA, outlier removal, and K-Fold cross-validation.</div>
+        <div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Flask</span><span class="stack-pill">Nginx</span></div>
+        <div class="project-footer"><a href="https://github.com/Shashank17singh/Home-Prices-API" target="_blank" class="project-link">API Repo →</a><a href="https://home-prices-api.duckdns.org/" target="_blank" class="project-link demo">Live Demo ↗</a></div>
       </div>
+    </div>
   </div>
 </section>
 
@@ -601,9 +593,9 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
           <a href="https://instagram.com/shashank.17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
           <a href="https://www.facebook.com/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>
           <a href="https://discord.gg/F82y2p7sp" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.0991.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>Discord</a>
-          <a href="https://reddit.com/user/u/Ok-Jelly-6146" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.4"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 013.11 12.42c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.437 4.744-1.5l.885-4.17a.36.36 0 01.43-.281l2.86.603a1.24 1.24 0 011.01-.564zM9.25 12.203a1.264 1.264 0 100 2.528 1.264 1.264 0 000-2.528zm5.516 0a1.264 1.264 0 100 2.528 1.264 1.264 0 000-2.528zm-5.51 3.667c-.219.219-.219.578 0 .797.997.997 2.807.998 3.802 0a.564.564 0 00-.797-.797c-.622.622-1.786.622-2.408 0a.563.563 0 00-.797 0z"/></svg>Reddit</a>
-          <a href="https://quora.com/profile/Shashank-Singh-1352" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.4"><path d="M12.006 3.763c-4.756 0-8.005 3.234-8.005 7.909v.688c0 4.675 3.309 7.877 8.005 7.877 1.416 0 2.616-.323 3.612-.849l-1.145-1.588a5.099 5.099 0 01-.865.104c-2.335 0-3.686-1.844-3.686-4.99v-.688c0-3.146 1.351-4.99 3.686-4.99 2.336 0 3.687 1.844 3.687 4.99v.688c0 1.088-.166 1.994-.478 2.716l-1.457-2.022h-2.427l2.478 3.437c-.354.166-.746.25-1.174.25-.163 0-.315-.011-.462-.033l1.803 2.5c3.09-.774 5.174-3.596 5.174-7.706v-.688c0-4.675-3.25-7.909-8.006-7.909h.26z"/></svg>Quora</a>
-          <a href="https://pinterest.com/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.4"><path d="M12 0a12 12 0 00-4.373 23.178c-.035-.947-.006-2.083.235-3.113.263-1.11 1.746-7.395 1.746-7.395s-.446-.892-.446-2.207c0-2.067 1.198-3.612 2.69-3.612 1.269 0 1.881.951 1.881 2.09 0 1.274-.811 3.18-1.229 4.947-.35 1.48.742 2.687 2.201 2.687 2.641 0 4.678-2.785 4.678-6.804 0-3.557-2.556-6.045-6.204-6.045-4.226 0-6.708 3.17-6.708 6.446 0 1.276.492 2.645 1.106 3.39a.445.445 0 01.103.427c-.113.47-.365 1.48-.414 1.686-.065.273-.215.331-.496.199-1.849-.86-3.005-3.564-3.005-5.735 0-4.67 3.393-8.958 9.786-8.958 5.14 0 9.14 3.662 9.14 8.556 0 5.106-3.219 9.216-7.687 9.216-1.5 0-2.912-.78-3.394-1.7l-.923 3.522c-.334 1.286-1.238 2.897-1.844 3.879A12 12 0 1012 0z"/></svg>Pinterest</a>
+          <a href="https://reddit.com/user/u/Ok-Jelly-6146" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 013.11 12.42c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.437 4.744-1.5l.885-4.17a.36.36 0 01.43-.281l2.86.603a1.24 1.24 0 011.01-.564zM9.25 12.203a1.264 1.264 0 100 2.528 1.264 1.264 0 000-2.528zm5.516 0a1.264 1.264 0 100 2.528 1.264 1.264 0 000-2.528zm-5.51 3.667c-.219.219-.219.578 0 .797.997.997 2.807.998 3.802 0a.564.564 0 00-.797-.797c-.622.622-1.786.622-2.408 0a.563.563 0 00-.797 0z"/></svg>Reddit</a>
+          <a href="https://quora.com/profile/Shashank-Singh-1352" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.006 3.763c-4.756 0-8.005 3.234-8.005 7.909v.688c0 4.675 3.309 7.877 8.005 7.877 1.416 0 2.616-.323 3.612-.849l-1.145-1.588a5.099 5.099 0 01-.865.104c-2.335 0-3.686-1.844-3.686-4.99v-.688c0-3.146 1.351-4.99 3.686-4.99 2.336 0 3.687 1.844 3.687 4.99v.688c0 1.088-.166 1.994-.478 2.716l-1.457-2.022h-2.427l2.478 3.437c-.354.166-.746.25-1.174.25-.163 0-.315-.011-.462-.033l1.803 2.5c3.09-.774 5.174-3.596 5.174-7.706v-.688c0-4.675-3.25-7.909-8.006-7.909h.26z"/></svg>Quora</a>
+          <a href="https://pinterest.com/shashank17singh" target="_blank" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 00-4.373 23.178c-.035-.947-.006-2.083.235-3.113.263-1.11 1.746-7.395 1.746-7.395s-.446-.892-.446-2.207c0-2.067 1.198-3.612 2.69-3.612 1.269 0 1.881.951 1.881 2.09 0 1.274-.811 3.18-1.229 4.947-.35 1.48.742 2.687 2.201 2.687 2.641 0 4.678-2.785 4.678-6.804 0-3.557-2.556-6.045-6.204-6.045-4.226 0-6.708 3.17-6.708 6.446 0 1.276.492 2.645 1.106 3.39a.445.445 0 01.103.427c-.113.47-.365 1.48-.414 1.686-.065.273-.215.331-.496.199-1.849-.86-3.005-3.564-3.005-5.735 0-4.67 3.393-8.958 9.786-8.958 5.14 0 9.14 3.662 9.14 8.556 0 5.106-3.219 9.216-7.687 9.216-1.5 0-2.912-.78-3.394-1.7l-.923 3.522c-.334 1.286-1.238 2.897-1.844 3.879A12 12 0 1012 0z"/></svg>Pinterest</a>
         </div>
       </div>
 
@@ -635,7 +627,7 @@ window.addEventListener('scroll', () => {
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // typing effect
-const phrases = ['AI & ML Engineer', 'Generative AI & RAG Developer', 'C++ Systems & Network Engineer', 'Full-Stack ML Deployment'];
+const phrases = ['AI & ML Engineer', 'RAG & Vector Search Builder', 'C++ Systems Engineer', 'LLM Post-Training & RLHF'];
 let pi = 0, ci = 0, deleting = false;
 const typedEl = document.getElementById('typed');
 function type() {
