@@ -132,9 +132,9 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
 
 .hero-right { position: relative; }
 .hero-card {
-  background: linear-gradient(180deg, var(--surface), var(--bg-soft));
+  background: var(--surface);
   border: 1px solid var(--border); border-radius: 20px; padding: 34px;
-  box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
   position: relative; overflow: visible;
   animation: fadeUp 0.8s 0.24s ease both;
   transform-style: preserve-3d; transition: transform 0.12s ease-out;
@@ -360,18 +360,18 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
         <p>I am actively pursuing software engineering and data science opportunities where I can apply my systems-level expertise and ML deployment capabilities to drive innovation and solve high-impact, complex engineering challenges.</p>
       </div>
       <div class="edu-stack reveal">
-        <div class="edu-card">
+        <div class="edu-card tilt">
           <div class="edu-degree">B.Tech — CSE (Artificial Intelligence)</div>
           <div class="edu-school">University of Lucknow</div>
           <div class="edu-year">Oct 2023 – Present · Final Year</div>
         </div>
-        <div class="edu-card">
+        <div class="edu-card tilt">
           <div class="edu-degree">Intermediate (Class XII)</div>
           <div class="edu-school">Einstein Public School, Pratapgarh</div>
           <div class="edu-year">2021 – 2022</div>
           <span class="edu-grade">86.8%</span>
         </div>
-        <div class="edu-card">
+        <div class="edu-card tilt">
           <div class="edu-degree">High School (Class X)</div>
           <div class="edu-school">Einstein Public School, Pratapgarh</div>
           <div class="edu-year">2019 – 2020</div>
@@ -671,8 +671,8 @@ if (!reduceMotion) {
   const ctx = canvas.getContext('2d');
   const hero = document.getElementById('hero');
   let w, h, nodes = [];
-  const NODE_COUNT = 46;
-  const LINK_DIST = 130;
+  const NODE_COUNT = 70;
+  const LINK_DIST = 160;
   let mouse = { x: -9999, y: -9999 };
 
   function resize() {
@@ -683,8 +683,8 @@ if (!reduceMotion) {
     resize();
     nodes = Array.from({ length: NODE_COUNT }, () => ({
       x: Math.random() * w, y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
-      r: Math.random() * 1.6 + 1
+      vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 1.8 + 1
     }));
   }
   function step() {
@@ -702,15 +702,15 @@ if (!reduceMotion) {
         const a = nodes[i], b = nodes[j];
         const d = Math.hypot(a.x - b.x, a.y - b.y);
         if (d < LINK_DIST) {
-          ctx.strokeStyle = `rgba(139,124,246,${0.16 * (1 - d / LINK_DIST)})`;
-          ctx.lineWidth = 1;
+          ctx.strokeStyle = `rgba(139,124,246,${0.35 * (1 - d / LINK_DIST)})`;
+          ctx.lineWidth = 1.2;
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
         }
       }
     }
     for (const n of nodes) {
       ctx.beginPath();
-      ctx.fillStyle = 'rgba(77,216,230,0.55)';
+      ctx.fillStyle = 'rgba(77,216,230,0.8)';
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fill();
     }
