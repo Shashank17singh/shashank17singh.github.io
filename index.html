@@ -51,14 +51,6 @@ h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: linear-gradient(var(--violet), var(--cyan)); border-radius: 10px; border: 2px solid var(--bg); }
 
-/* cursor glow — disabled */
-.cursor-glow {
-  display: none;
-}
-/* ambient background — disabled */
-.mesh { display: none; }
-.grain { display: none; }
-
 /* nav */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -185,13 +177,14 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
 .edu-stack { display: flex; flex-direction: column; gap: 12px; }
 .edu-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px;
-  position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s;
+  position: relative; overflow: visible; transition: border-color 0.3s;
+  transform-style: preserve-3d;
 }
-.edu-card:hover { transform: translateX(4px) translateZ(0); border-color: rgba(139,124,246,0.3); }
+.edu-card:hover { border-color: rgba(139,124,246,0.3); }
 .edu-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--grad-primary); }
-.edu-degree { font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-.edu-school { font-size: 12.5px; color: var(--cyan); font-weight: 500; margin-bottom: 6px; }
-.edu-year { font-size: 11.5px; color: var(--text-faint); }
+.edu-degree { font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; transform: translateZ(24px); }
+.edu-school { font-size: 12.5px; color: var(--cyan); font-weight: 500; margin-bottom: 6px; transform: translateZ(16px); }
+.edu-year { font-size: 11.5px; color: var(--text-faint); transform: translateZ(10px); }
 .edu-grade { display: inline-block; margin-top: 8px; background: var(--rose-pale); color: var(--rose-light); font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 100px; border: 1px solid rgba(86,105,124,0.25); }
 
 /* certifications */
@@ -216,13 +209,16 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
 
 /* skills */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
-.skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: transform 0.3s, border-color 0.3s; }
-.skill-group:hover { transform: translateY(-4px); border-color: rgba(77,216,230,0.25); }
-.sg-title { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 15px; display: flex; align-items: center; gap: 9px; }
-.sg-icon { width: 28px; height: 28px; background: var(--violet-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
-.sg-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-group { 
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; 
+  transition: border-color 0.3s, box-shadow 0.3s; transform-style: preserve-3d;
+}
+.skill-group:hover { border-color: rgba(77,216,230,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+.sg-title { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 15px; display: flex; align-items: center; gap: 9px; transform: translateZ(24px); }
+.sg-icon { width: 28px; height: 28px; background: var(--violet-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; transform: translateZ(12px); }
+.sg-tags { display: flex; flex-wrap: wrap; gap: 6px; transform: translateZ(16px); }
 .sg-tag { background: var(--bg-soft); border: 1px solid var(--border); color: var(--text-mid); font-size: 11.5px; font-weight: 500; padding: 5px 12px; border-radius: 100px; transition: all 0.2s; }
-.sg-tag:hover { background: var(--cyan-pale); border-color: rgba(77,216,230,0.25); color: var(--cyan); }
+.sg-tag:hover { background: var(--cyan-pale); border-color: rgba(77,216,230,0.25); color: var(--cyan); transform: translateY(-2px); }
 
 /* projects */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px; }
@@ -246,17 +242,17 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
 /* experience */
 .timeline { position: relative; padding-left: 30px; }
 .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--violet), var(--cyan), transparent); border-radius: 2px; }
-.tl-item { position: relative; padding-bottom: 52px; }
+.tl-item { position: relative; padding-bottom: 52px; transform-style: preserve-3d; transition: transform 0.12s ease-out; }
 .tl-item:last-child { padding-bottom: 0; }
-.tl-dot { position: absolute; left: -36px; top: 6px; width: 12px; height: 12px; background: var(--bg-soft); border: 2px solid var(--violet); border-radius: 50%; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
-.tl-item:hover .tl-dot { background: var(--violet); transform: scale(1.3); box-shadow: 0 0 14px rgba(139,124,246,0.6); }
-.tl-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.tl-dot { position: absolute; left: -36px; top: 6px; width: 12px; height: 12px; background: var(--bg-soft); border: 2px solid var(--violet); border-radius: 50%; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; transform: translateZ(1px); }
+.tl-item:hover .tl-dot { background: var(--violet); transform: scale(1.3) translateZ(1px); box-shadow: 0 0 14px rgba(139,124,246,0.6); }
+.tl-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; transform: translateZ(20px); }
 .tl-badge { display: inline-block; background: var(--violet-pale); color: var(--violet-light); font-size: 10.5px; font-weight: 700; padding: 3px 11px; border-radius: 100px; border: 1px solid rgba(139,124,246,0.2); text-transform: uppercase; letter-spacing: 0.06em; }
 .tl-badge.intern { background: var(--rose-pale); color: var(--rose-light); border-color: rgba(86,105,124,0.25); }
 .tl-period { font-size: 11.5px; color: var(--text-faint); font-family: 'JetBrains Mono', monospace; }
-.tl-role { font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-.tl-org { font-size: 13px; color: var(--cyan); font-weight: 500; margin-bottom: 12px; }
-.tl-desc { font-size: 14.5px; color: var(--text-mid); line-height: 1.85; }
+.tl-role { font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 4px; transform: translateZ(28px); }
+.tl-org { font-size: 13px; color: var(--cyan); font-weight: 500; margin-bottom: 12px; transform: translateZ(18px); }
+.tl-desc { font-size: 14.5px; color: var(--text-mid); line-height: 1.85; transform: translateZ(12px); }
 
 /* contact */
 #contact { text-align: center; }
@@ -295,9 +291,6 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
 </style>
 </head>
 <body>
-<div class="mesh"></div>
-<div class="grain"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
 
 <nav id="nav">
   <div class="nav-logo">Shashank<span class="dot">.</span>Singh</div>
@@ -414,27 +407,27 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
   <div class="section-wrap">
     <div class="section-eyebrow reveal"><span class="eyebrow-dot violet"></span><span class="eyebrow-label">Skills</span></div>
     <h2 class="section-title reveal">Technical <em>Proficiencies</em></h2>
-      <div class="skill-group reveal">
+      <div class="skill-group reveal tilt">
         <div class="sg-title"><div class="sg-icon">💻</div>Programming Languages</div>
         <div class="sg-tags"><span class="sg-tag">Python</span><span class="sg-tag">C++</span><span class="sg-tag">SQL</span><span class="sg-tag">HTML</span><span class="sg-tag">CSS</span><span class="sg-tag">JavaScript</span></div>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-group reveal tilt">
         <div class="sg-title"><div class="sg-icon">🧠</div>AI &amp; Machine Learning</div>
         <div class="sg-tags"><span class="sg-tag">Scikit-learn</span><span class="sg-tag">PyTorch</span><span class="sg-tag">LangChain</span><span class="sg-tag">HuggingFace</span><span class="sg-tag">ChromaDB</span><span class="sg-tag">Ollama</span><span class="sg-tag">Groq</span><span class="sg-tag">OpenCV</span><span class="sg-tag">MediaPipe</span><span class="sg-tag">Pydantic</span></div>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-group reveal tilt">
         <div class="sg-title"><div class="sg-icon">⚙️</div>Systems Engineering</div>
         <div class="sg-tags"><span class="sg-tag">C++17</span><span class="sg-tag">Multithreading</span><span class="sg-tag">libpcap</span><span class="sg-tag">TCP/UDP</span><span class="sg-tag">Vector Databases</span><span class="sg-tag">HNSW</span></div>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-group reveal tilt">
         <div class="sg-title"><div class="sg-icon">🌐</div>Backend Development</div>
         <div class="sg-tags"><span class="sg-tag">Flask</span><span class="sg-tag">FastAPI</span><span class="sg-tag">REST APIs</span><span class="sg-tag">cpp-httplib</span><span class="sg-tag">SQLite</span><span class="sg-tag">SQLAlchemy</span></div>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-group reveal tilt">
         <div class="sg-title"><div class="sg-icon">☁️</div>Cloud &amp; DevOps</div>
         <div class="sg-tags"><span class="sg-tag">Docker</span><span class="sg-tag">Nginx</span><span class="sg-tag">AWS</span><span class="sg-tag">GitHub Actions (CI/CD)</span><span class="sg-tag">Vercel</span><span class="sg-tag">Streamlit</span></div>
       </div>
-      <div class="skill-group reveal">
+      <div class="skill-group reveal tilt">
         <div class="sg-title"><div class="sg-icon">📊</div>Data Science &amp; Analytics</div>
         <div class="sg-tags"><span class="sg-tag">Pandas</span><span class="sg-tag">NumPy</span><span class="sg-tag">Matplotlib</span><span class="sg-tag">Jupyter Notebook</span></div>
       </div>
@@ -530,7 +523,7 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
     <div class="section-eyebrow reveal"><span class="eyebrow-dot rose"></span><span class="eyebrow-label">Experience</span></div>
     <h2 class="section-title reveal">Professional <em>Experience</em></h2>
     <div class="timeline">
-      <div class="tl-item reveal">
+      <div class="tl-item reveal tilt">
         <div class="tl-dot"></div>
         <div class="tl-meta"><span class="tl-badge intern">Internship</span><span class="tl-period">Jun 2025 – Jul 2025</span></div>
         <div class="tl-role">Data Science Intern</div>
@@ -652,17 +645,8 @@ if (!reduceMotion) {
       const y = e.clientY - r.top - r.height / 2;
       el.style.transform = `translate(${x * 0.25}px, ${y * 0.25 - 3}px)`;
     });
-    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    el.addEventListener('mouseleave', () => { el.style.transform = '';  });
   });
-
-  // cursor glow
-  const glow = document.getElementById('cursorGlow');
-  window.addEventListener('mousemove', (e) => {
-    glow.style.opacity = '1';
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-  });
-  document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
 }
 
 // neural network canvas — hero signature element
