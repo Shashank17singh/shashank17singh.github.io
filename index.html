@@ -55,18 +55,9 @@ h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
 .cursor-glow {
   display: none;
 }
-
-/* ambient background */
-.mesh { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.mesh::before, .mesh::after {
-  content: ''; position: absolute; border-radius: 50%; filter: blur(120px);
-  animation: drift 24s ease-in-out infinite alternate;
-}
-.mesh::before { width: 640px; height: 640px; background: radial-gradient(circle, rgba(139,124,246,0.14), transparent 70%); top: -220px; right: -160px; }
-.mesh::after { width: 560px; height: 560px; background: radial-gradient(circle, rgba(86,105,124,0.09), transparent 70%); bottom: -180px; left: -180px; animation-delay: -10s; }
-@keyframes drift { from { transform: translate(0,0) scale(1); } to { transform: translate(40px,30px) scale(1.08); } }
-.grain { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.035; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+/* ambient background — disabled */
+.mesh { display: none; }
+.grain { display: none; }
 
 /* nav */
 nav {
@@ -157,7 +148,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
   -webkit-mask: linear-gradient(to bottom, #000 3px, transparent 3px);
   mask: linear-gradient(to bottom, #000 3px, transparent 3px);
 }
-.hero-card::after { content: ''; position: absolute; inset: -1px; border-radius: 20px; background: radial-gradient(400px circle at var(--mx,50%) var(--my,0%), rgba(139,124,246,0.14), transparent 60%); pointer-events: none; opacity: var(--glow-op, 0); transition: opacity 0.3s; }
+.hero-card::after { display: none; }
 .card-avatar {
   width: 60px; height: 60px; border-radius: 16px;
   background: var(--grad-primary);
