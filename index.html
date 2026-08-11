@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #07080c;
-  --bg-soft: #0c0e14;
-  --surface: #12141d;
-  --surface-2: #191c28;
-  --border: rgba(255,255,255,0.08);
-  --border-strong: rgba(255,255,255,0.14);
-  --text: #eef0f6;
-  --text-mid: #979aad;
-  --text-faint: #565a6c;
+  --bg: #181a1e;
+  --bg-soft: #1c1e24;
+  --surface: #232630;
+  --surface-2: #2a2d38;
+  --border: rgba(255,255,255,0.09);
+  --border-strong: rgba(255,255,255,0.15);
+  --text: #e8e6e3;
+  --text-mid: #a0a0a8;
+  --text-faint: #686a72;
   --violet: #8b7cf6;
   --violet-light: #b3a8ff;
   --violet-pale: rgba(139,124,246,0.10);
@@ -45,7 +45,7 @@ body {
 }
 h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
 .mono { font-family: 'JetBrains Mono', monospace; }
-::selection { background: var(--violet); color: #07080c; }
+::selection { background: var(--violet); color: #181a1e; }
 
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -76,12 +76,12 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 20px 64px;
-  background: rgba(7,8,12,0.7);
+  background: rgba(24,26,30,0.7);
   backdrop-filter: blur(20px) saturate(140%);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s, background 0.3s;
 }
-nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88); }
+nav.scrolled { border-bottom-color: var(--border); background: rgba(24,26,30,0.88); }
 .nav-logo { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
 .nav-logo .dot { color: var(--violet); }
 .nav-links { display: flex; gap: 8px; list-style: none; }
@@ -127,7 +127,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeUp 0.8s 0.32s ease both; }
 .btn-fill {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--grad-primary); color: #07080c; text-decoration: none;
+  background: var(--grad-primary); color: #181a1e; text-decoration: none;
   padding: 13px 26px; border-radius: 100px; font-size: 13.5px; font-weight: 700;
   transition: box-shadow 0.25s; box-shadow: 0 4px 24px rgba(139,124,246,0.25);
   border: none; cursor: pointer; will-change: transform;
@@ -151,13 +151,13 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
   animation: fadeUp 0.8s 0.24s ease both;
   transform-style: preserve-3d; transition: transform 0.12s ease-out;
 }
-.hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad-primary); border-radius: 20px 20px 0 0; }
+.hero-card::before { content: ''; position: absolute; top: -1px; left: -1px; right: -1px; height: 3px; background: var(--grad-primary); border-radius: 20px 20px 0 0; }
 .hero-card::after { content: ''; position: absolute; inset: -1px; border-radius: 20px; background: radial-gradient(400px circle at var(--mx,50%) var(--my,0%), rgba(139,124,246,0.14), transparent 60%); pointer-events: none; opacity: var(--glow-op, 0); transition: opacity 0.3s; }
 .card-avatar {
   width: 60px; height: 60px; border-radius: 16px;
   background: var(--grad-primary);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #07080c;
+  font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #181a1e;
   margin-bottom: 20px; box-shadow: 0 8px 24px rgba(139,124,246,0.3);
   transform: translateZ(48px);
 }
@@ -280,7 +280,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(7,8,12,0.88)
 
 .socials { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 .social-btn { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); color: var(--text); text-decoration: none; padding: 11px 20px; border-radius: 100px; font-size: 12.5px; font-weight: 500; transition: all 0.25s; }
-.social-btn:hover { background: var(--grad-primary); color: #07080c; border-color: transparent; transform: translateY(-3px); }
+.social-btn:hover { background: var(--grad-primary); color: #181a1e; border-color: transparent; transform: translateY(-3px); }
 
 footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--text-faint); font-family: 'JetBrains Mono', monospace; }
 
