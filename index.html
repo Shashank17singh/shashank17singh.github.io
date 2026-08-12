@@ -177,8 +177,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
 .edu-stack { display: flex; flex-direction: column; gap: 12px; }
 .edu-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px;
-  position: relative; overflow: visible; transition: transform 0.12s ease-out, border-color 0.3s;
-  transform-style: preserve-3d;
+  position: relative; overflow: hidden; transition: transform 0.12s ease-out, border-color 0.3s;
 }
 .edu-card:hover { border-color: rgba(139,124,246,0.3); }
 .edu-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--grad-primary); border-radius: 14px 0 0 14px; }
@@ -192,7 +191,6 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
 .cert-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 28px;
   position: relative; overflow: hidden; transition: transform 0.12s ease-out, border-color 0.3s, box-shadow 0.3s;
-  transform-style: preserve-3d;
 }
 .cert-card:hover { border-color: rgba(139,124,246,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
 .cert-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 17px 17px 0 0; }
@@ -211,7 +209,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
 .skill-group { 
   background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; 
-  transition: transform 0.12s ease-out, border-color 0.3s, box-shadow 0.3s; transform-style: preserve-3d;
+  transition: transform 0.12s ease-out, border-color 0.3s, box-shadow 0.3s;
 }
 .skill-group:hover { border-color: rgba(77,216,230,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
 .sg-title { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 15px; display: flex; align-items: center; gap: 9px; transform: translateZ(24px); }
@@ -226,7 +224,6 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
   background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 28px;
   display: flex; flex-direction: column; position: relative; overflow: hidden;
   transition: transform 0.12s ease-out, border-color 0.3s, box-shadow 0.3s;
-  transform-style: preserve-3d;
 }
 .project-card:hover { border-color: rgba(139,124,246,0.3); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
 .project-tag { display: inline-block; font-size: 10.5px; font-weight: 600; color: var(--cyan); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; transform: translateZ(20px); }
@@ -242,7 +239,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
 /* experience */
 .timeline { position: relative; padding-left: 30px; }
 .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--violet), var(--cyan), transparent); border-radius: 2px; }
-.tl-item { position: relative; padding-bottom: 52px; transform-style: preserve-3d; transition: transform 0.12s ease-out; }
+.tl-item { position: relative; padding-bottom: 52px; transition: transform 0.12s ease-out; }
 .tl-item:last-child { padding-bottom: 0; }
 .tl-dot { position: absolute; left: -36px; top: 6px; width: 12px; height: 12px; background: var(--bg-soft); border: 2px solid var(--violet); border-radius: 50%; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; transform: translateZ(1px); }
 .tl-item:hover .tl-dot { background: var(--violet); transform: scale(1.3) translateZ(1px); box-shadow: 0 0 14px rgba(139,124,246,0.6); }
@@ -607,38 +604,36 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // 3D tilt on cards (with layered translateZ children for real depth)
-if (!reduceMotion) {
-  document.querySelectorAll('.tilt').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s, border-color 0.3s';
-    });
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(900px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateZ(6px)`;
-      card.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
-      card.style.setProperty('--my', `${(y + 0.5) * 100}%`);
-      card.style.setProperty('--glow-op', '1');
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateZ(0)';
-      card.style.setProperty('--glow-op', '0');
-      setTimeout(() => { card.style.transition = ''; }, 150);
-    });
+document.querySelectorAll('.tilt').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s, border-color 0.3s';
   });
+  card.addEventListener('mousemove', (e) => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `perspective(900px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateZ(6px)`;
+    card.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
+    card.style.setProperty('--my', `${(y + 0.5) * 100}%`);
+    card.style.setProperty('--glow-op', '1');
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateZ(0)';
+    card.style.setProperty('--glow-op', '0');
+    setTimeout(() => { card.style.transition = ''; }, 150);
+  });
+});
 
-  // magnetic buttons
-  document.querySelectorAll('.btn-fill, .btn-ghost').forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width / 2;
-      const y = e.clientY - r.top - r.height / 2;
-      el.style.transform = `translate(${x * 0.25}px, ${y * 0.25 - 3}px)`;
-    });
-    el.addEventListener('mouseleave', () => { el.style.transform = '';  });
+// magnetic buttons
+document.querySelectorAll('.btn-fill, .btn-ghost').forEach(el => {
+  el.addEventListener('mousemove', (e) => {
+    const r = el.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width / 2;
+    const y = e.clientY - r.top - r.height / 2;
+    el.style.transform = `translate(${x * 0.25}px, ${y * 0.25 - 3}px)`;
   });
-}
+  el.addEventListener('mouseleave', () => { el.style.transform = '';  });
+});
 
 // neural network canvas — hero signature element
 (function() {
