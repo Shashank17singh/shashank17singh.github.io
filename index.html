@@ -128,7 +128,7 @@ nav.scrolled { border-bottom-color: var(--border); background: rgba(19,19,20,0.8
   border: 1px solid var(--border); border-radius: 20px; padding: 34px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.2);
   position: relative; overflow: visible;
-  animation: fadeUp 0.8s 0.24s ease both;
+  animation: fadeUp 0.8s 0.24s ease backwards;
   transform-style: preserve-3d; transition: transform 0.12s ease-out;
 }
 .hero-card::before {
@@ -609,6 +609,9 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 // 3D tilt on cards (with layered translateZ children for real depth)
 if (!reduceMotion) {
   document.querySelectorAll('.tilt').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s, border-color 0.3s';
+    });
     card.addEventListener('mousemove', (e) => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width - 0.5;
@@ -621,6 +624,7 @@ if (!reduceMotion) {
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateZ(0)';
       card.style.setProperty('--glow-op', '0');
+      setTimeout(() => { card.style.transition = ''; }, 150);
     });
   });
 
