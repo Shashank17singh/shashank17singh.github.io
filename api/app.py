@@ -25,7 +25,7 @@ load_dotenv()
 DB_PATH = "./chroma_db"
 COLLECTION_NAME = "portfolio_knowledge"
 EMBED_MODEL = "all-MiniLM-L6-v2"
-GROQ_MODEL = "openai/gpt-oss-120b"
+GROQ_MODEL = "llama3-8b-8192"
 TOP_K = 4
 MAX_HISTORY_TURNS = 6
 
@@ -131,7 +131,7 @@ def chat():
             yield "data: [DONE]\n\n"
         except Exception as e:
             app.logger.error("Groq API error: %s", e)
-            yield f"data: {json.dumps({'error': 'generation failed'})}\n\n"
+            yield f"data: {json.dumps({'error': f'generation failed: {e}'})}\n\n"
 
     return Response(
         generate(),
