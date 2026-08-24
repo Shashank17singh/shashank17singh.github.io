@@ -1,4 +1,4 @@
-"""
+﻿"""
 Flask backend for the portfolio RAG chatbot.
 
 Endpoints
@@ -73,12 +73,25 @@ except Exception as e:
     embed_model = None
     collection = None
 
+# DIAGNOSTICS FOR GROQ
+groq_client = None
+groq_error = ""
+
 try:
-    groq_client = Groq(api_key=os.environ["GROQ_API_KEY"])
+    env_keys = list(os.environ.keys())
+    print(f"DEBUG: All environment variables available to Python: {env_keys}")
+    if "GROQ_API_KEY" not in os.environ:
+        groq_error = "GROQ_API_KEY is completely missing from os.environ!"
+    elif not os.environ["GROQ_API_KEY"]:
+        groq_error = "GROQ_API_KEY is present but empty!"
+    else:
+        api_key = os.environ["GROQ_API_KEY"]
+        if api_key.startswith("gsk_"):
+            groq_client = Groq(api_key=api_key)
+        else:
+            groq_error = f"GROQ_API_KEY does not start with gsk_. It starts with: {api_key[:4]}..."
 except Exception as e:
-    print(f"WARNING: Failed to initialize Groq client: {e}")
-    print("WARNING: GROQ_API_KEY not set. Generation will fail.")
-    groq_client = None
+    groq_error = f"Exception while initializing Groq: {e}"
 
 def retrieve_context(query: str, k: int = TOP_K) -> str:
     if embed_model is None or collection is None:
@@ -115,7 +128,7 @@ def chat():
 
     def generate():
         if groq_client is None:
-            yield f"data: {{\"error\": \"Backend misconfigured. API key missing.\"}}\n\n"
+            yield f"data: {{\"error\": \"Groq Init Failed: {groq_error}\"}}\n\n"
             return
         if collection is None or embed_model is None:
             yield f"data: {{\"error\": \"Backend misconfigured. AI models failed to load.\"}}\n\n"
