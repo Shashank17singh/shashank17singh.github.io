@@ -1,4 +1,4 @@
-﻿"""
+"""
 Flask backend for the portfolio RAG chatbot.
 
 Endpoints
@@ -25,7 +25,7 @@ load_dotenv()
 DB_PATH = "./chroma_db"
 COLLECTION_NAME = "portfolio_knowledge"
 EMBED_MODEL = "all-MiniLM-L6-v2"
-GROQ_MODEL = "llama3-8b-8192"
+GROQ_MODEL = "llama-3.1-8b-instant"
 TOP_K = 4
 MAX_HISTORY_TURNS = 6
 
