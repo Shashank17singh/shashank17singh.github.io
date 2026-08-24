@@ -1,4 +1,4 @@
-"""
+﻿"""
 Flask backend for the portfolio RAG chatbot.
 
 Endpoints
@@ -62,17 +62,16 @@ Rules:
 app = Flask(__name__)
 CORS(app, origins=ALLOWED_ORIGINS)
 
-print("Loading embedding model...")
-embed_model = SentenceTransformer(EMBED_MODEL)
-
-print("Connecting to Chroma...")
-chroma_client = chromadb.PersistentClient(path=DB_PATH)
 try:
+    print("Loading embedding model...")
+    embed_model = SentenceTransformer(EMBED_MODEL)
+    print("Connecting to Chroma...")
+    chroma_client = chromadb.PersistentClient(path=DB_PATH)
     collection = chroma_client.get_collection(COLLECTION_NAME)
 except Exception as e:
-    raise RuntimeError(
-        "Chroma collection not found. Run `python ingest.py` first."
-    ) from e
+    print(f"WARNING: Failed to load AI models or database: {e}")
+    embed_model = None
+    collection = None
 
 try:
     groq_client = Groq(api_key=os.environ["GROQ_API_KEY"])
@@ -80,18 +79,17 @@ except KeyError:
     print("WARNING: GROQ_API_KEY not set. Generation will fail.")
     groq_client = None
 
-
 def retrieve_context(query: str, k: int = TOP_K) -> str:
+    if embed_model is None or collection is None:
+        return ""
     embedding = embed_model.encode([query]).tolist()
     results = collection.query(query_embeddings=embedding, n_results=k)
     chunks = results["documents"][0] if results["documents"] else []
     return "\n\n".join(chunks)
 
-
 @app.route("/health")
 def health():
     return jsonify(status="ok")
-
 
 @app.route("/chat", methods=["POST"])
 def chat():
@@ -105,7 +103,6 @@ def chat():
         return jsonify(error="message too long"), 400
 
     context = retrieve_context(message)
-
     messages = [{"role": "system", "content": f"{SYSTEM_PROMPT}\n\nContext:\n{context}"}]
 
     for turn in history[-MAX_HISTORY_TURNS:]:
@@ -116,6 +113,12 @@ def chat():
     messages.append({"role": "user", "content": message})
 
     def generate():
+        if groq_client is None:
+            yield f"data: {{\"error\": \"Backend misconfigured. API key missing.\"}}\n\n"
+            return
+        if collection is None or embed_model is None:
+            yield f"data: {{\"error\": \"Backend misconfigured. AI models failed to load.\"}}\n\n"
+            return
         try:
             stream = groq_client.chat.completions.create(
                 model=GROQ_MODEL,
@@ -138,7 +141,6 @@ def chat():
         mimetype="text/event-stream",
         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
     )
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
