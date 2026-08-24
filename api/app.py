@@ -25,7 +25,7 @@ load_dotenv()
 DB_PATH = "./chroma_db"
 COLLECTION_NAME = "portfolio_knowledge"
 EMBED_MODEL = "all-MiniLM-L6-v2"
-GROQ_MODEL = "openai/gpt-oss-120b"
+GROQ_MODEL = "openai/gpt-oss-20b"
 TOP_K = 4
 MAX_HISTORY_TURNS = 6
 
