@@ -1,4 +1,4 @@
-﻿"""
+"""
 Flask backend for the portfolio RAG chatbot.
 
 Endpoints
@@ -75,7 +75,8 @@ except Exception as e:
 
 try:
     groq_client = Groq(api_key=os.environ["GROQ_API_KEY"])
-except KeyError:
+except Exception as e:
+    print(f"WARNING: Failed to initialize Groq client: {e}")
     print("WARNING: GROQ_API_KEY not set. Generation will fail.")
     groq_client = None
 

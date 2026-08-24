@@ -14,7 +14,7 @@ RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTr
 COPY app.py .
 COPY ingest.py .
 COPY knowledge_base.py .
-COPY chroma_db/ ./chroma_db/
+RUN python ingest.py
 
 RUN mkdir -p /app/cache && chmod -R 777 /app/cache /app/chroma_db
 
