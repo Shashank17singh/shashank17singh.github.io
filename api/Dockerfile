@@ -16,6 +16,8 @@ COPY ingest.py .
 COPY knowledge_base.py .
 COPY chroma_db/ ./chroma_db/
 
+RUN mkdir -p /app/cache && chmod -R 777 /app/cache /app/chroma_db
+
 EXPOSE 5000
 
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "1", "--threads", "2", "--timeout", "120", "app:app"]
