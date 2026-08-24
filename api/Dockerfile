@@ -1,6 +1,7 @@
 FROM python:3.11-slim
 
 WORKDIR /app
+ENV HF_HOME=/app/cache
 
 # Install dependencies first (cache-friendly)
 COPY requirements.txt .

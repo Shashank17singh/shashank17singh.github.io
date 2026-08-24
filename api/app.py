@@ -74,7 +74,11 @@ except Exception as e:
         "Chroma collection not found. Run `python ingest.py` first."
     ) from e
 
-groq_client = Groq(api_key=os.environ["GROQ_API_KEY"])
+try:
+    groq_client = Groq(api_key=os.environ["GROQ_API_KEY"])
+except KeyError:
+    print("WARNING: GROQ_API_KEY not set. Generation will fail.")
+    groq_client = None
 
 
 def retrieve_context(query: str, k: int = TOP_K) -> str:
