@@ -1,8 +1,9 @@
-services:
+﻿services:
   - type: web
     name: portfolio-chatbot-api
     env: docker
-    rootDir: api
+    rootDir: .
+    dockerfilePath: api/Dockerfile
     plan: free
     envVars:
       - key: GROQ_API_KEY

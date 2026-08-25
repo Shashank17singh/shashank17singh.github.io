@@ -26,7 +26,7 @@ DB_PATH = "./chroma_db"
 COLLECTION_NAME = "portfolio_knowledge"
 EMBED_MODEL = "all-MiniLM-L6-v2"
 GROQ_MODEL = "openai/gpt-oss-20b"
-TOP_K = 4
+TOP_K = 6
 MAX_HISTORY_TURNS = 6
 
 ALLOWED_ORIGINS = os.environ.get(
