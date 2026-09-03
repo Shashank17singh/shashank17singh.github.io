@@ -1,22 +1,12 @@
-﻿"""
-ingest.py - builds the persistent Chroma vector index by scraping index.html.
-
-Reads the portfolio HTML directly, extracts each project card as its own
-document chunk, and indexes everything into ChromaDB. Just update index.html
-and redeploy - no manual knowledge_base.py needed.
-"""
-
 import os
 import re
 from html.parser import HTMLParser
-
 import chromadb
 from sentence_transformers import SentenceTransformer
 
 DB_PATH = "./chroma_db"
 COLLECTION_NAME = "portfolio_knowledge"
 EMBED_MODEL = "all-MiniLM-L6-v2"
-
 _candidates = [
     os.path.join(os.path.dirname(__file__), "index.html"),
     os.path.join(os.path.dirname(__file__), "..", "index.html"),
@@ -25,15 +15,15 @@ HTML_PATH = next((p for p in _candidates if os.path.exists(p)), _candidates[-1])
 
 
 def get_text(html_fragment):
-    """Strip all HTML tags and return clean text."""
     text = re.sub(r"<[^>]+>", " ", html_fragment)
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
 
 def extract_project_cards(html):
-    """Extract each project-card div as a separate document."""
-    cards = re.findall(r'<div class="project-card[^"]*">(.*?)</div>\s*</div>', html, re.DOTALL)
+    cards = re.findall(
+        r'<div class="project-card[^"]*">(.*?)</div>\s*</div>', html, re.DOTALL
+    )
     projects = []
     for i, card in enumerate(cards):
         title_m = re.search(r'class="project-title">(.*?)</div>', card, re.DOTALL)
@@ -41,8 +31,9 @@ def extract_project_cards(html):
         tag_m = re.search(r'class="project-tag">(.*?)</div>', card, re.DOTALL)
         stack_m = re.search(r'class="project-stack">(.*?)</div>', card, re.DOTALL)
         github_m = re.search(r'href="(https://github\.com/[^"]+)"', card)
-        demo_m = re.search(r'href="(https://(?!github)[^"]+)"[^>]*class="project-link demo"', card)
-
+        demo_m = re.search(
+            r'href="(https://(?!github)[^"]+)"[^>]*class="project-link demo"', card
+        )
         title = get_text(title_m.group(1)) if title_m else f"Project {i+1}"
         desc = get_text(desc_m.group(1)) if desc_m else ""
         tag = get_text(tag_m.group(1)) if tag_m else ""
@@ -51,7 +42,6 @@ def extract_project_cards(html):
         stack = ", ".join(stack_pills)
         github = github_m.group(1) if github_m else ""
         demo = demo_m.group(1) if demo_m else ""
-
         parts = [f"Project: {title}"]
         if tag:
             parts.append(f"Category: {tag}")
@@ -63,32 +53,30 @@ def extract_project_cards(html):
             parts.append(f"GitHub: {github}")
         if demo:
             parts.append(f"Live demo: {demo}")
-
         text = " | ".join(parts)
-        projects.append({
-            "id": f"project-{i}",
-            "category": "project",
-            "text": text,
-        })
-
+        projects.append(
+            {
+                "id": f"project-{i}",
+                "category": "project",
+                "text": text,
+            }
+        )
     return projects
 
 
 def extract_section_text(html, section_id):
-    """Extract all visible text from a named section."""
     section_m = re.search(
-        rf'<section\s+id="{section_id}"[^>]*>(.*?)</section>',
-        html, re.DOTALL
+        rf'<section\s+id="{section_id}"[^>]*>(.*?)</section>', html, re.DOTALL
     )
     if not section_m:
         return []
     raw = section_m.group(1)
-    # Remove script/style blocks
-    raw = re.sub(r"<(script|style|noscript|svg|canvas)[^>]*>.*?</\1>", "", raw, flags=re.DOTALL)
+    raw = re.sub(
+        r"<(script|style|noscript|svg|canvas)[^>]*>.*?</\1>", "", raw, flags=re.DOTALL
+    )
     text = get_text(raw)
     if len(text) < 30:
         return []
-    # Split into 500-char chunks at sentence boundaries
     sentences = re.split(r"(?<=[.!?])\s+", text)
     chunks, current = [], ""
     for s in sentences:
@@ -105,52 +93,46 @@ def extract_section_text(html, section_id):
 def main():
     html_path = os.path.abspath(HTML_PATH)
     print(f"Reading portfolio from: {html_path}")
-
     if not os.path.exists(html_path):
         print(f"ERROR: {html_path} not found!")
         return
-
     with open(html_path, "r", encoding="utf-8") as f:
         html = f.read()
-
     documents = []
-
-    # Extract each project card as its own document
     project_docs = extract_project_cards(html)
     print(f"Found {len(project_docs)} project cards")
     documents.extend(project_docs)
-
-    # Extract other sections as chunked text
     for section_id in ("about", "skills", "experience", "certifications", "contact"):
         chunks = extract_section_text(html, section_id)
         for i, chunk in enumerate(chunks):
-            documents.append({
-                "id": f"{section_id}-{i}",
-                "category": section_id,
-                "text": chunk,
-            })
+            documents.append(
+                {
+                    "id": f"{section_id}-{i}",
+                    "category": section_id,
+                    "text": chunk,
+                }
+            )
         print(f"  [{section_id}] {len(chunks)} chunks")
-
-    # Add a concise projects summary for list-style questions
     if project_docs:
-        names = [re.match(r"Project: ([^|]+)", d["text"]).group(1).strip()
-                 for d in project_docs
-                 if re.match(r"Project: ([^|]+)", d["text"])]
+        names = [
+            re.match(r"Project: ([^|]+)", d["text"]).group(1).strip()
+            for d in project_docs
+            if re.match(r"Project: ([^|]+)", d["text"])
+        ]
         summary = f"Shashank has built {len(names)} projects: " + "; ".join(names) + "."
-        documents.append({
-            "id": "projects-summary",
-            "category": "project",
-            "text": summary,
-        })
+        documents.append(
+            {
+                "id": "projects-summary",
+                "category": "project",
+                "text": summary,
+            }
+        )
         print(f"  [projects-summary] {summary[:100]}...")
-
     print(f"\nTotal: {len(documents)} documents")
     for doc in documents:
         print(f"  [{doc['id']}] {doc['text'][:90]}...")
-
     print(f"\nLoading embedding model '{EMBED_MODEL}'...")
     model = SentenceTransformer(EMBED_MODEL)
-
     print(f"Connecting to Chroma at {DB_PATH}...")
     client = chromadb.PersistentClient(path=DB_PATH)
     try:
@@ -158,15 +140,12 @@ def main():
     except Exception:
         pass
     collection = client.create_collection(COLLECTION_NAME)
-
     texts = [d["text"] for d in documents]
     ids = [d["id"] for d in documents]
     metadatas = [{"category": d["category"]} for d in documents]
-
     print(f"Embedding {len(texts)} documents...")
     embeddings = model.encode(texts, show_progress_bar=True).tolist()
     collection.add(ids=ids, embeddings=embeddings, documents=texts, metadatas=metadatas)
-
     print(f"Done. Indexed {collection.count()} chunks into '{COLLECTION_NAME}'.")
 
 
