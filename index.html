@@ -792,14 +792,13 @@ document.querySelectorAll('.btn-fill, .btn-ghost').forEach(el => {
   .cw-msg.cw-typing span {
     width: 6px; height: 6px; border-radius: 50%;
     background: var(--cw-text-mid);
-    animation: cw-type-scale 1.2s infinite ease-in-out both;
+    animation: cw-bounce 1.2s infinite ease-in-out;
   }
-  .cw-msg.cw-typing span:nth-child(1) { animation-delay: -0.32s; }
-  .cw-msg.cw-typing span:nth-child(2) { animation-delay: -0.16s; }
-  .cw-msg.cw-typing span:nth-child(3) { animation-delay: 0s; }
-  @keyframes cw-type-scale {
-    0%, 80%, 100% { transform: scale(0.6); opacity: 0.6; }
-    40% { transform: scale(1.2); opacity: 1; }
+  .cw-msg.cw-typing span:nth-child(2) { animation-delay: 0.15s; }
+  .cw-msg.cw-typing span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes cw-bounce {
+    0%,60%,100% { transform: translateY(0); opacity: 0.5; }
+    30% { transform: translateY(-4px); opacity: 1; }
   }
 
   .cw-msg.cw-streaming::after {
