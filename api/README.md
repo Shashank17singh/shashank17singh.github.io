@@ -48,7 +48,7 @@ curl -X POST http://localhost:5000/chat \
 GitHub Pages only serves static files, so the Flask API needs to run
 somewhere else. Two options, both compatible with what you've already set up:
 
-**Option A - same pattern as Home-Prices-API (Flask + Nginx + DuckDNS)**
+**Option A - same pattern as Home-Prices-Suite (Flask + Nginx + DuckDNS)**
 1. Provision a small VM (or reuse your existing one).
 2. Copy the `backend/` folder over, set up the venv, run `ingest.py`.
 3. Run the app with gunicorn: `gunicorn -w 2 -b 127.0.0.1:5000 app:app`
