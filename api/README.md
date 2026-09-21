@@ -3,7 +3,7 @@
 A retrieval-augmented chatbot for shashank17singh.github.io. Visitors ask
 questions about Shashank's projects, skills, experience, and contact info;
 the bot retrieves the relevant facts from a small vector index and answers
-using Groq's Llama 3.3 70B.
+using Gemini 3.6 Flash.
 
 ## What's in this folder
 
@@ -30,7 +30,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-# edit .env: set GROQ_API_KEY (get one free at console.groq.com)
+# edit .env: set GEMINI_API_KEY (get one free at aistudio.google.com)
 
 python ingest.py     # builds ./chroma_db from knowledge_base.py - run once, and again after any edit to knowledge_base.py
 python app.py         # starts dev server on http://localhost:5000
@@ -60,7 +60,7 @@ somewhere else. Two options, both compatible with what you've already set up:
 2. On Render: New → Web Service → connect the repo.
 3. Build command: `pip install -r requirements.txt && python ingest.py`
 4. Start command: `gunicorn -w 2 -b 0.0.0.0:$PORT app:app`
-5. Add the `GROQ_API_KEY` env var in Render's dashboard.
+5. Add the `GEMINI_API_KEY` env var in Render's dashboard.
 6. Render gives you an HTTPS URL automatically.
 
 Either way, once deployed, note the final API URL (e.g.
@@ -99,7 +99,7 @@ needs to change for content updates - only for style/behavior tweaks.
 
 - The bot only answers from `knowledge_base.py` - it's instructed not to
   invent details, so it won't hallucinate metrics or dates that aren't there.
-- Groq's free tier is generous and fast (same one you're already using in
+- Gemini's free tier is generous and fast (same one you're already using in
   AI Resume Screener and the Conversational RAG Chatbot), so cost shouldn't
   be an issue for portfolio-level traffic.
 - If you'd rather skip a database dependency for something this small, you
