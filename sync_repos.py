@@ -50,9 +50,7 @@ def main():
         print(f"Topics: {topics}")
         
         try:
-            # Edit description
             subprocess.run(['gh', 'repo', 'edit', f'Shashank17singh/{repo_name}', '-d', desc], check=True)
-            # Edit topics
             if topics:
                 subprocess.run(['gh', 'repo', 'edit', f'Shashank17singh/{repo_name}', '--add-topic', ",".join(topics)], check=True)
         except Exception as e:
