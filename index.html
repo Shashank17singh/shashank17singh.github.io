@@ -301,20 +301,14 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
   </ul>
 </nav>
 
-<section id="hero">
-  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; z-index: 10; pointer-events: none;">
+<section id="hero" style="position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; max-width: 100%; margin: 0; background: var(--bg);">
+  <canvas id="network-canvas"></canvas>
+  <div style="position: relative; width: 100%; text-align: center; z-index: 10; pointer-events: none; padding-bottom: 80px;">
     <div>
-      <h1 style="font-family: 'JetBrains Mono', monospace; font-size: clamp(60px, 12vw, 210px); font-weight: 800; line-height: 0.8; letter-spacing: -0.05em; color: var(--violet); margin: 0; text-transform: uppercase;">SHASHANK</h1>
+      <h1 style="font-family: 'JetBrains Mono', monospace; font-size: clamp(40px, 10vw, 140px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; color: var(--violet); margin: 0; text-transform: uppercase;">SHASHANK</h1>
     </div>
     <div>
-      <h1 style="font-family: 'JetBrains Mono', monospace; font-size: clamp(60px, 12vw, 210px); font-weight: 800; line-height: 0.8; letter-spacing: -0.05em; color: var(--violet); margin: 0; text-transform: uppercase;">SINGH</h1>
-    </div>
-
-    <!-- Profile Picture Overlay -->
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; pointer-events: auto;">
-      <div style="width: clamp(75px, 12vw, 150px); height: clamp(120px, 20vw, 240px); border-radius: 9999px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4); transition: transform 0.3s; border: 4px solid var(--bg);" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="profile.jpg" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;" />
-      </div>
+      <h1 style="font-family: 'JetBrains Mono', monospace; font-size: clamp(40px, 10vw, 140px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; color: var(--violet); margin: 0; text-transform: uppercase;">SINGH</h1>
     </div>
   </div>
 
@@ -323,7 +317,7 @@ footer { position: relative; z-index: 1; text-align: center; padding: 30px 64px;
     <p style="font-family: 'Quicksand', sans-serif; font-size: clamp(15px, 2vw, 22px); color: var(--text-faint); margin-bottom: 24px; font-weight: 600;">
       Architecting high-performance systems and human experiences in code.
     </p>
-    <div class="hero-ctas" style="justify-content: center;">
+    <div class="hero-ctas" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
       <a href="https://www.linkedin.com/in/shashank17singh/" target="_blank" class="btn-ghost">LinkedIn</a>
       <a href="https://drive.google.com/file/d/1LyoIkE3Q09gl7EVvjt_VgZbeDfYBcqxd/view?usp=sharing" target="_blank" class="btn-ghost">Resume</a>
       <button class="btn-fill" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
