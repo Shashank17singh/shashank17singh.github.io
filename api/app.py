@@ -72,6 +72,7 @@ except Exception as e:
 
 
 def retrieve_context(query: str, k: int = TOP_K) -> str:
+    """Retrieves relevant context from the vector database for a given query."""
     if embed_model is None or collection is None:
         return ""
     embedding = embed_model.encode([query]).tolist()
@@ -82,11 +83,13 @@ def retrieve_context(query: str, k: int = TOP_K) -> str:
 
 @app.route("/health")
 def health():
+    """Simple health check endpoint."""
     return jsonify(status="ok")
 
 
 @app.route("/chat", methods=["POST"])
 def chat():
+    """Handles chat requests, retrieves context, and streams the AI response."""
     data = request.get_json(silent=True) or {}
     message = (data.get("message") or "").strip()
     history = data.get("history") or []
