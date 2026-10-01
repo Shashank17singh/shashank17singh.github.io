@@ -15,12 +15,14 @@ HTML_PATH = next((p for p in _candidates if os.path.exists(p)), _candidates[-1])
 
 
 def get_text(html_fragment):
+    """Strips HTML tags and normalizes whitespace from a given HTML fragment."""
     text = re.sub(r"<[^>]+>", " ", html_fragment)
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
 
 def extract_project_cards(html):
+    """Parses project cards from the HTML and formats them into searchable text chunks."""
     cards = re.findall(
         r'<div class="project-card[^"]*">(.*?)</div>\s*</div>', html, re.DOTALL
     )
@@ -65,6 +67,7 @@ def extract_project_cards(html):
 
 
 def extract_section_text(html, section_id):
+    """Extracts and chunks text from a specific section ID in the HTML."""
     section_m = re.search(
         rf'<section\s+id="{section_id}"[^>]*>(.*?)</section>', html, re.DOTALL
     )
@@ -91,6 +94,7 @@ def extract_section_text(html, section_id):
 
 
 def main():
+    """Main execution block: reads the HTML, extracts content, and stores embeddings in ChromaDB."""
     html_path = os.path.abspath(HTML_PATH)
     print(f"Reading portfolio from: {html_path}")
     if not os.path.exists(html_path):
