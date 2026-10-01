@@ -1,6 +1,6 @@
 import os
 import re
-from html.parser import HTMLParser
+
 import chromadb
 from sentence_transformers import SentenceTransformer
 
@@ -36,7 +36,7 @@ def extract_project_cards(html):
         demo_m = re.search(
             r'href="(https://(?!github)[^"]+)"[^>]*class="project-link demo"', card
         )
-        title = get_text(title_m.group(1)) if title_m else f"Project {i+1}"
+        title = get_text(title_m.group(1)) if title_m else f"Project {i + 1}"
         desc = get_text(desc_m.group(1)) if desc_m else ""
         tag = get_text(tag_m.group(1)) if tag_m else ""
         stack_html = stack_m.group(1) if stack_m else ""

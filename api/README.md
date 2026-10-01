@@ -37,6 +37,7 @@ python app.py         # starts dev server on http://localhost:5000
 ```
 
 Test it:
+
 ```bash
 curl -X POST http://localhost:5000/chat \
   -H "Content-Type: application/json" \
@@ -49,6 +50,7 @@ GitHub Pages only serves static files, so the Flask API needs to run
 somewhere else. Two options, both compatible with what you've already set up:
 
 **Option A - same pattern as Home-Prices-Suite (Flask + Nginx + DuckDNS)**
+
 1. Provision a small VM (or reuse your existing one).
 2. Copy the `backend/` folder over, set up the venv, run `ingest.py`.
 3. Run the app with gunicorn: `gunicorn -w 2 -b 127.0.0.1:5000 app:app`
@@ -56,6 +58,7 @@ somewhere else. Two options, both compatible with what you've already set up:
 5. Add HTTPS (Let's Encrypt / certbot) - required, since GitHub Pages is HTTPS and browsers block mixed-content requests from an HTTPS page to an HTTP API.
 
 **Option B - Render free tier (zero server maintenance)**
+
 1. Push the `backend/` folder to a GitHub repo.
 2. On Render: New → Web Service → connect the repo.
 3. Build command: `pip install -r requirements.txt && python ingest.py`
