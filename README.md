@@ -54,25 +54,25 @@ graph TD
 
 ## Features
 
-| | |
-|---|---|
-| **Responsive Design** | Fluid layout that scales elegantly across mobile, tablet, and desktop viewports |
-| **Project Showcase** | A detailed grid highlighting my best projects with tech stack pills and live links |
-| **Dynamic Interactions** | Scroll-reveal animations and interactive hover states for a polished UI |
-| **Dark-Themed UI** | Modern dark-mode aesthetic utilizing CSS variables for consistent theming |
-| **AI Assistant** | An integrated chatbot that answers questions based on my resume/experience |
+|                          |                                                                                    |
+| ------------------------ | ---------------------------------------------------------------------------------- |
+| **Responsive Design**    | Fluid layout that scales elegantly across mobile, tablet, and desktop viewports    |
+| **Project Showcase**     | A detailed grid highlighting my best projects with tech stack pills and live links |
+| **Dynamic Interactions** | Scroll-reveal animations and interactive hover states for a polished UI            |
+| **Dark-Themed UI**       | Modern dark-mode aesthetic utilizing CSS variables for consistent theming          |
+| **AI Assistant**         | An integrated chatbot that answers questions based on my resume/experience         |
 
 ---
 
 ## Tech Stack
 
-| Component | Technology |
-|---|---|
-| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
-| **API Framework** | Flask |
-| **LLM Inference** | Groq (`openai/gpt-oss-20b`) |
-| **Embeddings** | HuggingFace (`all-MiniLM-L6-v2`) |
-| **Vector Store** | ChromaDB |
+| Component         | Technology                       |
+| ----------------- | -------------------------------- |
+| **Frontend**      | HTML5, CSS3, Vanilla JavaScript  |
+| **API Framework** | Flask                            |
+| **LLM Inference** | Groq (`openai/gpt-oss-20b`)      |
+| **Embeddings**    | HuggingFace (`all-MiniLM-L6-v2`) |
+| **Vector Store**  | ChromaDB                         |
 
 ---
 
@@ -105,22 +105,26 @@ npx serve .
 ### Backend (Chatbot API)
 
 1. Navigate to the API directory:
+
 ```bash
 cd api
 ```
 
 2. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Set your Groq API key:
+
 ```bash
 # Create a .env file and add your GROQ_API_KEY
 echo "GROQ_API_KEY=your_api_key_here" > .env
 ```
 
 4. Run the server:
+
 ```bash
 python app.py
 ```

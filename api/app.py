@@ -1,5 +1,6 @@
 import json
 import os
+
 import chromadb
 from dotenv import load_dotenv
 from flask import Flask, Response, jsonify, request
@@ -112,7 +113,7 @@ def chat():
             yield f'data: {{"error": "Groq Init Failed: {groq_error}"}}\n\n'
             return
         if collection is None or embed_model is None:
-            yield f'data: {{"error": "Backend misconfigured. AI models failed to load."}}\n\n'
+            yield 'data: {"error": "Backend misconfigured. AI models failed to load."}\n\n'
             return
         try:
             stream = groq_client.chat.completions.create(
