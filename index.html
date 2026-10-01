@@ -665,6 +665,7 @@ const phrases = ['C++ Systems Engineer', 'Generative AI & RAG Developer', 'Scala
 let pi = 0, ci = 0, deleting = false;
 const typedEl = document.getElementById('typed');
 function type() {
+  if (!typedEl) return;
   const word = phrases[pi];
   typedEl.textContent = deleting ? word.substring(0, ci--) : word.substring(0, ci++);
   if (!deleting && ci === word.length + 1) { deleting = true; setTimeout(type, 1400); return; }
