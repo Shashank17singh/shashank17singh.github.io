@@ -4,18 +4,11 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    role: "Freelance Software Developer",
-    company: "Self-Employed",
-    duration: "May 2024 – Present",
-    description: "Architected and delivered custom software solutions focusing on AI integration and full-stack web applications. Built automated AI pipelines, developed custom CRM tools with LLMs, and deployed scalable architectures on AWS for global clients.",
-    tech: ["FastAPI", "React", "AWS", "Python", "Ollama"]
-  },
-  {
-    role: "Subject Matter Expert",
-    company: "Chegg Inc.",
-    duration: "Sep 2022 – Jun 2023",
-    description: "Provided expert-level solutions and guidance in Advanced Mathematics and Computer Science. Maintained a 95% satisfaction rating by delivering step-by-step technical explanations for complex problems.",
-    tech: ["Mathematics", "Algorithms", "Data Structures", "C++"]
+    role: "Python & Data Science Trainee",
+    company: "NIELIT, Gorakhpur (Government of India) · Remote",
+    duration: "Jun 2025 – Jul 2025",
+    description: "Completed a 60-hour structured training in Python, NumPy, Pandas, Matplotlib, and introductory machine learning. Built a House Price Predictor capstone using Random Forest and Streamlit on 76,000+ real-world property records.",
+    tech: ["Python", "NumPy", "Pandas", "Scikit-learn", "Streamlit"]
   }
 ];
 
