@@ -8,6 +8,7 @@ const skills = [
   { category: "AI & Machine Learning", items: ["Scikit-learn", "XGBoost", "Random Forest", "RAG", "LangChain", "LangGraph", "ChromaDB", "Ollama", "OpenCV", "MediaPipe"] },
   { category: "Systems Engineering", items: ["C++17", "Multithreading", "libpcap", "TCP/UDP", "TLS/SNI", "Qdrant", "HNSW", "KD-Tree"] },
   { category: "Backend Development", items: ["Flask", "FastAPI", "REST APIs", "PostgreSQL", "Supabase", "SQLite", "SQLAlchemy"] },
+  { category: "Frontend Development", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"] },
   { category: "Cloud & DevOps", items: ["Docker", "Nginx", "AWS", "GitHub Actions", "Git", "Vercel", "Streamlit"] },
   { category: "Data Science & Analytics", items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebook"] }
 ];

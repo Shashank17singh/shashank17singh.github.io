@@ -9,7 +9,7 @@ const projects = [
     description: "C++17 deep packet inspection engine that analyzes PCAP captures, reconstructs TCP/UDP flows, classifies traffic through TLS SNI and HTTP Host inspection, and supports configurable blocking rules.",
     tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
     github: "https://github.com/Shashank17singh/DPI-Engine",
-    demo: null,
+    demo: "https://github.com/Shashank17singh/DPI-Engine/blob/main/dpi-engine.png",
     color: "from-blue-500/20 to-cyan-500/20",
     hoverColor: "group-hover:border-cyan-500/50"
   },
@@ -18,7 +18,7 @@ const projects = [
     description: "C++ vector database with HNSW, KD-Tree, and brute-force search, plus an Ollama-backed local RAG pipeline, REST API, automated benchmarks, and 2D PCA visualization.",
     tech: ["C++", "HNSW", "KD-Tree", "RAG", "Ollama"],
     github: "https://github.com/Shashank17singh/Your-Own-AI",
-    demo: null,
+    demo: "https://github.com/Shashank17singh/Your-Own-AI/blob/main/Your-Own-AI.png",
     color: "from-indigo-500/20 to-purple-500/20",
     hoverColor: "group-hover:border-purple-500/50"
   },
@@ -57,6 +57,96 @@ const projects = [
     demo: null,
     color: "from-rose-500/20 to-red-500/20",
     hoverColor: "group-hover:border-rose-500/50"
+  },
+  {
+    title: "YouTube Scrapper - Multi-Playlist RAG",
+    description: "RAG system that analyzes YouTube playlists and returns grounded answers with video timestamps using BAAI/bge-m3 embeddings, Qdrant, and asynchronous Faster-Whisper transcription.",
+    tech: ["RAG", "Qdrant", "Faster-Whisper", "Python"],
+    github: "https://github.com/Shashank17singh/Youtube-Scrapper",
+    demo: null,
+    color: "from-violet-500/20 to-purple-500/20",
+    hoverColor: "group-hover:border-violet-500/50"
+  },
+  {
+    title: "Agentic JobHunt",
+    description: "Automated job-search pipeline that uses public ATS APIs, deterministic filtering, and two-stage LLM screening to match resumes with roles and draft tailored application kits.",
+    tech: ["Python", "LLMs", "ATS APIs", "Automation"],
+    github: "https://github.com/Shashank17singh/JobHunt",
+    demo: null,
+    color: "from-sky-500/20 to-blue-500/20",
+    hoverColor: "group-hover:border-sky-500/50"
+  },
+  {
+    title: "Hire Me AI - Resume Parser & Chatbot",
+    description: "FastAPI application that parses PDF resumes into Pydantic schemas and provides a Gemini-powered, fact-grounded recruiter chatbot.",
+    tech: ["FastAPI", "Gemini", "Pydantic", "PDF"],
+    github: "https://github.com/Shashank17singh/Hire-Me-AI",
+    demo: null,
+    color: "from-fuchsia-500/20 to-pink-500/20",
+    hoverColor: "group-hover:border-fuchsia-500/50"
+  },
+  {
+    title: "Conversational RAG Chatbot",
+    description: "Production-ready RAG web application for multi-turn, context-aware conversations over uploaded PDF documents with LangChain, Gemini, and ChromaDB.",
+    tech: ["Streamlit", "LangChain", "Gemini", "ChromaDB"],
+    github: "https://github.com/Shashank17singh/Conversational-RAG-Chatbot",
+    demo: "https://conversational-rag-chatbot-pdf.streamlit.app/",
+    color: "from-cyan-500/20 to-blue-500/20",
+    hoverColor: "group-hover:border-cyan-500/50"
+  },
+  {
+    title: "AI Resume Screener",
+    description: "Streamlit application for automated resume scoring with Pydantic schemas, batch processing, caching, retry handling, and Gemini-based skill-gap analysis.",
+    tech: ["Streamlit", "Gemini", "Pydantic", "Python"],
+    github: "https://github.com/Shashank17singh/AI-Resume-Screener",
+    demo: "https://screen-resumes-ai.streamlit.app/",
+    color: "from-indigo-500/20 to-blue-500/20",
+    hoverColor: "group-hover:border-indigo-500/50"
+  },
+  {
+    title: "Home Price Suite",
+    description: "End-to-end machine learning application with a Flask REST API, Nginx reverse proxy, responsive frontend, and a feature-engineered linear regression model.",
+    tech: ["Flask", "Nginx", "Scikit-learn", "Docker"],
+    github: "https://github.com/Shashank17singh/Home-Prices-Suite",
+    demo: "https://home-prices-api.duckdns.org/",
+    color: "from-lime-500/20 to-emerald-500/20",
+    hoverColor: "group-hover:border-lime-500/50"
+  },
+  {
+    title: "SolarWind Forecaster",
+    description: "Time-series forecasting project for renewable energy generation using rolling-window features, lag variables, and strict temporal train/test splitting.",
+    tech: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+    github: "https://github.com/Shashank17singh/SolarWind-Forecaster",
+    demo: null,
+    color: "from-yellow-500/20 to-orange-500/20",
+    hoverColor: "group-hover:border-yellow-500/50"
+  },
+  {
+    title: "Sports Person Classifier",
+    description: "Computer-vision classification system using OpenCV Haar Cascades and wavelet transforms, with optimized SVM, Random Forest, and Logistic Regression models.",
+    tech: ["OpenCV", "Scikit-learn", "Flask", "Computer Vision"],
+    github: "https://github.com/Shashank17singh/Sports-Person-Classifier",
+    demo: "https://sports-person-classifier-xi.vercel.app/",
+    color: "from-teal-500/20 to-cyan-500/20",
+    hoverColor: "group-hover:border-teal-500/50"
+  },
+  {
+    title: "Posture Checker - AI Physiotherapy",
+    description: "AI-driven physiotherapy application that uses MediaPipe pose estimation to provide real-time exercise-form feedback, joint-angle analysis, repetition counting, and corrections.",
+    tech: ["Python", "MediaPipe", "OpenCV", "Streamlit"],
+    github: "https://github.com/Shashank17singh/SIC-Project",
+    demo: "https://sic-project.streamlit.app/",
+    color: "from-orange-500/20 to-red-500/20",
+    hoverColor: "group-hover:border-orange-500/50"
+  },
+  {
+    title: "House Price Predictor",
+    description: "NIELIT capstone machine-learning pipeline that predicts Mumbai property prices using a Random Forest Regressor trained on 76,000+ records.",
+    tech: ["Python", "Streamlit", "Random Forest", "Pandas"],
+    github: "https://github.com/Shashank17singh/NIELIT-Project",
+    demo: "https://nielit-project.streamlit.app/",
+    color: "from-blue-500/20 to-indigo-500/20",
+    hoverColor: "group-hover:border-blue-500/50"
   }
 ];
 
@@ -113,6 +203,10 @@ export function Projects() {
                     {t}
                   </span>
                 ))}
+              </div>
+              <div className="mt-6 flex gap-4 text-sm font-medium">
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-slate-300 hover:text-white">GitHub <GitBranch className="h-4 w-4" /></a>
+                {project.demo && <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300">Live demo <ExternalLink className="h-4 w-4" /></a>}
               </div>
             </div>
           </motion.div>

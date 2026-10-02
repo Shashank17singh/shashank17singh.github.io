@@ -3,6 +3,9 @@ import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
+import { TypingHeadline } from "@/components/TypingHeadline";
+import { Contact } from "@/components/Contact";
+import { Chatbot } from "@/components/Chatbot";
 
 export default function Home() {
   return (
@@ -21,9 +24,7 @@ export default function Home() {
             <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-indigo-600">Shashank</span>
           </h1>
           
-          <div className="text-xl text-slate-400 mb-8 h-8 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200 fill-mode-both">
-            Building <span className="text-blue-500 font-mono">high-performance systems</span><span className="inline-block w-0.5 h-5 bg-blue-500 ml-1 animate-pulse"></span>
-          </div>
+          <div className="mb-8 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200 fill-mode-both"><TypingHeadline /></div>
           
           <p className="text-slate-400 text-lg leading-relaxed max-w-md mb-10 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300 fill-mode-both">
             Final-year B.Tech Computer Science (AI) candidate building reliable <strong className="text-slate-100">AI, backend, and systems</strong> applications.
@@ -83,6 +84,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Projects />
+      <Contact />
 
       <footer className="border-t border-slate-800 bg-slate-950/50 backdrop-blur-lg mt-24">
         <div className="max-w-7xl mx-auto px-16 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -101,6 +103,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <Chatbot />
     </div>
   );
 }

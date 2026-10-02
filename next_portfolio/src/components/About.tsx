@@ -70,15 +70,15 @@ export function About() {
             <h3 className="text-2xl font-semibold text-white">Certifications & Training</h3>
             <div className="space-y-4">
               <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
-                <p className="font-semibold text-white mb-1">Samsung Innovation Campus</p>
+                <a href="https://github.com/Shashank17singh/SIC-Project/blob/master/SIC%20Certificate.pdf" target="_blank" rel="noopener noreferrer" className="font-semibold text-white mb-1 hover:text-blue-300">Samsung Innovation Campus ↗</a>
                 <p className="text-sm text-blue-400">Artificial Intelligence Certificate</p>
               </div>
               <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
-                <p className="font-semibold text-white mb-1">NIELIT, Gorakhpur</p>
+                <a href="https://github.com/Shashank17singh/NIELIT-Project/blob/main/NIELIT%20Certificate.pdf" target="_blank" rel="noopener noreferrer" className="font-semibold text-white mb-1 hover:text-blue-300">NIELIT, Gorakhpur ↗</a>
                 <p className="text-sm text-indigo-400">Industrial Training in Data Science & ML</p>
               </div>
               <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
-                <p className="font-semibold text-white mb-1">AWS Academy</p>
+                <a href="https://drive.google.com/file/d/1BIk7_Sc7RUaW5huU4AEgFMzN3jCe4OmH/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="font-semibold text-white mb-1 hover:text-blue-300">AWS Academy ↗</a>
                 <p className="text-sm text-orange-400">Fundamentals of ML &amp; AI</p>
               </div>
             </div>
