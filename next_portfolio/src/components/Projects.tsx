@@ -5,31 +5,58 @@ import { ExternalLink, GitBranch, FolderGit2 } from "lucide-react";
 
 const projects = [
   {
-    title: "AI Virtual Mouse",
-    description: "A computer vision application that controls the mouse pointer and executes clicks using hand gestures. Built using MediaPipe and OpenCV.",
-    tech: ["Python", "OpenCV", "MediaPipe", "PyAutoGUI"],
-    github: "https://github.com/shashank17singh/Virtual-Mouse",
+    title: "DPI Engine - Deep Packet Inspection",
+    description: "C++17 deep packet inspection engine that analyzes PCAP captures, reconstructs TCP/UDP flows, classifies traffic through TLS SNI and HTTP Host inspection, and supports configurable blocking rules.",
+    tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
+    github: "https://github.com/Shashank17singh/DPI-Engine",
     demo: null,
     color: "from-blue-500/20 to-cyan-500/20",
     hoverColor: "group-hover:border-cyan-500/50"
   },
   {
-    title: "Real-Time Chat App",
-    description: "A highly scalable MERN stack chat application featuring real-time messaging, user authentication, online status indicators, and responsive UI.",
-    tech: ["MongoDB", "Express", "React", "Node.js", "Socket.io"],
-    github: "https://github.com/shashank17singh/chat-app",
-    demo: "https://chat-app-d352.onrender.com",
+    title: "Your Own AI - Vector Database",
+    description: "C++ vector database with HNSW, KD-Tree, and brute-force search, plus an Ollama-backed local RAG pipeline, REST API, automated benchmarks, and 2D PCA visualization.",
+    tech: ["C++", "HNSW", "KD-Tree", "RAG", "Ollama"],
+    github: "https://github.com/Shashank17singh/Your-Own-AI",
+    demo: null,
     color: "from-indigo-500/20 to-purple-500/20",
     hoverColor: "group-hover:border-purple-500/50"
   },
   {
-    title: "Gemini Vision Explorer",
-    description: "An advanced multi-modal AI interface leveraging Gemini Pro Vision for complex image analysis, OCR, and context-aware visual Q&A.",
-    tech: ["Next.js", "Gemini API", "TailwindCSS", "TypeScript"],
-    github: "https://github.com/shashank17singh",
+    title: "UPI Mesh - Offline-First Payments",
+    description: "Offline-first FastAPI backend for UPI-style transactions, using hybrid RSA-2048/AES-256-GCM cryptography, a simulated Bluetooth mesh network, and ciphertext-hash idempotency.",
+    tech: ["Python", "FastAPI", "RSA-2048", "AES-256-GCM"],
+    github: "https://github.com/Shashank17singh/UPI-Mesh",
     demo: null,
     color: "from-rose-500/20 to-orange-500/20",
     hoverColor: "group-hover:border-orange-500/50"
+  },
+  {
+    title: "Learning Analytics Engine",
+    description: "Learning platform that generates assessments from uploaded PDFs using RAG and multi-provider LLMs, with predictive modeling for student metrics and Supabase-backed telemetry.",
+    tech: ["RAG", "Gemini", "LangChain", "Scikit-learn", "Supabase"],
+    github: "https://github.com/Shashank17singh/Learning-Analytics-Engine",
+    demo: null,
+    color: "from-emerald-500/20 to-teal-500/20",
+    hoverColor: "group-hover:border-emerald-500/50"
+  },
+  {
+    title: "Restaurant Agent",
+    description: "Stateful AI restaurant ordering system with LangGraph, Gemini, FastAPI, Pydantic tool calling, multi-turn memory, and a responsive Streamlit frontend.",
+    tech: ["LangGraph", "Gemini", "FastAPI", "Pydantic", "Streamlit"],
+    github: "https://github.com/Shashank17singh/Restaurant-Agent",
+    demo: null,
+    color: "from-amber-500/20 to-orange-500/20",
+    hoverColor: "group-hover:border-amber-500/50"
+  },
+  {
+    title: "Agentic Fraud Sentinel",
+    description: "Financial fraud detection system using an Optuna-tuned XGBoost model, temporal feature engineering, SMOTE balancing, and SHAP-based model explainability.",
+    tech: ["Python", "XGBoost", "Optuna", "SMOTE", "SHAP"],
+    github: "https://github.com/Shashank17singh/Agentic-Fraud-Sentinel",
+    demo: null,
+    color: "from-rose-500/20 to-red-500/20",
+    hoverColor: "group-hover:border-rose-500/50"
   }
 ];
 

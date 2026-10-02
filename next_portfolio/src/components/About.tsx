@@ -40,7 +40,7 @@ export function About() {
           >
             <Server className="w-8 h-8 text-indigo-400 shrink-0 mt-1" />
             <p className="text-slate-300 text-lg leading-relaxed">
-              My technical expertise centers on backend infrastructure, vector databases, and deploying machine learning models as web APIs utilizing <strong className="text-white">FastAPI, Docker, and AWS</strong>. 
+              My technical expertise centers on backend infrastructure, vector databases, and deploying machine learning models as web APIs utilizing <strong className="text-white">FastAPI, Docker, and AWS</strong>.
             </p>
           </motion.div>
           
@@ -53,7 +53,7 @@ export function About() {
           >
             <Brain className="w-8 h-8 text-purple-400 shrink-0 mt-1" />
             <p className="text-slate-300 text-lg leading-relaxed">
-              I&apos;ve worked hands-on with systems ranging from packet inspection engines in modern C++ to RAG pipelines leveraging <strong className="text-white">Ollama, Gemini, LangChain, and ChromaDB</strong>.
+              I&apos;ve worked hands-on with systems ranging from packet inspection engines in modern C++ to RAG pipelines leveraging <strong className="text-white">Ollama, Gemini, LangChain, and ChromaDB</strong>, alongside a 6-week NIELIT industrial training in Python data science and machine learning.
             </p>
           </motion.div>
         </div>
@@ -79,7 +79,7 @@ export function About() {
               </div>
               <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
                 <p className="font-semibold text-white mb-1">AWS Academy</p>
-                <p className="text-sm text-orange-400">Cloud Foundations</p>
+                <p className="text-sm text-orange-400">Fundamentals of ML &amp; AI</p>
               </div>
             </div>
           </div>
