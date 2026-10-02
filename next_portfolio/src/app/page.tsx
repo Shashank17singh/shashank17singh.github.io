@@ -13,7 +13,7 @@ export default function Home() {
         <div className="flex-1 flex flex-col items-start z-10">
           <div className="flex items-center gap-2 bg-blue-500/15 border border-blue-500/25 rounded-full px-4 py-1.5 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.8)]"></span>
-            <span className="text-blue-400 text-sm font-medium">Available for new opportunities</span>
+            <span className="text-blue-400 text-sm font-medium">Open to software engineering and data science opportunities</span>
           </div>
           
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100 fill-mode-both">
@@ -22,11 +22,11 @@ export default function Home() {
           </h1>
           
           <div className="text-xl text-slate-400 mb-8 h-8 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200 fill-mode-both">
-            Building <span className="text-blue-500 font-mono">intelligent systems</span><span className="inline-block w-0.5 h-5 bg-blue-500 ml-1 animate-pulse"></span>
+            Building <span className="text-blue-500 font-mono">high-performance systems</span><span className="inline-block w-0.5 h-5 bg-blue-500 ml-1 animate-pulse"></span>
           </div>
           
           <p className="text-slate-400 text-lg leading-relaxed max-w-md mb-10 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300 fill-mode-both">
-            I am an AI Engineer and Full-Stack Developer blending <strong className="text-slate-100">Machine Learning</strong> with high-performance systems to solve complex problems.
+            Final-year B.Tech Computer Science (AI) candidate building reliable <strong className="text-slate-100">AI, backend, and systems</strong> applications.
           </p>
           
           <div className="flex gap-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500 fill-mode-both">
@@ -34,7 +34,7 @@ export default function Home() {
               View Work
             </a>
             <div className="border border-slate-700 bg-slate-800/50 rounded-full flex items-center justify-center hover:border-blue-500 transition-colors group">
-              <Link001 href="mailto:shashank17singh@example.com" className="px-8 py-3 font-medium text-slate-200 group-hover:text-blue-400 transition-colors">
+              <Link001 href="mailto:shashanksingh1709@gmail.com" className="px-8 py-3 font-medium text-slate-200 group-hover:text-blue-400 transition-colors">
                 Contact Me
               </Link001>
             </div>
@@ -51,28 +51,28 @@ export default function Home() {
             </div>
             
             <h3 className="text-2xl font-bold text-slate-100 mb-1">Shashank Singh</h3>
-            <p className="text-sm text-slate-400 mb-6">AI & Systems Engineer</p>
+            <p className="text-sm text-slate-400 mb-6">B.Tech CSE (Artificial Intelligence)</p>
             
             <div className="grid grid-cols-3 gap-3 mb-6">
               <div className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-3 text-center">
-                <div className="text-2xl font-bold text-slate-100 mb-1 text-shadow-sm shadow-blue-500/20">4<span className="text-blue-400 text-sm">+</span></div>
-                <div className="text-[10px] uppercase tracking-wider text-slate-500">Years</div>
-              </div>
-              <div className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-3 text-center">
-                <div className="text-2xl font-bold text-slate-100 mb-1">12<span className="text-blue-400 text-sm">+</span></div>
+                <div className="text-2xl font-bold text-slate-100 mb-1 text-shadow-sm shadow-blue-500/20">15<span className="text-blue-400 text-sm">+</span></div>
                 <div className="text-[10px] uppercase tracking-wider text-slate-500">Projects</div>
               </div>
               <div className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-3 text-center">
                 <div className="text-2xl font-bold text-slate-100 mb-1">3</div>
-                <div className="text-[10px] uppercase tracking-wider text-slate-500">Patents</div>
+                <div className="text-[10px] uppercase tracking-wider text-slate-500">Credentials</div>
+              </div>
+              <div className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-3 text-center">
+                <div className="text-2xl font-bold text-slate-100 mb-1">AI</div>
+                <div className="text-[10px] uppercase tracking-wider text-slate-500">Specialization</div>
               </div>
             </div>
             
             <div className="flex flex-wrap gap-2">
               <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">Python</span>
               <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">C++</span>
-              <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">PyTorch</span>
-              <span className="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full text-xs font-medium">React</span>
+              <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">FastAPI</span>
+              <span className="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full text-xs font-medium">RAG</span>
             </div>
           </div>
         </div>

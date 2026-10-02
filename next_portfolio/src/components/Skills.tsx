@@ -3,10 +3,13 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { category: "Languages", items: ["Python", "C++", "C", "SQL", "JavaScript", "HTML/CSS"] },
-  { category: "Frameworks & Libs", items: ["FastAPI", "TensorFlow", "PyTorch", "React", "Next.js", "LangChain"] },
-  { category: "Databases", items: ["PostgreSQL", "ChromaDB", "MongoDB", "Redis"] },
-  { category: "Tools", items: ["Docker", "Git", "AWS", "Linux"] }
+  { category: "Cryptography & Security", items: ["RSA-2048", "AES-256-GCM", "Zero-Trust", "Idempotency", "MITM Protection"] },
+  { category: "Programming Languages", items: ["Python", "C++", "SQL", "HTML", "CSS", "JavaScript"] },
+  { category: "AI & Machine Learning", items: ["Scikit-learn", "XGBoost", "Random Forest", "RAG", "LangChain", "LangGraph", "ChromaDB", "Ollama", "OpenCV", "MediaPipe"] },
+  { category: "Systems Engineering", items: ["C++17", "Multithreading", "libpcap", "TCP/UDP", "TLS/SNI", "Qdrant", "HNSW", "KD-Tree"] },
+  { category: "Backend Development", items: ["Flask", "FastAPI", "REST APIs", "PostgreSQL", "Supabase", "SQLite", "SQLAlchemy"] },
+  { category: "Cloud & DevOps", items: ["Docker", "Nginx", "AWS", "GitHub Actions", "Git", "Vercel", "Streamlit"] },
+  { category: "Data Science & Analytics", items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebook"] }
 ];
 
 export function Skills() {
