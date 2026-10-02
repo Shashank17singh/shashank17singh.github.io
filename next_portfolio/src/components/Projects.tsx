@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ExternalLink, GitBranch, FolderGit2 } from "lucide-react";
 
