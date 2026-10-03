@@ -1,5 +1,5 @@
 const socialLinks = [
-  ["Email", "mailto:shashanksingh1709@gmail.com"],
+  ["Email", "https://mail.google.com/mail/u/0/?fs=1&to=shashanksingh1709@gmail.com&tf=cm"],
   ["LinkedIn", "https://www.linkedin.com/in/shashank17singh/"],
   ["GitHub", "https://github.com/Shashank17singh"],
   ["Codolio", "https://codolio.com/profile/Shashank17singh"],
