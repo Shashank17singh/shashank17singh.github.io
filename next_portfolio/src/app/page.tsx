@@ -1,4 +1,3 @@
-import { Link001 } from "@/components/ui/skiper-ui/skiper40";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
@@ -35,9 +34,9 @@ export default function Home() {
               View Work
             </a>
             <div className="border border-slate-700 bg-slate-800/50 rounded-full flex items-center justify-center hover:border-blue-500 transition-colors group">
-              <Link001 href="mailto:shashanksingh1709@gmail.com" className="px-8 py-3 font-medium text-slate-200 group-hover:text-blue-400 transition-colors">
+              <a href="https://mail.google.com/mail/u/0/?fs=1&to=shashanksingh1709@gmail.com&tf=cm" target="_blank" rel="noopener noreferrer" className="px-8 py-3 font-medium text-slate-200 group-hover:text-blue-400 transition-colors">
                 Contact Me
-              </Link001>
+              </a>
             </div>
           </div>
         </div>

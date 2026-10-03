@@ -27,7 +27,7 @@ const projects = [
     description: "Offline-first FastAPI backend for UPI-style transactions, using hybrid RSA-2048/AES-256-GCM cryptography, a simulated Bluetooth mesh network, and ciphertext-hash idempotency.",
     tech: ["Python", "FastAPI", "RSA-2048", "AES-256-GCM"],
     github: "https://github.com/Shashank17singh/UPI-Mesh",
-    demo: null,
+    demo: "https://upi-mesh.duckdns.org/",
     color: "from-rose-500/20 to-orange-500/20",
     hoverColor: "group-hover:border-orange-500/50"
   },
@@ -36,7 +36,7 @@ const projects = [
     description: "Learning platform that generates assessments from uploaded PDFs using RAG and multi-provider LLMs, with predictive modeling for student metrics and Supabase-backed telemetry.",
     tech: ["RAG", "Gemini", "LangChain", "Scikit-learn", "Supabase"],
     github: "https://github.com/Shashank17singh/Learning-Analytics-Engine",
-    demo: null,
+    demo: "https://learning-analytics-engine.streamlit.app/",
     color: "from-emerald-500/20 to-teal-500/20",
     hoverColor: "group-hover:border-emerald-500/50"
   },
@@ -45,7 +45,7 @@ const projects = [
     description: "Stateful AI restaurant ordering system with LangGraph, Gemini, FastAPI, Pydantic tool calling, multi-turn memory, and a responsive Streamlit frontend.",
     tech: ["LangGraph", "Gemini", "FastAPI", "Pydantic", "Streamlit"],
     github: "https://github.com/Shashank17singh/Restaurant-Agent",
-    demo: null,
+    demo: "https://restaurants-agents.streamlit.app/",
     color: "from-amber-500/20 to-orange-500/20",
     hoverColor: "group-hover:border-amber-500/50"
   },
@@ -54,7 +54,7 @@ const projects = [
     description: "Financial fraud detection system using an Optuna-tuned XGBoost model, temporal feature engineering, SMOTE balancing, and SHAP-based model explainability.",
     tech: ["Python", "XGBoost", "Optuna", "SMOTE", "SHAP"],
     github: "https://github.com/Shashank17singh/Agentic-Fraud-Sentinel",
-    demo: null,
+    demo: "https://agentic-fraud-sentinel.streamlit.app/",
     color: "from-rose-500/20 to-red-500/20",
     hoverColor: "group-hover:border-rose-500/50"
   },
@@ -63,7 +63,7 @@ const projects = [
     description: "RAG system that analyzes YouTube playlists and returns grounded answers with video timestamps using BAAI/bge-m3 embeddings, Qdrant, and asynchronous Faster-Whisper transcription.",
     tech: ["RAG", "Qdrant", "Faster-Whisper", "Python"],
     github: "https://github.com/Shashank17singh/Youtube-Scrapper",
-    demo: null,
+    demo: "https://youtubescrapper-mb60.onrender.com/",
     color: "from-violet-500/20 to-purple-500/20",
     hoverColor: "group-hover:border-violet-500/50"
   },
@@ -81,7 +81,7 @@ const projects = [
     description: "FastAPI application that parses PDF resumes into Pydantic schemas and provides a Gemini-powered, fact-grounded recruiter chatbot.",
     tech: ["FastAPI", "Gemini", "Pydantic", "PDF"],
     github: "https://github.com/Shashank17singh/Hire-Me-AI",
-    demo: null,
+    demo: "https://hiremeai-dn64.onrender.com/",
     color: "from-fuchsia-500/20 to-pink-500/20",
     hoverColor: "group-hover:border-fuchsia-500/50"
   },
@@ -117,7 +117,7 @@ const projects = [
     description: "Time-series forecasting project for renewable energy generation using rolling-window features, lag variables, and strict temporal train/test splitting.",
     tech: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
     github: "https://github.com/Shashank17singh/SolarWind-Forecaster",
-    demo: null,
+    demo: "https://solarwind-forecaster.streamlit.app/",
     color: "from-yellow-500/20 to-orange-500/20",
     hoverColor: "group-hover:border-yellow-500/50"
   },
@@ -176,21 +176,9 @@ export function Projects() {
             <div className={`absolute inset-0 bg-gradient-to-br ${project.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`}></div>
             <div className={`relative h-full bg-slate-900/80 border border-slate-700/50 backdrop-blur-sm rounded-2xl p-8 flex flex-col transition-all duration-500 ${project.hoverColor} group-hover:-translate-y-2`}>
               
-              <div className="flex justify-between items-start mb-6">
+              <div className="mb-6">
                 <div className="p-3 bg-slate-800/50 rounded-xl border border-slate-700/50">
                   <FolderGit2 className="w-8 h-8 text-cyan-400" />
-                </div>
-                <div className="flex gap-3">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
-                      <GitBranch className="w-5 h-5" />
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                  )}
                 </div>
               </div>
 
