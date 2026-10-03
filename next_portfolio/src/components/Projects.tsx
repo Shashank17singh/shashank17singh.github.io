@@ -3,13 +3,25 @@
 import { motion } from "framer-motion";
 import { ExternalLink, GitBranch, FolderGit2 } from "lucide-react";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  demo: string | null;
+  demoLabel?: string;
+  color: string;
+  hoverColor: string;
+};
+
+const projects: Project[] = [
   {
     title: "DPI Engine - Deep Packet Inspection",
     description: "C++17 deep packet inspection engine that analyzes PCAP captures, reconstructs TCP/UDP flows, classifies traffic through TLS SNI and HTTP Host inspection, and supports configurable blocking rules.",
     tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
     github: "https://github.com/Shashank17singh/DPI-Engine",
     demo: "https://github.com/Shashank17singh/DPI-Engine/blob/main/dpi-engine.png",
+    demoLabel: "View Output",
     color: "from-blue-500/20 to-cyan-500/20",
     hoverColor: "group-hover:border-cyan-500/50"
   },
@@ -19,6 +31,7 @@ const projects = [
     tech: ["C++", "HNSW", "KD-Tree", "RAG", "Ollama"],
     github: "https://github.com/Shashank17singh/Your-Own-AI",
     demo: "https://github.com/Shashank17singh/Your-Own-AI/blob/main/Your-Own-AI.png",
+    demoLabel: "View Architecture",
     color: "from-indigo-500/20 to-purple-500/20",
     hoverColor: "group-hover:border-purple-500/50"
   },
@@ -194,7 +207,7 @@ export function Projects() {
               </div>
               <div className="mt-6 flex gap-4 text-sm font-medium">
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-slate-300 hover:text-white">GitHub <GitBranch className="h-4 w-4" /></a>
-                {project.demo && <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300">Live demo <ExternalLink className="h-4 w-4" /></a>}
+                {project.demo && <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300">{project.demoLabel ?? "Live demo"} <ExternalLink className="h-4 w-4" /></a>}
               </div>
             </div>
           </motion.div>
