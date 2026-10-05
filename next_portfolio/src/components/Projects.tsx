@@ -64,7 +64,7 @@ const projects: Project[] = [  {
   },
   {
     title: "Customer Churn Prediction",
-    description: "Interactive telecom churn predictor using an ANN classifier. Features per-customer explanations, batch scoring, and model diagnostics.",
+    description: "An interactive telecom churn predictor: an ANN classifier with per-customer explanations, batch scoring, and model diagnostics, served through Streamlit.",
     tech: ["Python", "scikit-learn", "ANN", "Streamlit"],
     github: "https://github.com/Shashank17singh/Customer-Churn-Prediction",
     demo: "https://customer-telecom-churn.streamlit.app/",
