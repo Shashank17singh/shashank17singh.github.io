@@ -34,7 +34,7 @@ export function About() {
               <strong className="text-white">
                 Computer Science
               </strong>{" "}
-              candidate at the University of Lucknow, specializing in
+              student at the University of Lucknow, specializing in
               high-performance systems engineering, distributed architectures, and
               applied artificial intelligence.
             </p>
