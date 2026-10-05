@@ -14,28 +14,7 @@ type Project = {
   hoverColor: string;
 };
 
-const projects: Project[] = [
-  {
-    title: "Code Sentinel",
-    description: "An evidence-based integrity triage system for coding assessments, powered by MOSS-style fingerprinting, a Groq LLM investigator, and Streamlit.",
-    tech: ["Python", "Streamlit", "Groq LLM", "MOSS"],
-    github: "https://github.com/Shashank17singh/Code-Sentinel",
-    demo: "https://code-sentinel.streamlit.app/",
-    demoLabel: "Live demo",
-    color: "from-blue-500/20 to-purple-500/20",
-    hoverColor: "group-hover:border-purple-500/50"
-  },
-  {
-    title: "Customer Churn Prediction",
-    description: "Interactive telecom churn predictor using an ANN classifier. Features per-customer explanations, batch scoring, and model diagnostics.",
-    tech: ["Python", "scikit-learn", "ANN", "Streamlit"],
-    github: "https://github.com/Shashank17singh/Customer-Churn-Prediction",
-    demo: "https://customer-telecom-churn.streamlit.app/",
-    demoLabel: "Live demo",
-    color: "from-fuchsia-500/20 to-rose-500/20",
-    hoverColor: "group-hover:border-rose-500/50"
-  },
-  {
+const projects: Project[] = [  {
     title: "DPI Engine - Deep Packet Inspection",
     description: "C++17 deep packet inspection engine that analyzes PCAP captures, reconstructs TCP/UDP flows, classifies traffic through TLS SNI and HTTP Host inspection, and supports configurable blocking rules.",
     tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
@@ -65,13 +44,14 @@ const projects: Project[] = [
     hoverColor: "group-hover:border-orange-500/50"
   },
   {
-    title: "Learning Analytics Engine",
-    description: "Learning platform that generates assessments from uploaded PDFs using RAG and multi-provider LLMs, with predictive modeling for student metrics and Supabase-backed telemetry.",
-    tech: ["RAG", "Gemini", "LangChain", "Scikit-learn", "Supabase"],
-    github: "https://github.com/Shashank17singh/Learning-Analytics-Engine",
-    demo: "https://learning-analytics-engine.streamlit.app/",
-    color: "from-emerald-500/20 to-teal-500/20",
-    hoverColor: "group-hover:border-emerald-500/50"
+    title: "Code Sentinel",
+    description: "An evidence-based integrity triage system for coding assessments, powered by MOSS-style fingerprinting, a Groq LLM investigator, and Streamlit.",
+    tech: ["Python", "Streamlit", "Groq LLM", "MOSS"],
+    github: "https://github.com/Shashank17singh/Code-Sentinel",
+    demo: "https://code-sentinel.streamlit.app/",
+    demoLabel: "Live demo",
+    color: "from-blue-500/20 to-purple-500/20",
+    hoverColor: "group-hover:border-purple-500/50"
   },
   {
     title: "Restaurant Agent",
@@ -81,6 +61,25 @@ const projects: Project[] = [
     demo: "https://restaurants-agents.streamlit.app/",
     color: "from-amber-500/20 to-orange-500/20",
     hoverColor: "group-hover:border-amber-500/50"
+  },
+  {
+    title: "Customer Churn Prediction",
+    description: "Interactive telecom churn predictor using an ANN classifier. Features per-customer explanations, batch scoring, and model diagnostics.",
+    tech: ["Python", "scikit-learn", "ANN", "Streamlit"],
+    github: "https://github.com/Shashank17singh/Customer-Churn-Prediction",
+    demo: "https://customer-telecom-churn.streamlit.app/",
+    demoLabel: "Live demo",
+    color: "from-fuchsia-500/20 to-rose-500/20",
+    hoverColor: "group-hover:border-rose-500/50"
+  },
+  {
+    title: "Learning Analytics Engine",
+    description: "Learning platform that generates assessments from uploaded PDFs using RAG and multi-provider LLMs, with predictive modeling for student metrics and Supabase-backed telemetry.",
+    tech: ["RAG", "Gemini", "LangChain", "Scikit-learn", "Supabase"],
+    github: "https://github.com/Shashank17singh/Learning-Analytics-Engine",
+    demo: "https://learning-analytics-engine.streamlit.app/",
+    color: "from-emerald-500/20 to-teal-500/20",
+    hoverColor: "group-hover:border-emerald-500/50"
   },
   {
     title: "Agentic Fraud Sentinel",
@@ -180,8 +179,7 @@ const projects: Project[] = [
     demo: "https://nielit-project.streamlit.app/",
     color: "from-blue-500/20 to-indigo-500/20",
     hoverColor: "group-hover:border-blue-500/50"
-  }
-];
+  }];
 
 export function Projects() {
   return (
@@ -236,3 +234,4 @@ export function Projects() {
     </section>
   );
 }
+
