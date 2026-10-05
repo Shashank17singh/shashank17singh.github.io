@@ -34,9 +34,8 @@ export default function Home() {
           </div>
 
           <p className="text-slate-400 text-lg leading-relaxed max-w-md mb-10 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300 fill-mode-both">
-            Final-year B.Tech Computer Science (AI) candidate building reliable{" "}
-            <strong className="text-slate-100">AI, backend, and systems</strong>{" "}
-            applications.
+            Final-year Computer Science candidate specializing in{" "}
+            <strong className="text-slate-100">high-performance systems, applied AI, and scalable backend infrastructure</strong>.
           </p>
 
           <div className="flex gap-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500 fill-mode-both">
