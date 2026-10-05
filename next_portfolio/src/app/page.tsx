@@ -2,7 +2,7 @@ import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
-import { TypingHeadline } from "@/components/TypingHeadline";
+
 import { Contact } from "@/components/Contact";
 import { Chatbot } from "@/components/Chatbot";
 
@@ -30,7 +30,7 @@ export default function Home() {
           </h1>
 
           <div className="mb-8 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200 fill-mode-both">
-            <TypingHeadline />
+
           </div>
 
           <p className="text-slate-400 text-lg leading-relaxed max-w-md mb-10 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300 fill-mode-both">
