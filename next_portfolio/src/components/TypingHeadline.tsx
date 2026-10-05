@@ -33,9 +33,17 @@ export function TypingHeadline() {
   }, [deleting, length, phraseIndex]);
 
   return (
-    <p className="min-h-8 max-w-full text-xl text-slate-400 md:text-2xl" aria-label={phrases[phraseIndex]}>
-      <span className="break-words text-blue-500 font-mono">{phrases[phraseIndex].slice(0, length)}</span>
-      <span className="ml-1 inline-block h-6 w-0.5 align-[-0.1em] bg-blue-500 animate-pulse" aria-hidden="true" />
+    <p
+      className="min-h-8 max-w-full text-xl text-slate-400 md:text-2xl"
+      aria-label={phrases[phraseIndex]}
+    >
+      <span className="break-words text-blue-500 font-mono">
+        {phrases[phraseIndex].slice(0, length)}
+      </span>
+      <span
+        className="ml-1 inline-block h-6 w-0.5 align-[-0.1em] bg-blue-500 animate-pulse"
+        aria-hidden="true"
+      />
     </p>
   );
 }
