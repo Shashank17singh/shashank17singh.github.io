@@ -64,7 +64,7 @@ export function About() {
           >
             <Brain className="w-8 h-8 text-purple-400 shrink-0 mt-1" />
             <p className="text-slate-300 text-lg leading-relaxed">
-              I&apos;ve developed complex, end-to-end systems ranging from low-latency packet
+              I&apos;ve built complex, end-to-end systems ranging from low-latency packet
               inspection engines in modern C++ to advanced RAG pipelines leveraging{" "}
               <strong className="text-white">
                 Ollama, Gemini, LangChain, and ChromaDB
