@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 const skills = [
   { category: "Cryptography & Security", items: ["RSA-2048", "AES-256-GCM", "Zero-Trust", "Idempotency", "MITM Protection"] },
   { category: "Programming Languages", items: ["Python", "C++", "SQL", "HTML", "CSS", "JavaScript"] },
-  { category: "AI & Machine Learning", items: ["Scikit-learn", "XGBoost", "Random Forest", "Optuna", "SHAP", "SMOTE", "PyTorch", "RAG", "LangChain", "LangGraph", "Hugging Face", "ChromaDB", "Ollama", "Faster-Whisper", "OpenCV", "MediaPipe", "Pydantic"] },
-  { category: "Systems Engineering", items: ["C++17", "Multithreading", "libpcap", "TCP/UDP", "TLS/SNI", "Qdrant", "HNSW", "KD-Tree"] },
+  { category: "AI & Machine Learning", items: ["Scikit-learn", "XGBoost", "Random Forest", "ANN", "Optuna", "SHAP", "SMOTE", "PyTorch", "RAG", "LangChain", "LangGraph", "Hugging Face", "ChromaDB", "Ollama", "Groq LLM", "Faster-Whisper", "OpenCV", "MediaPipe", "Pydantic"] },
+  { category: "Systems Engineering", items: ["C++17", "Multithreading", "libpcap", "TCP/UDP", "TLS/SNI", "Qdrant", "HNSW", "KD-Tree", "MOSS"] },
   { category: "Backend Development", items: ["Flask", "FastAPI", "REST APIs", "ATS APIs", "cpp-httplib", "yt-dlp", "PostgreSQL", "Supabase", "SQLite", "SQLAlchemy"] },
   { category: "Frontend Development", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"] },
   { category: "Cloud & DevOps", items: ["Docker", "Nginx", "AWS", "GitHub Actions", "Git", "Vercel", "Streamlit"] },
