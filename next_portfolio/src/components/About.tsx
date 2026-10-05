@@ -32,11 +32,11 @@ export function About() {
             <p className="text-slate-300 text-lg leading-relaxed">
               I am a final-year{" "}
               <strong className="text-white">
-                B.Tech Computer Science (Artificial Intelligence)
+                Computer Science
               </strong>{" "}
               candidate at the University of Lucknow, specializing in
-              high-performance systems engineering, applied cryptography, and
-              systems programming.
+              high-performance systems engineering, distributed architectures, and
+              applied artificial intelligence.
             </p>
           </motion.div>
 
@@ -49,9 +49,8 @@ export function About() {
           >
             <Server className="w-8 h-8 text-indigo-400 shrink-0 mt-1" />
             <p className="text-slate-300 text-lg leading-relaxed">
-              My technical expertise centers on backend infrastructure, vector
-              databases, and deploying machine learning models as web APIs
-              utilizing{" "}
+              My technical expertise centers on backend infrastructure, distributed systems,
+              and deploying machine learning models to production. I build secure, performant APIs utilizing{" "}
               <strong className="text-white">FastAPI, Docker, and AWS</strong>.
             </p>
           </motion.div>
@@ -65,13 +64,11 @@ export function About() {
           >
             <Brain className="w-8 h-8 text-purple-400 shrink-0 mt-1" />
             <p className="text-slate-300 text-lg leading-relaxed">
-              I&apos;ve worked hands-on with systems ranging from packet
-              inspection engines in modern C++ to RAG pipelines leveraging{" "}
+              I&apos;ve developed complex, end-to-end systems ranging from low-latency packet
+              inspection engines in modern C++ to advanced RAG pipelines leveraging{" "}
               <strong className="text-white">
                 Ollama, Gemini, LangChain, and ChromaDB
-              </strong>
-              , alongside a 6-week NIELIT industrial training in Python data
-              science and machine learning.
+              </strong>.
             </p>
           </motion.div>
         </div>

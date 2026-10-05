@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 const phrases = [
-  "C++ Systems Engineer",
-  "Generative AI & RAG Developer",
-  "Scalable Backend Architect",
+  "High-Performance Systems Engineer",
+  "Applied AI Engineer",
+  "Distributed Systems Engineer",
 ];
 
 export function TypingHeadline() {
