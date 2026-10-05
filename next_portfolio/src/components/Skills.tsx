@@ -9,7 +9,7 @@ const skills = [
   { category: "Systems Engineering", items: ["C++17", "Multithreading", "libpcap", "TCP/UDP", "TLS/SNI", "Qdrant", "HNSW", "KD-Tree", "MOSS"] },
   { category: "Backend Development", items: ["Flask", "FastAPI", "REST APIs", "ATS APIs", "cpp-httplib", "yt-dlp", "PostgreSQL", "Supabase", "SQLite", "SQLAlchemy"] },
   { category: "Frontend Development", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"] },
-  { category: "Cloud & DevOps", items: ["Docker", "Nginx", "AWS", "GitHub Actions", "Git", "Vercel", "Streamlit"] },
+  { category: "Cloud & DevOps", items: ["Docker", "Nginx", "AWS", "GitHub Actions", "CI/CD", "Git", "Pytest", "Mypy", "Vercel", "Streamlit"] },
   { category: "Data Science & Analytics", items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebook"] }
 ];
 
