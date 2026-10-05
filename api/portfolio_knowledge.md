@@ -12,6 +12,27 @@ Shashank is pursuing B.Tech Computer Science (Artificial Intelligence) at the Un
 
 Programming: Python, C++, SQL, HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS, and Framer Motion. AI and ML: Scikit-learn, XGBoost, Random Forest, RAG, LangChain, LangGraph, ChromaDB, Ollama, OpenCV, and MediaPipe. Systems and security: C++17, multithreading, libpcap, TCP/UDP, TLS/SNI, HNSW, KD-Tree, RSA-2048, AES-256-GCM, zero-trust, idempotency, and MITM protection. Backend and cloud: Flask, FastAPI, REST APIs, PostgreSQL, Supabase, SQLite, SQLAlchemy, Docker, Nginx, AWS, GitHub Actions, Git, Vercel, and Streamlit.
 
+## Projects Summary
+
+Shashank has built 18 distinct projects spanning AI, ML, systems, and backend engineering:
+- Code Sentinel (Evidence-based integrity triage system for coding assessments)
+- Customer Churn Prediction (Interactive telecom churn predictor with an ANN classifier)
+- DPI Engine (Deep packet inspection in C++)
+- Your Own AI Vector Database (Local RAG pipeline & HNSW/KD-Tree)
+- UPI Mesh (Offline-first FastAPI transaction backend)
+- Learning Analytics Engine (Custom assessments from PDFs using RAG)
+- Restaurant Agent (Stateful AI ordering system)
+- YouTube Scrapper (Multi-playlist RAG system)
+- Agentic JobHunt (Automated job discovery)
+- Hire Me AI (Resume parsing and recruiter chatbot)
+- Agentic Fraud Sentinel (Financial fraud detection)
+- Conversational RAG Chatbot (Multi-turn PDF chat)
+- AI Resume Screener (Automated resume scoring)
+- Home Price Suite (End-to-end ML REST API)
+- SolarWind Forecaster (Renewable energy prediction)
+- Sports Person Classifier (Computer vision classification)
+- Posture Checker (MediaPipe real-time pose estimation)
+- House Price Predictor (Random Forest regression for property prices)
 ## DPI Engine
 
 DPI Engine is a C++17 deep packet inspection engine that analyzes PCAP captures, reconstructs TCP and UDP flows, classifies traffic using TLS SNI and HTTP Host inspection, and supports configurable blocking rules. GitHub: https://github.com/Shashank17singh/DPI-Engine.
@@ -75,6 +96,14 @@ Posture Checker is an AI physiotherapy application that uses MediaPipe pose esti
 ## House Price Predictor
 
 House Price Predictor is a NIELIT capstone that predicts Mumbai property prices with a Random Forest Regressor trained on 76,000+ records. GitHub: https://github.com/Shashank17singh/NIELIT-Project. Live demo: https://nielit-project.streamlit.app/.
+
+## Code Sentinel
+
+Code Sentinel is an evidence-based integrity triage system for coding assessments, powered by MOSS-style fingerprinting, a Groq LLM investigator, and Streamlit. It gathers independent pieces of evidence for every submission. GitHub: https://github.com/Shashank17singh/Code-Sentinel. Live demo: https://code-sentinel.streamlit.app/.
+
+## Customer Churn Prediction
+
+Customer Churn Prediction is an interactive telecom churn predictor with an ANN classifier, providing per-customer explanations, batch scoring, and model diagnostics via a Streamlit app. GitHub: https://github.com/shashank17singh/Customer-Churn-Prediction. Live demo: https://customer-telecom-churn.streamlit.app.
 
 ## Contact
 
