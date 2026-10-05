@@ -30,7 +30,11 @@ def load_documents():
         sections.append((heading, " ".join(body).strip()))
 
     return [
-        {"id": f"fact-{index}", "category": heading.lower(), "text": f"{heading}: {text}"}
+        {
+            "id": f"fact-{index}",
+            "category": heading.lower(),
+            "text": f"{heading}: {text}",
+        }
         for index, (heading, text) in enumerate(sections)
         if text
     ]
@@ -48,7 +52,9 @@ def main():
     collection = client.create_collection(COLLECTION_NAME)
     collection.add(
         ids=[document["id"] for document in documents],
-        embeddings=model.encode([document["text"] for document in documents], show_progress_bar=True).tolist(),
+        embeddings=model.encode(
+            [document["text"] for document in documents], show_progress_bar=True
+        ).tolist(),
         documents=[document["text"] for document in documents],
         metadatas=[{"category": document["category"]} for document in documents],
     )

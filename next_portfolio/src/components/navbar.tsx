@@ -6,22 +6,34 @@ export function Navbar() {
       </div>
       <ul className="flex gap-4 list-none m-0 p-0 items-center">
         <li>
-          <a href="#about" className="text-slate-400 text-sm font-medium py-2 px-4 rounded-full transition-colors hover:text-slate-50 hover:bg-slate-800">
+          <a
+            href="#about"
+            className="text-slate-400 text-sm font-medium py-2 px-4 rounded-full transition-colors hover:text-slate-50 hover:bg-slate-800"
+          >
             About
           </a>
         </li>
         <li>
-          <a href="#skills" className="text-slate-400 text-sm font-medium py-2 px-4 rounded-full transition-colors hover:text-slate-50 hover:bg-slate-800">
+          <a
+            href="#skills"
+            className="text-slate-400 text-sm font-medium py-2 px-4 rounded-full transition-colors hover:text-slate-50 hover:bg-slate-800"
+          >
             Skills
           </a>
         </li>
         <li>
-          <a href="#projects" className="text-slate-400 text-sm font-medium py-2 px-4 rounded-full transition-colors hover:text-slate-50 hover:bg-slate-800">
+          <a
+            href="#projects"
+            className="text-slate-400 text-sm font-medium py-2 px-4 rounded-full transition-colors hover:text-slate-50 hover:bg-slate-800"
+          >
             Projects
           </a>
         </li>
         <li>
-          <a href="#experience" className="text-slate-400 text-sm font-medium py-2 px-4 rounded-full transition-colors hover:text-slate-50 hover:bg-slate-800">
+          <a
+            href="#experience"
+            className="text-slate-400 text-sm font-medium py-2 px-4 rounded-full transition-colors hover:text-slate-50 hover:bg-slate-800"
+          >
             Experience
           </a>
         </li>

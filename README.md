@@ -58,29 +58,29 @@ graph TD
 
 ## Features
 
-| Feature | Description |
-| --- | --- |
-| **Responsive Design** | Fluid layout that scales across mobile, tablet, and desktop |
-| **Project Showcase** | Grid of featured projects with tech stack pills and live links |
-| **Dynamic Interactions** | Scroll-reveal animations and interactive hover states |
-| **Dark-Themed UI** | Dark-mode aesthetic with consistent theming |
-| **AI Assistant** | RAG chatbot that answers questions based on my resume and experience |
-| **Automated Deploys** | Every push to `main` builds and publishes the site via GitHub Actions |
+| Feature                  | Description                                                           |
+| ------------------------ | --------------------------------------------------------------------- |
+| **Responsive Design**    | Fluid layout that scales across mobile, tablet, and desktop           |
+| **Project Showcase**     | Grid of featured projects with tech stack pills and live links        |
+| **Dynamic Interactions** | Scroll-reveal animations and interactive hover states                 |
+| **Dark-Themed UI**       | Dark-mode aesthetic with consistent theming                           |
+| **AI Assistant**         | RAG chatbot that answers questions based on my resume and experience  |
+| **Automated Deploys**    | Every push to `main` builds and publishes the site via GitHub Actions |
 
 ---
 
 ## Tech Stack
 
-| Component | Technology |
-| --- | --- |
-| **Frontend** | Next.js, React (static export) |
-| **Hosting** | GitHub Pages |
-| **CI/CD** | GitHub Actions |
-| **API Framework** | Flask |
-| **LLM Inference** | Groq (`openai/gpt-oss-20b`) |
-| **Embeddings** | HuggingFace (`all-MiniLM-L6-v2`) |
-| **Vector Store** | ChromaDB |
-| **Backend Hosting** | Render |
+| Component           | Technology                       |
+| ------------------- | -------------------------------- |
+| **Frontend**        | Next.js, React (static export)   |
+| **Hosting**         | GitHub Pages                     |
+| **CI/CD**           | GitHub Actions                   |
+| **API Framework**   | Flask                            |
+| **LLM Inference**   | Groq (`openai/gpt-oss-20b`)      |
+| **Embeddings**      | HuggingFace (`all-MiniLM-L6-v2`) |
+| **Vector Store**    | ChromaDB                         |
+| **Backend Hosting** | Render                           |
 
 ---
 

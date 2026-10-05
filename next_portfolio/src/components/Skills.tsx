@@ -3,14 +3,103 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { category: "Cryptography & Security", items: ["RSA-2048", "AES-256-GCM", "Zero-Trust", "Idempotency", "MITM Protection"] },
-  { category: "Programming Languages", items: ["Python", "C++", "SQL", "HTML", "CSS", "JavaScript"] },
-  { category: "AI & Machine Learning", items: ["Scikit-learn", "XGBoost", "Random Forest", "ANN", "Optuna", "SHAP", "SMOTE", "PyTorch", "RAG", "LangChain", "LangGraph", "Hugging Face", "ChromaDB", "Ollama", "Groq LLM", "Faster-Whisper", "OpenCV", "MediaPipe", "Pydantic"] },
-  { category: "Systems Engineering", items: ["C++17", "Multithreading", "libpcap", "TCP/UDP", "TLS/SNI", "Qdrant", "HNSW", "KD-Tree", "MOSS"] },
-  { category: "Backend Development", items: ["Flask", "FastAPI", "REST APIs", "ATS APIs", "cpp-httplib", "yt-dlp", "PostgreSQL", "Supabase", "SQLite", "SQLAlchemy"] },
-  { category: "Frontend Development", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"] },
-  { category: "Cloud & DevOps", items: ["Docker", "Nginx", "AWS", "GitHub Actions", "CI/CD", "Git", "Pytest", "Mypy", "Vercel", "Streamlit"] },
-  { category: "Data Science & Analytics", items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebook"] }
+  {
+    category: "Cryptography & Security",
+    items: [
+      "RSA-2048",
+      "AES-256-GCM",
+      "Zero-Trust",
+      "Idempotency",
+      "MITM Protection",
+    ],
+  },
+  {
+    category: "Programming Languages",
+    items: ["Python", "C++", "SQL", "HTML", "CSS", "JavaScript"],
+  },
+  {
+    category: "AI & Machine Learning",
+    items: [
+      "Scikit-learn",
+      "XGBoost",
+      "Random Forest",
+      "ANN",
+      "Optuna",
+      "SHAP",
+      "SMOTE",
+      "PyTorch",
+      "RAG",
+      "LangChain",
+      "LangGraph",
+      "Hugging Face",
+      "ChromaDB",
+      "Ollama",
+      "Groq LLM",
+      "Faster-Whisper",
+      "OpenCV",
+      "MediaPipe",
+      "Pydantic",
+    ],
+  },
+  {
+    category: "Systems Engineering",
+    items: [
+      "C++17",
+      "Multithreading",
+      "libpcap",
+      "TCP/UDP",
+      "TLS/SNI",
+      "Qdrant",
+      "HNSW",
+      "KD-Tree",
+      "MOSS",
+    ],
+  },
+  {
+    category: "Backend Development",
+    items: [
+      "Flask",
+      "FastAPI",
+      "REST APIs",
+      "ATS APIs",
+      "cpp-httplib",
+      "yt-dlp",
+      "PostgreSQL",
+      "Supabase",
+      "SQLite",
+      "SQLAlchemy",
+    ],
+  },
+  {
+    category: "Frontend Development",
+    items: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+    ],
+  },
+  {
+    category: "Cloud & DevOps",
+    items: [
+      "Docker",
+      "Nginx",
+      "AWS",
+      "GitHub Actions",
+      "CI/CD",
+      "Git",
+      "Pytest",
+      "Mypy",
+      "Vercel",
+      "Streamlit",
+    ],
+  },
+  {
+    category: "Data Science & Analytics",
+    items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebook"],
+  },
 ];
 
 export function Skills() {
@@ -23,7 +112,10 @@ export function Skills() {
         className="flex items-center gap-4 mb-16"
       >
         <div className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.8)]"></div>
-        <h2 className="text-4xl font-bold tracking-tight">Technical <span className="text-purple-400 font-mono italic">Arsenal</span></h2>
+        <h2 className="text-4xl font-bold tracking-tight">
+          Technical{" "}
+          <span className="text-purple-400 font-mono italic">Arsenal</span>
+        </h2>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -43,8 +135,8 @@ export function Skills() {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((item) => (
-                  <span 
-                    key={item} 
+                  <span
+                    key={item}
                     className="bg-slate-800 text-slate-300 border border-slate-700 px-3 py-1.5 rounded-full text-sm hover:bg-purple-500/20 hover:text-purple-300 hover:border-purple-500/30 transition-colors"
                   >
                     {item}
