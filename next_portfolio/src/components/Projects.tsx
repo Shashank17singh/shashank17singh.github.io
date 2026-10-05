@@ -46,7 +46,7 @@ const projects: Project[] = [  {
   {
     title: "Code Sentinel",
     description: "An evidence-based integrity triage system for coding assessments, powered by MOSS-style fingerprinting, a Groq LLM investigator, and Streamlit.",
-    tech: ["Python", "Streamlit", "Groq LLM", "MOSS"],
+    tech: ["Python", "Streamlit", "Groq LLM", "MOSS", "Pytest", "Mypy"],
     github: "https://github.com/Shashank17singh/Code-Sentinel",
     demo: "https://code-sentinel.streamlit.app/",
     demoLabel: "Live demo",
@@ -65,7 +65,7 @@ const projects: Project[] = [  {
   {
     title: "Customer Churn Prediction",
     description: "An interactive telecom churn predictor: an ANN classifier with per-customer explanations, batch scoring, and model diagnostics, served through Streamlit.",
-    tech: ["Python", "scikit-learn", "ANN", "Streamlit"],
+    tech: ["Python", "scikit-learn", "ANN", "Streamlit", "Pytest", "CI/CD"],
     github: "https://github.com/Shashank17singh/Customer-Churn-Prediction",
     demo: "https://customer-telecom-churn.streamlit.app/",
     demoLabel: "Live demo",
