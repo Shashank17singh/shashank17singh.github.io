@@ -9,10 +9,10 @@ const experiences = [
     duration: "Jun 2025 – Jul 2025",
     points: [
       "Mastered data science fundamentals through a comprehensive government-certified program covering Python, Pandas, NumPy, Matplotlib, SQLite, and Machine Learning algorithms.",
-      "Independently conceived and engineered an end-to-end House Price Predictor, training a Random Forest Regressor on a large-scale dataset of 76,000+ real-world property records.",
-      "Designed and deployed an interactive, user-facing web application using Streamlit to serve the machine learning model with dynamic inputs and visualizations."
+      "Independently conceived and engineered an end-to-end House Price Predictor with dual machine learning models (Random Forest and Linear Regression) trained on 76,000+ property records.",
+      "Designed an interactive Streamlit web application and a Tkinter desktop GUI to serve predictions, with SQLite integrated to persistently log user queries."
     ],
-    tech: ["Python", "NumPy", "Pandas", "Scikit-learn", "Streamlit"]
+    tech: ["Python", "Scikit-learn", "Streamlit", "Tkinter", "SQLite"]
   }
 ];
 
@@ -39,7 +39,7 @@ export function Experience() {
             transition={{ delay: idx * 0.2 }}
             className="relative pl-8 md:pl-12"
           >
-            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></div>
+            <div className="absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></div>
             
             <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2 gap-2">
               <h3 className="text-2xl font-bold text-white">{exp.role}</h3>

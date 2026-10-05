@@ -173,8 +173,8 @@ const projects: Project[] = [  {
   },
   {
     title: "House Price Predictor",
-    description: "NIELIT capstone machine-learning pipeline that predicts Mumbai property prices using a Random Forest Regressor trained on 76,000+ records.",
-    tech: ["Python", "Streamlit", "Random Forest", "Pandas"],
+    description: "NIELIT capstone machine-learning pipeline that predicts property prices, featuring a dual Random Forest/Linear Regression model comparison, Streamlit web app, Tkinter desktop GUI, and SQLite data persistence.",
+    tech: ["Streamlit", "Tkinter", "Scikit-Learn", "SQLite"],
     github: "https://github.com/Shashank17singh/NIELIT-Project",
     demo: "https://nielit-project.streamlit.app/",
     color: "from-blue-500/20 to-indigo-500/20",
