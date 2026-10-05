@@ -71,7 +71,7 @@ export default function Home() {
               Shashank Singh
             </h3>
             <p className="text-sm text-slate-400 mb-6">
-              Final-Year Computer Science Candidate
+              B.Tech CSE (Artificial Intelligence)
             </p>
 
             <div className="grid grid-cols-3 gap-3 mb-6">
