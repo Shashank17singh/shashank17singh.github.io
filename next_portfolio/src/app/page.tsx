@@ -69,10 +69,7 @@ export default function Home() {
             </div>
             
             <div className="flex flex-wrap gap-2">
-              <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">Python</span>
-              <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">C++</span>
-              <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">FastAPI</span>
-              <span className="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full text-xs font-medium">RAG</span>
+              {['Python', 'C++17', 'FastAPI', 'RAG', 'Docker', 'AWS'].map((skill) => <span key={skill} className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">{skill}</span>)}
             </div>
           </div>
         </div>
