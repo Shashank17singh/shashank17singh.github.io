@@ -34,7 +34,7 @@ export default function Home() {
           </div>
 
           <p className="text-slate-400 text-lg leading-relaxed max-w-md mb-10 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300 fill-mode-both">
-            Final-year Computer Science candidate specializing in{" "}
+            Final-year Computer Science student specializing in{" "}
             <strong className="text-slate-100">high-performance systems, applied AI, and scalable backend infrastructure</strong>.
           </p>
 

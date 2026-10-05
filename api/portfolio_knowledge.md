@@ -2,7 +2,7 @@
 
 ## Profile
 
-Shashank Singh is a final-year B.Tech Computer Science (Artificial Intelligence) candidate at the University of Lucknow. He focuses on high-performance systems engineering, applied cryptography, systems programming, backend infrastructure, vector databases, and deploying machine-learning models as web APIs with FastAPI, Docker, and AWS. He is actively pursuing software engineering and data science opportunities.
+Shashank Singh is a final-year B.Tech Computer Science (Artificial Intelligence) student at the University of Lucknow. He focuses on high-performance systems engineering, applied cryptography, systems programming, backend infrastructure, vector databases, and deploying machine-learning models as web APIs with FastAPI, Docker, and AWS. He is actively pursuing software engineering and data science opportunities.
 
 ## Education and Training
 
