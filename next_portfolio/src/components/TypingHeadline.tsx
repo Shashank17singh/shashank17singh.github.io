@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const phrases = [
-  "Building fast systems.",
-  "Applying machine learning.",
-  "Writing concurrent code.",
-  "Scaling infrastructure.",
+  "Building fast systems",
+  "Applying machine learning",
+  "Writing concurrent code",
+  "Scaling infrastructure",
 ];
 
 export function TypingHeadline() {
