@@ -48,17 +48,6 @@ const projects: Project[] = [
     hoverColor: "group-hover:border-orange-500/50",
   },
   {
-    title: "Code Sentinel",
-    description:
-      "An evidence-based integrity triage system for coding assessments, powered by MOSS-style fingerprinting, a Groq LLM investigator, and Streamlit.",
-    tech: ["Python", "Streamlit", "Groq LLM", "MOSS", "Pytest", "Mypy"],
-    github: "https://github.com/Shashank17singh/Code-Sentinel",
-    demo: "https://code-sentinel.streamlit.app/",
-    demoLabel: "Live demo",
-    color: "from-blue-500/20 to-purple-500/20",
-    hoverColor: "group-hover:border-purple-500/50",
-  },
-  {
     title: "Restaurant Agent",
     description:
       "Stateful AI restaurant ordering system with LangGraph, Gemini, FastAPI, Pydantic tool calling, multi-turn memory, and a responsive Streamlit frontend.",
@@ -67,37 +56,6 @@ const projects: Project[] = [
     demo: "https://restaurants-agents.streamlit.app/",
     color: "from-amber-500/20 to-orange-500/20",
     hoverColor: "group-hover:border-amber-500/50",
-  },
-  {
-    title: "Customer Churn Prediction",
-    description:
-      "An interactive telecom churn predictor: an ANN classifier with per-customer explanations, batch scoring, and model diagnostics, served through Streamlit.",
-    tech: ["Python", "scikit-learn", "ANN", "Streamlit", "Pytest", "CI/CD"],
-    github: "https://github.com/Shashank17singh/Customer-Churn-Prediction",
-    demo: "https://customer-telecom-churn.streamlit.app/",
-    demoLabel: "Live demo",
-    color: "from-fuchsia-500/20 to-rose-500/20",
-    hoverColor: "group-hover:border-rose-500/50",
-  },
-  {
-    title: "Learning Analytics Engine",
-    description:
-      "Learning platform that generates assessments from uploaded PDFs using RAG and multi-provider LLMs, with predictive modeling for student metrics and Supabase-backed telemetry.",
-    tech: ["RAG", "Gemini", "LangChain", "Scikit-learn", "Supabase"],
-    github: "https://github.com/Shashank17singh/Learning-Analytics-Engine",
-    demo: "https://learning-analytics-engine.streamlit.app/",
-    color: "from-emerald-500/20 to-teal-500/20",
-    hoverColor: "group-hover:border-emerald-500/50",
-  },
-  {
-    title: "Agentic Fraud Sentinel",
-    description:
-      "Financial fraud detection system using an Optuna-tuned XGBoost model, temporal feature engineering, SMOTE balancing, and SHAP-based model explainability.",
-    tech: ["Python", "XGBoost", "Optuna", "SMOTE", "SHAP"],
-    github: "https://github.com/Shashank17singh/Agentic-Fraud-Sentinel",
-    demo: "https://agentic-fraud-sentinel.streamlit.app/",
-    color: "from-rose-500/20 to-red-500/20",
-    hoverColor: "group-hover:border-rose-500/50",
   },
   {
     title: "YouTube Scrapper - Multi-Playlist RAG",
@@ -110,94 +68,15 @@ const projects: Project[] = [
     hoverColor: "group-hover:border-violet-500/50",
   },
   {
-    title: "Agentic JobHunt",
+    title: "Code Sentinel",
     description:
-      "Automated job-search pipeline that uses public ATS APIs, deterministic filtering, and two-stage LLM screening to match resumes with roles and draft tailored application kits.",
-    tech: ["Python", "LLMs", "ATS APIs", "Automation"],
-    github: "https://github.com/Shashank17singh/JobHunt",
-    demo: null,
-    color: "from-sky-500/20 to-blue-500/20",
-    hoverColor: "group-hover:border-sky-500/50",
-  },
-  {
-    title: "Hire Me AI - Resume Parser & Chatbot",
-    description:
-      "FastAPI application that parses PDF resumes into Pydantic schemas and provides a Gemini-powered, fact-grounded recruiter chatbot.",
-    tech: ["FastAPI", "Gemini", "Pydantic", "PDF"],
-    github: "https://github.com/Shashank17singh/Hire-Me-AI",
-    demo: "https://hiremeai-dn64.onrender.com/",
-    color: "from-fuchsia-500/20 to-pink-500/20",
-    hoverColor: "group-hover:border-fuchsia-500/50",
-  },
-  {
-    title: "Conversational RAG Chatbot",
-    description:
-      "Production-ready RAG web application for multi-turn, context-aware conversations over uploaded PDF documents with LangChain, Gemini, and ChromaDB.",
-    tech: ["Streamlit", "LangChain", "Gemini", "ChromaDB"],
-    github: "https://github.com/Shashank17singh/Conversational-RAG-Chatbot",
-    demo: "https://conversational-rag-chatbot-pdf.streamlit.app/",
-    color: "from-cyan-500/20 to-blue-500/20",
-    hoverColor: "group-hover:border-cyan-500/50",
-  },
-  {
-    title: "AI Resume Screener",
-    description:
-      "Streamlit application for automated resume scoring with Pydantic schemas, batch processing, caching, retry handling, and Gemini-based skill-gap analysis.",
-    tech: ["Streamlit", "Gemini", "Pydantic", "Python"],
-    github: "https://github.com/Shashank17singh/AI-Resume-Screener",
-    demo: "https://screen-resumes-ai.streamlit.app/",
-    color: "from-indigo-500/20 to-blue-500/20",
-    hoverColor: "group-hover:border-indigo-500/50",
-  },
-  {
-    title: "Home Price Suite",
-    description:
-      "End-to-end machine learning application with a Flask REST API, Nginx reverse proxy, responsive frontend, and a feature-engineered linear regression model.",
-    tech: ["Flask", "Nginx", "Scikit-learn", "Docker"],
-    github: "https://github.com/Shashank17singh/Home-Prices-Suite",
-    demo: "https://home-prices-api.duckdns.org/",
-    color: "from-lime-500/20 to-emerald-500/20",
-    hoverColor: "group-hover:border-lime-500/50",
-  },
-  {
-    title: "SolarWind Forecaster",
-    description:
-      "Time-series forecasting project for renewable energy generation using rolling-window features, lag variables, and strict temporal train/test splitting.",
-    tech: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
-    github: "https://github.com/Shashank17singh/SolarWind-Forecaster",
-    demo: "https://solarwind-forecaster.streamlit.app/",
-    color: "from-yellow-500/20 to-orange-500/20",
-    hoverColor: "group-hover:border-yellow-500/50",
-  },
-  {
-    title: "Sports Person Classifier",
-    description:
-      "Computer-vision classification system using OpenCV Haar Cascades and wavelet transforms, with optimized SVM, Random Forest, and Logistic Regression models.",
-    tech: ["OpenCV", "Scikit-learn", "Flask", "Computer Vision"],
-    github: "https://github.com/Shashank17singh/Sports-Person-Classifier",
-    demo: "https://sports-person-classifier-xi.vercel.app/",
-    color: "from-teal-500/20 to-cyan-500/20",
-    hoverColor: "group-hover:border-teal-500/50",
-  },
-  {
-    title: "Posture Checker - AI Physiotherapy",
-    description:
-      "AI-driven physiotherapy application that uses MediaPipe pose estimation to provide real-time exercise-form feedback, joint-angle analysis, repetition counting, and corrections.",
-    tech: ["Python", "MediaPipe", "OpenCV", "Streamlit"],
-    github: "https://github.com/Shashank17singh/SIC-Project",
-    demo: "https://sic-project.streamlit.app/",
-    color: "from-orange-500/20 to-red-500/20",
-    hoverColor: "group-hover:border-orange-500/50",
-  },
-  {
-    title: "House Price Predictor",
-    description:
-      "NIELIT capstone machine-learning pipeline that predicts property prices, featuring a dual Random Forest/Linear Regression model comparison, Streamlit web app, Tkinter desktop GUI, and SQLite data persistence.",
-    tech: ["Streamlit", "Tkinter", "Scikit-Learn", "SQLite"],
-    github: "https://github.com/Shashank17singh/NIELIT-Project",
-    demo: "https://nielit-project.streamlit.app/",
-    color: "from-blue-500/20 to-indigo-500/20",
-    hoverColor: "group-hover:border-blue-500/50",
+      "An evidence-based integrity triage system for coding assessments, powered by MOSS-style fingerprinting, a Groq LLM investigator, and Streamlit.",
+    tech: ["Python", "Streamlit", "Groq LLM", "MOSS", "Pytest", "Mypy"],
+    github: "https://github.com/Shashank17singh/Code-Sentinel",
+    demo: "https://code-sentinel.streamlit.app/",
+    demoLabel: "Live demo",
+    color: "from-blue-500/20 to-purple-500/20",
+    hoverColor: "group-hover:border-purple-500/50",
   },
 ];
 
