@@ -77,10 +77,10 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-3 mb-6">
               <div className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-3 text-center">
                 <div className="text-2xl font-bold text-slate-100 mb-1 text-shadow-sm shadow-blue-500/20">
-                  15<span className="text-blue-400 text-sm">+</span>
+                  6<span className="text-blue-400 text-sm">+</span>
                 </div>
                 <div className="text-[10px] uppercase tracking-wider text-slate-500">
-                  Projects
+                  Top Projects
                 </div>
               </div>
               <div className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-3 text-center">
@@ -98,7 +98,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {["Python", "C++17", "FastAPI", "RAG", "Docker", "AWS"].map(
+              {["C++17", "Python", "FastAPI", "LangGraph", "Docker", "AWS"].map(
                 (skill) => (
                   <span
                     key={skill}
