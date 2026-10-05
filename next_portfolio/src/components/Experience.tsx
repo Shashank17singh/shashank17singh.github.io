@@ -7,7 +7,11 @@ const experiences = [
     role: "Python & Data Science Trainee",
     company: "NIELIT, Gorakhpur (Government of India) · Remote",
     duration: "Jun 2025 – Jul 2025",
-    description: "Completed a 60-hour structured training in Python, NumPy, Pandas, Matplotlib, and introductory machine learning. Built a House Price Predictor capstone using Random Forest and Streamlit on 76,000+ real-world property records.",
+    points: [
+      "Completed a rigorous 60-hour government-certified training program focusing on advanced Python, data manipulation (NumPy, Pandas), and foundational machine learning.",
+      "Engineered an end-to-end House Price Predictor capstone by training a Random Forest Regressor on a large-scale dataset of 76,000+ real-world property records.",
+      "Designed and deployed an interactive, user-facing web application using Streamlit to serve the machine learning model with dynamic inputs and visualizations."
+    ],
     tech: ["Python", "NumPy", "Pandas", "Scikit-learn", "Streamlit"]
   }
 ];
@@ -43,7 +47,11 @@ export function Experience() {
             </div>
             
             <p className="text-slate-400 font-medium mb-4">{exp.company}</p>
-            <p className="text-slate-300 leading-relaxed mb-6">{exp.description}</p>
+            <ul className="list-disc list-outside ml-5 text-slate-300 leading-relaxed mb-6 space-y-2 marker:text-emerald-500">
+              {exp.points.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
             
             <div className="flex flex-wrap gap-2">
               {exp.tech.map(t => (
