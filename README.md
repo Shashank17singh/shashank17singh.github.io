@@ -1,4 +1,6 @@
-# Shashank Singh - Personal Portfolio
+<div align="center">
+
+<h1 align="center">Shashank Singh - Personal Portfolio</h1>
 
 **A fast, responsive developer portfolio built with Next.js, featuring a RAG-powered AI chatbot that answers questions about my experience and projects.**
 
@@ -12,6 +14,8 @@
 [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions)
 
 **Live site:** [shashank17singh.github.io](https://shashank17singh.github.io/)
+
+</div>
 
 ---
 
