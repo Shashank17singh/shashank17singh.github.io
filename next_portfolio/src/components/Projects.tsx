@@ -16,6 +16,26 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Code Sentinel",
+    description: "An evidence-based integrity triage system for coding assessments, powered by MOSS-style fingerprinting, a Groq LLM investigator, and Streamlit.",
+    tech: ["Python", "Streamlit", "Groq LLM", "MOSS"],
+    github: "https://github.com/Shashank17singh/Code-Sentinel",
+    demo: "https://code-sentinel.streamlit.app/",
+    demoLabel: "Live demo",
+    color: "from-blue-500/20 to-purple-500/20",
+    hoverColor: "group-hover:border-purple-500/50"
+  },
+  {
+    title: "Customer Churn Prediction",
+    description: "Interactive telecom churn predictor using an ANN classifier. Features per-customer explanations, batch scoring, and model diagnostics.",
+    tech: ["Python", "scikit-learn", "ANN", "Streamlit"],
+    github: "https://github.com/Shashank17singh/Customer-Churn-Prediction",
+    demo: "https://customer-telecom-churn.streamlit.app/",
+    demoLabel: "Live demo",
+    color: "from-fuchsia-500/20 to-rose-500/20",
+    hoverColor: "group-hover:border-rose-500/50"
+  },
+  {
     title: "DPI Engine - Deep Packet Inspection",
     description: "C++17 deep packet inspection engine that analyzes PCAP captures, reconstructs TCP/UDP flows, classifies traffic through TLS SNI and HTTP Host inspection, and supports configurable blocking rules.",
     tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
