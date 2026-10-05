@@ -9,7 +9,7 @@ const experiences = [
     duration: "Jun 2025 – Jul 2025",
     points: [
       "Mastered data science fundamentals through a comprehensive government-certified program covering Python, Pandas, NumPy, Matplotlib, SQLite, and Machine Learning algorithms.",
-      "Engineered an end-to-end House Price Predictor with dual machine learning models (Random Forest and Linear Regression) trained on 76,000+ property records.",
+      "Built an end-to-end House Price Predictor with dual machine learning models (Random Forest and Linear Regression) trained on 76,000+ property records.",
       "Designed an interactive Streamlit web application and a Tkinter desktop GUI to serve predictions, with SQLite integrated to persistently log user queries.",
     ],
     tech: ["Python", "Scikit-learn", "Streamlit", "Tkinter", "SQLite"],
