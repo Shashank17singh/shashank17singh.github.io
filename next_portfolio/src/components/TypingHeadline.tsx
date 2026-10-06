@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 
 const phrases = [
-  "Building low-level systems",
-  "Crafting RAG pipelines",
-  "Designing vector search engines",
-  "Shipping AI agents",
-  "Exploring cryptographic protocols",
+  "Building Low-Level Systems",
+  "Crafting RAG Pipelines",
+  "Designing Vector Search Engines",
+  "Shipping AI Agents",
+  "Exploring Cryptographic Protocols",
 ];
 
 export function TypingHeadline() {
