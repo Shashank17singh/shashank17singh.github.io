@@ -18,7 +18,7 @@ export default function Home() {
           <div className="flex items-center gap-2 bg-blue-500/15 border border-blue-500/25 rounded-full px-4 py-1.5 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.8)]"></span>
             <span className="text-blue-400 text-sm font-medium">
-              Open to software engineering and data science opportunities
+              Open to Software Engineering and Data Science Opportunities
             </span>
           </div>
 
