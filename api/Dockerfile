@@ -10,4 +10,4 @@ COPY api/portfolio_knowledge.md .
 RUN python ingest.py
 RUN mkdir -p /app/cache && chmod -R 777 /app/cache /app/chroma_db
 EXPOSE 5000
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "1", "--threads", "2", "--timeout", "120", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "300", "app:app"]
