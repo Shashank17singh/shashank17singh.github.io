@@ -1,5 +1,7 @@
-"""Build the chatbot's Chroma collection from the maintained portfolio facts."""
-
+"""
+Knowledge ingestion script for the portfolio conversational agent.
+Parses markdown documentation and indexes it into ChromaDB using SentenceTransformers.
+"""
 from pathlib import Path
 
 import chromadb
@@ -12,7 +14,6 @@ KNOWLEDGE_PATH = Path(__file__).with_name("portfolio_knowledge.md")
 
 
 def load_documents():
-    """Split the Markdown knowledge base into heading-based retrieval chunks."""
     if not KNOWLEDGE_PATH.exists():
         raise FileNotFoundError(f"Portfolio knowledge file not found: {KNOWLEDGE_PATH}")
 

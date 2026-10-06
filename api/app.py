@@ -1,3 +1,12 @@
+"""
+Flask API serving the conversational AI backend for the portfolio.
+Retrieves context from ChromaDB and streams responses using Groq.
+
+Architecture note:
+This backend operates as a stateless proxy between the React frontend and Groq's LLM.
+It embeds incoming queries, retrieves relevant chunks from a local ChromaDB, 
+constructs the prompt, and streams the generation back via Server-Sent Events (SSE).
+"""
 import json
 import os
 
@@ -15,6 +24,7 @@ EMBED_MODEL = "all-MiniLM-L6-v2"
 GROQ_MODEL = "openai/gpt-oss-20b"
 TOP_K = 6
 MAX_HISTORY_TURNS = 6
+
 ALLOWED_ORIGINS = os.environ.get(
     "ALLOWED_ORIGINS", "https://shashank17singh.github.io"
 ).split(",") + [
@@ -24,6 +34,7 @@ ALLOWED_ORIGINS = os.environ.get(
     "http://127.0.0.1:5500",
     "null",
 ]
+
 SYSTEM_PROMPT = """You are the AI assistant for Shashank Singh's professional portfolio website.
 You converse with recruiters and visitors about Shashank - his skills, projects, experience, education,
 and how to reach him - using ONLY the context provided below.
@@ -41,23 +52,24 @@ Rules:
 - Never fabricate project details, metrics, or dates.
 - Do NOT use markdown formatting (no **, *, #, ` etc.). Output plain text only.
 """
+
 app = Flask(__name__)
 CORS(app, origins=ALLOWED_ORIGINS)
+
 try:
-    print("Loading embedding model...")
     embed_model = SentenceTransformer(EMBED_MODEL)
-    print("Connecting to Chroma...")
     chroma_client = chromadb.PersistentClient(path=DB_PATH)
     collection = chroma_client.get_collection(COLLECTION_NAME)
 except Exception as e:
-    print(f"WARNING: Failed to load AI models or database: {e}")
+    app.logger.error(f"WARNING: Failed to load AI models or database: {e}")
     embed_model = None
     collection = None
+
 groq_client = None
 groq_error = ""
+
 try:
     env_keys = list(os.environ.keys())
-    print(f"DEBUG: All environment variables available to Python: {env_keys}")
     if "GROQ_API_KEY" not in os.environ:
         groq_error = "GROQ_API_KEY is completely missing from os.environ!"
     elif not os.environ["GROQ_API_KEY"]:
@@ -73,7 +85,6 @@ except Exception as e:
 
 
 def retrieve_context(query: str, k: int = TOP_K) -> str:
-    """Retrieves relevant context from the vector database for a given query."""
     if embed_model is None or collection is None:
         return ""
     embedding = embed_model.encode([query]).tolist()
@@ -84,13 +95,11 @@ def retrieve_context(query: str, k: int = TOP_K) -> str:
 
 @app.route("/health")
 def health():
-    """Simple health check endpoint."""
     return jsonify(status="ok")
 
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    """Handles chat requests, retrieves context, and streams the AI response."""
     data = request.get_json(silent=True) or {}
     message = (data.get("message") or "").strip()
     history = data.get("history") or []

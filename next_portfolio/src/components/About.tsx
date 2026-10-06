@@ -93,7 +93,7 @@ export function About() {
                   rel="noopener noreferrer"
                   className="font-semibold text-white mb-1 hover:text-blue-300"
                 >
-                  Samsung Innovation Campus ↗
+                  Samsung Innovation Campus 
                 </a>
                 <p className="text-sm text-blue-400">
                   Artificial Intelligence Certificate
@@ -106,7 +106,7 @@ export function About() {
                   rel="noopener noreferrer"
                   className="font-semibold text-white mb-1 hover:text-blue-300"
                 >
-                  NIELIT, Gorakhpur ↗
+                  NIELIT, Gorakhpur 
                 </a>
                 <p className="text-sm text-indigo-400">
                   Industrial Training in Data Science & ML
@@ -119,7 +119,7 @@ export function About() {
                   rel="noopener noreferrer"
                   className="font-semibold text-white mb-1 hover:text-blue-300"
                 >
-                  AWS Academy ↗
+                  AWS Academy 
                 </a>
                 <p className="text-sm text-orange-400">
                   Fundamentals of ML &amp; AI
