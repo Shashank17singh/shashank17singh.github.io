@@ -17,7 +17,13 @@ export function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: "assistant",
+      content:
+        "Hi! I can answer questions about Shashank’s projects, skills, and experience.",
+    },
+  ]);
   const messagesRef = useRef<HTMLDivElement>(null);
 
   // NEW: Silently wake up the Render backend as soon as the portfolio loads
@@ -25,17 +31,7 @@ export function Chatbot() {
     fetch(HEALTH_URL).catch(() => console.log("Waking up AI backend..."));
   }, []);
 
-  useEffect(() => {
-    if (open && messages.length === 0) {
-      setMessages([
-        {
-          role: "assistant",
-          content:
-            "Hi! I can answer questions about Shashank’s projects, skills, and experience.",
-        },
-      ]);
-    }
-  }, [open, messages.length]);
+
 
   useEffect(() => {
     messagesRef.current?.scrollTo({
