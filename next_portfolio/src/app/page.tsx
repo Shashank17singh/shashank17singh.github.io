@@ -24,7 +24,7 @@ export default function Home() {
 
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100 fill-mode-both">
             Hi, I&apos;m <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-indigo-600">
+            <span className="bg-clip-text text-transparent bg-linear-to-br from-blue-400 to-indigo-600">
               Shashank
             </span>
           </h1>
@@ -41,7 +41,7 @@ export default function Home() {
           <div className="flex gap-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500 fill-mode-both">
             <a
               href="#projects"
-              className="bg-gradient-to-br from-slate-800 to-slate-900 text-white px-8 py-3 rounded-full font-bold shadow-[0_4px_24px_rgba(99,102,241,0.2)] hover:shadow-[0_10px_36px_rgba(99,102,241,0.4)] transition-all border border-slate-700"
+              className="bg-linear-to-br from-slate-800 to-slate-900 text-white px-8 py-3 rounded-full font-bold shadow-[0_4px_24px_rgba(99,102,241,0.2)] hover:shadow-[0_10px_36px_rgba(99,102,241,0.4)] transition-all border border-slate-700"
             >
               View Work
             </a>
@@ -61,9 +61,9 @@ export default function Home() {
         {/* Right Side */}
         <div className="flex-1 flex justify-end relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both w-full max-w-md">
           <div className="bg-slate-900/60 border border-slate-700/80 rounded-2xl p-8 shadow-2xl backdrop-blur-md w-full relative overflow-hidden group hover:border-indigo-500/50 transition-colors duration-500">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-indigo-600"></div>
 
-            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-3xl font-bold mb-6 shadow-lg shadow-indigo-500/20">
+            <div className="w-24 h-24 rounded-2xl bg-linear-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-3xl font-bold mb-6 shadow-lg shadow-indigo-500/20">
               SS
             </div>
 
@@ -122,13 +122,13 @@ export default function Home() {
       <footer className="border-t border-slate-800 bg-slate-950/50 backdrop-blur-lg mt-24">
         <div className="max-w-7xl mx-auto px-16 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-xs font-bold shadow-lg shadow-indigo-500/20">
+            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-xs font-bold shadow-lg shadow-indigo-500/20">
               SS
             </div>
             <span className="text-slate-300 font-medium">Shashank Singh</span>
           </div>
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Shashank Singh. All rights reserved.
+             {new Date().getFullYear()} Shashank Singh. All rights reserved.
           </p>
           <div className="flex gap-4">
             <a
@@ -154,3 +154,4 @@ export default function Home() {
     </div>
   );
 }
+
