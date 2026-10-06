@@ -35,7 +35,7 @@ export default function Home() {
 
           <p className="text-slate-400 text-lg leading-relaxed max-w-md mb-10 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300 fill-mode-both">
             Final-year Computer Science (AI) student specializing in{" "}
-            <strong className="text-slate-100">high-performance systems, applied AI, and scalable backend infrastructure</strong>.
+            <strong className="text-slate-100">High-Performance Systems, Applied AI, and Scalable Backend Infrastructure</strong>.
           </p>
 
           <div className="flex gap-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500 fill-mode-both">
