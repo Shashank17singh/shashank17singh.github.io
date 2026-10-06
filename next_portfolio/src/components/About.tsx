@@ -30,13 +30,13 @@ export function About() {
           >
             <GraduationCap className="w-8 h-8 text-blue-400 shrink-0 mt-1" />
             <p className="text-slate-300 text-lg leading-relaxed">
-              I am a final-year{" "}
+              I am a Final-Year{" "}
               <strong className="text-white">
                 Computer Science
               </strong>{" "}
-              student at the University of Lucknow, specializing in
-              high-performance systems engineering, distributed architectures, and
-              applied artificial intelligence.
+              Student at the University of Lucknow, specializing in
+              High-Performance Systems Engineering, Distributed Architectures, and
+              Applied Artificial Intelligence.
             </p>
           </motion.div>
 
@@ -49,8 +49,8 @@ export function About() {
           >
             <Server className="w-8 h-8 text-indigo-400 shrink-0 mt-1" />
             <p className="text-slate-300 text-lg leading-relaxed">
-              My technical expertise centers on backend infrastructure, distributed systems,
-              and deploying machine learning models to production. I build secure, performant APIs utilizing{" "}
+              My technical expertise centers on Backend Infrastructure, Distributed Systems,
+              and deploying Machine Learning models to production. I build secure, performant APIs utilizing{" "}
               <strong className="text-white">FastAPI, Docker, and AWS</strong>.
             </p>
           </motion.div>
