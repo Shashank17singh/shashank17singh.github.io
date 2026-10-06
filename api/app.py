@@ -11,6 +11,7 @@ import json
 import os
 
 import chromadb
+from chromadb.config import Settings
 from dotenv import load_dotenv
 from flask import Flask, Response, jsonify, request
 from flask_cors import CORS
@@ -58,7 +59,10 @@ CORS(app, origins=ALLOWED_ORIGINS)
 
 try:
     embed_model = SentenceTransformer(EMBED_MODEL)
-    chroma_client = chromadb.PersistentClient(path=DB_PATH)
+    chroma_client = chromadb.PersistentClient(
+        path=DB_PATH,
+        settings=Settings(anonymized_telemetry=False)
+    )
     collection = chroma_client.get_collection(COLLECTION_NAME)
 except Exception as e:
     app.logger.error(f"WARNING: Failed to load AI models or database: {e}")
