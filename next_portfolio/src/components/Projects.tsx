@@ -18,7 +18,7 @@ const projects: Project[] = [
   {
     title: "DPI Engine - Deep Packet Inspection",
     description:
-      "C++17 deep packet inspection engine that analyzes PCAP captures, reconstructs TCP/UDP flows, classifies traffic through TLS SNI and HTTP Host inspection, and supports configurable blocking rules.",
+      "High-performance C++17 inspection engine that dissects PCAP captures, reconstructs TCP/UDP flows, classifies traffic via TLS SNI and HTTP Host headers, and enforces configurable blocking rules.",
     tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
     github: "https://github.com/Shashank17singh/DPI-Engine",
     demo: "https://github.com/Shashank17singh/DPI-Engine/blob/main/dpi-engine.png",
@@ -29,7 +29,7 @@ const projects: Project[] = [
   {
     title: "Your Own AI - Vector Database",
     description:
-      "C++ vector database with HNSW, KD-Tree, and brute-force search, plus an Ollama-backed local RAG pipeline, REST API, automated benchmarks, and 2D PCA visualization.",
+      "Multi-algorithm vector database supporting HNSW, KD-Tree, and brute-force search, paired with Ollama-backed local RAG, REST API endpoints, automated benchmarks, and 2D PCA visualization.",
     tech: ["C++", "HNSW", "KD-Tree", "RAG", "Ollama"],
     github: "https://github.com/Shashank17singh/Your-Own-AI",
     demo: "https://github.com/Shashank17singh/Your-Own-AI/blob/main/Your-Own-AI.png",
@@ -40,7 +40,7 @@ const projects: Project[] = [
   {
     title: "UPI Mesh - Offline-First Payments",
     description:
-      "Offline-first FastAPI backend for UPI-style transactions, using hybrid RSA-2048/AES-256-GCM cryptography, a simulated Bluetooth mesh network, and ciphertext-hash idempotency.",
+      "Connectivity-resilient FastAPI backend powering UPI-style transactions with hybrid RSA-2048/AES-256-GCM cryptography, simulated Bluetooth mesh relay, and ciphertext-hash idempotency.",
     tech: ["Python", "FastAPI", "RSA-2048", "AES-256-GCM"],
     github: "https://github.com/Shashank17singh/UPI-Mesh",
     demo: "https://upi-mesh.duckdns.org/",
@@ -50,7 +50,7 @@ const projects: Project[] = [
   {
     title: "Restaurant Agent",
     description:
-      "Stateful AI restaurant ordering system with LangGraph, Gemini, FastAPI, Pydantic tool calling, multi-turn memory, and a responsive Streamlit frontend.",
+      "Conversational AI ordering system built on LangGraph and Gemini, featuring Pydantic tool calling, multi-turn memory persistence, and responsive Streamlit interface.",
     tech: ["LangGraph", "Gemini", "FastAPI", "Pydantic", "Streamlit"],
     github: "https://github.com/Shashank17singh/Restaurant-Agent",
     demo: "https://restaurants-agents.streamlit.app/",
@@ -60,7 +60,7 @@ const projects: Project[] = [
   {
     title: "YouTube Scrapper - Multi-Playlist RAG",
     description:
-      "RAG system that analyzes YouTube playlists and returns grounded answers with video timestamps using BAAI/bge-m3 embeddings, Qdrant, and asynchronous Faster-Whisper transcription.",
+      "Playlist-aware RAG pipeline that transcribes YouTube videos via Faster-Whisper, indexes content with BAAI/bge-m3 embeddings in Qdrant, and returns timestamp-grounded answers.",
     tech: ["RAG", "Qdrant", "Faster-Whisper", "Python"],
     github: "https://github.com/Shashank17singh/Youtube-Scrapper",
     demo: "https://youtubescrapper-mb60.onrender.com/",
@@ -70,7 +70,7 @@ const projects: Project[] = [
   {
     title: "Code Sentinel",
     description:
-      "An evidence-based integrity triage system for coding assessments, powered by MOSS-style fingerprinting, a Groq LLM investigator, and Streamlit.",
+      "Evidence-driven integrity triage system for coding assessments, combining MOSS-style fingerprinting with Groq LLM investigation and interactive Streamlit dashboards.",
     tech: ["Python", "Streamlit", "Groq LLM", "MOSS", "Pytest", "Mypy"],
     github: "https://github.com/Shashank17singh/Code-Sentinel",
     demo: "https://code-sentinel.streamlit.app/",
