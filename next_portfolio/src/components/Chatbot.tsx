@@ -6,6 +6,7 @@ import { MessageCircle, Send, X } from "lucide-react";
 type Message = { role: "user" | "assistant"; content: string };
 
 const API_URL = "https://portfolio-chatbot-api-cztu.onrender.com/chat";
+const HEALTH_URL = "https://portfolio-chatbot-api-cztu.onrender.com/health";
 const suggestions = [
   "What projects has Shashank built?",
   "What are Shashank's skills?",
@@ -18,6 +19,11 @@ export function Chatbot() {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const messagesRef = useRef<HTMLDivElement>(null);
+
+  // NEW: Silently wake up the Render backend as soon as the portfolio loads
+  useEffect(() => {
+    fetch(HEALTH_URL).catch(() => console.log("Waking up AI backend..."));
+  }, []);
 
   useEffect(() => {
     if (open && messages.length === 0) {
