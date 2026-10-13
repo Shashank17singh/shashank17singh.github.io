@@ -40,10 +40,10 @@ export function Navbar() {
           aria-label="Toggle navigation menu"
         >
           <span
-            className={`block w-5 h-0.5 bg-slate-300 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[3px]" : ""}`}
+            className={`block w-5 h-0.5 bg-slate-300 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-0.75" : ""}`}
           />
           <span
-            className={`block w-5 h-0.5 bg-slate-300 mt-1 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[3px]" : ""}`}
+            className={`block w-5 h-0.5 bg-slate-300 mt-1 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-0.75" : ""}`}
           />
         </button>
       </div>

@@ -107,7 +107,7 @@ export function Projects() {
             className={`group relative h-full`}
           >
             <div
-              className={`absolute inset-0 bg-gradient-to-br ${project.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`}
+              className={`absolute inset-0 bg-linear-to-br ${project.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`}
             ></div>
             <div
               className={`relative h-full bg-slate-900/80 border border-slate-700/50 backdrop-blur-sm rounded-2xl p-8 flex flex-col transition-all duration-500 ${project.hoverColor} group-hover:-translate-y-2`}
@@ -121,7 +121,7 @@ export function Projects() {
               <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-slate-400 leading-relaxed mb-8 flex-grow">
+              <p className="text-slate-400 leading-relaxed mb-8 grow">
                 {project.description}
               </p>
 

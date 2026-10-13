@@ -11,10 +11,10 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30">
       <section
         id="hero"
-        className="relative flex flex-col md:flex-row items-center justify-between min-h-screen pt-24 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto w-full gap-10"
+        className="relative flex flex-col md:flex-row items-center md:justify-between md:min-h-screen pt-24 pb-16 md:pb-0 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto w-full gap-10"
       >
         {/* Left Side */}
-        <div className="flex-1 flex flex-col items-start z-10">
+        <div className="md:flex-1 flex flex-col items-start z-10">
           <div className="flex items-center gap-2 bg-blue-500/15 border border-blue-500/25 rounded-full px-4 py-1.5 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.8)]"></span>
             <span className="text-blue-400 text-sm font-medium">
@@ -59,7 +59,7 @@ export default function Home() {
         </div>
 
         {/* Right Side */}
-        <div className="flex-1 flex justify-end relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both w-full max-w-md">
+        <div className="md:flex-1 flex justify-end relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both w-full max-w-md">
           <div className="bg-slate-900/60 border border-slate-700/80 rounded-2xl p-8 shadow-2xl backdrop-blur-md w-full relative overflow-hidden group hover:border-indigo-500/50 transition-colors duration-500">
             <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-blue-500 to-indigo-600"></div>
 
@@ -127,8 +127,8 @@ export default function Home() {
             </div>
             <span className="text-slate-300 font-medium">Shashank Singh</span>
           </div>
-          <p className="text-slate-500 text-sm">
-             {new Date().getFullYear()} Shashank Singh. All rights reserved.
+          <p className="text-slate-500 text-sm" suppressHydrationWarning>
+            © {new Date().getFullYear()} Shashank Singh. All rights reserved.
           </p>
           <div className="flex gap-4">
             <a

@@ -48,7 +48,7 @@ def main():
     client = chromadb.PersistentClient(path=DB_PATH)
     try:
         client.delete_collection(COLLECTION_NAME)
-    except Exception:
+    except Exception:  # noqa: BLE001, S110
         pass
     collection = client.create_collection(COLLECTION_NAME)
     collection.add(

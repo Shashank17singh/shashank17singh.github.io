@@ -94,7 +94,7 @@ export function Skills() {
             transition={{ delay: idx * 0.1 }}
             className="group relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+            <div className="absolute inset-0 bg-linear-to-b from-purple-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
             <div className="relative h-full bg-slate-900/50 border border-slate-700/50 hover:border-purple-500/50 backdrop-blur-sm rounded-2xl p-6 transition-colors duration-500">
               <h3 className="text-lg font-semibold text-white mb-6 font-mono border-b border-slate-700/50 pb-4">
                 {skillGroup.category}
