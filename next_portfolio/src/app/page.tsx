@@ -11,18 +11,18 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30">
       <section
         id="hero"
-        className="relative flex flex-col md:flex-row items-center justify-between min-h-screen pt-24 px-16 max-w-7xl mx-auto w-full gap-10"
+        className="relative flex flex-col md:flex-row items-center justify-between min-h-screen pt-24 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto w-full gap-10"
       >
         {/* Left Side */}
         <div className="flex-1 flex flex-col items-start z-10">
           <div className="flex items-center gap-2 bg-blue-500/15 border border-blue-500/25 rounded-full px-4 py-1.5 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.8)]"></span>
             <span className="text-blue-400 text-sm font-medium">
-              Open to Software Engineering and Data Science Opportunities
+              <span className="hidden sm:inline">Open to Software Engineering and Data Science Opportunities</span><span className="sm:hidden">Open to SWE & Data Science Roles</span>
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100 fill-mode-both">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100 fill-mode-both">
             Hi, I&apos;m <br />
             <span className="bg-clip-text text-transparent bg-linear-to-br from-blue-400 to-indigo-600">
               Shashank
@@ -120,7 +120,7 @@ export default function Home() {
       <Contact />
 
       <footer className="border-t border-slate-800 bg-slate-950/50 backdrop-blur-lg mt-24">
-        <div className="max-w-7xl mx-auto px-16 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-linear-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-xs font-bold shadow-lg shadow-indigo-500/20">
               SS
