@@ -64,7 +64,7 @@ try:
         settings=Settings(anonymized_telemetry=False)
     )
     collection = chroma_client.get_collection(COLLECTION_NAME)
-except Exception as e:
+except Exception as e:  # noqa: BLE001
     app.logger.error(f"WARNING: Failed to load AI models or database: {e}")
     embed_model = None
     collection = None
@@ -84,7 +84,7 @@ try:
             groq_client = Groq(api_key=api_key)
         else:
             groq_error = f"GROQ_API_KEY does not start with gsk_. It starts with: {api_key[:4]}..."
-except Exception as e:
+except Exception as e:  # noqa: BLE001
     groq_error = f"Exception while initializing Groq: {e}"
 
 
@@ -141,7 +141,7 @@ def chat():
                 if delta and delta.content:
                     yield f"data: {json.dumps({'token': delta.content})}\n\n"
             yield "data: [DONE]\n\n"
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             app.logger.error("Groq API error: %s", e)
             yield f"data: {json.dumps({'error': f'generation failed: {e}'})}\n\n"
 
@@ -153,4 +153,4 @@ def chat():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", "5000")))
