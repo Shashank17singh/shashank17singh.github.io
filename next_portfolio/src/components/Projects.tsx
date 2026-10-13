@@ -82,7 +82,7 @@ const projects: Project[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-32 px-16 max-w-7xl mx-auto w-full">
+    <section id="projects" className="py-32 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto w-full">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

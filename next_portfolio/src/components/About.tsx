@@ -5,7 +5,7 @@ import { GraduationCap, Brain, Server } from "lucide-react";
 
 export function About() {
   return (
-    <section id="about" className="py-32 px-16 max-w-7xl mx-auto w-full">
+    <section id="about" className="py-32 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto w-full">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

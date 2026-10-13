@@ -20,7 +20,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="py-32 px-16 max-w-4xl mx-auto w-full relative"
+      className="py-32 px-4 sm:px-6 md:px-16 max-w-4xl mx-auto w-full relative"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
