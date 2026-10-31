@@ -1,3 +1,6 @@
+/* Hallmark · checked: 2026-10-31 · genre: editorial (inferred)
+ * fixed: gradients flattened, caps labels and glows removed, transitions listed · structural: left for the owner, see the audit
+ * built: the project · redesign: polish · v2.0.0 */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -46,6 +49,14 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --page-bg: #020617;
+  --nav-bg: rgb(19 19 20 / 70%);
+  --shadow-accent: rgb(59 130 246 / 20%);
+  --shadow-panel: rgb(0 0 0 / 55%);
+  --shadow-button: rgb(59 130 246 / 40%);
 }
 
 :root {
@@ -125,10 +136,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   html {
     @apply font-sans;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 }

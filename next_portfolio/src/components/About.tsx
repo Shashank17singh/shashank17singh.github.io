@@ -12,7 +12,7 @@ export function About() {
         viewport={{ once: true, margin: "-100px" }}
         className="flex items-center gap-4 mb-16"
       >
-        <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]"></div>
+        <div className="w-2 h-2 rounded-full bg-blue-500"></div>
         <h2 className="text-4xl font-bold tracking-tight">
           Professional{" "}
           <span className="text-blue-400 font-mono italic">Summary</span>
@@ -80,7 +80,7 @@ export function About() {
           transition={{ delay: 0.4 }}
           className="relative group"
         >
-          <div className="absolute inset-0 bg-linear-to-tr from-blue-500/20 to-indigo-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+          <div className="absolute inset-0 bg-linear-to-tr from-blue-500/20 to-blue-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition duration-500"></div>
           <div className="relative bg-slate-900/80 border border-slate-700/50 backdrop-blur-sm rounded-2xl p-8 h-full flex flex-col justify-center gap-6 hover:border-indigo-500/50 transition-colors duration-500">
             <h3 className="text-2xl font-semibold text-white">
               Certifications & Training

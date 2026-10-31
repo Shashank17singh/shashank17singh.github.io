@@ -35,7 +35,7 @@ const codingLinks = [
 function LinkGroup({ title, links }: { title: string; links: string[][] }) {
   return (
     <div className="mt-9">
-      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <p className="mb-4 text-xs font-semibold text-slate-500">
         {title}
       </p>
       <div className="flex flex-wrap justify-center gap-3">
@@ -62,9 +62,6 @@ export function Contact() {
       className="mx-auto w-full max-w-7xl px-6 py-24 md:px-16"
     >
       <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center md:p-12">
-        <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-          Contact
-        </p>
         <h2 className="text-4xl font-bold tracking-tight text-white">
           Get in touch
         </h2>
