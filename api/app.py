@@ -11,14 +11,13 @@ import json
 import os
 
 import chromadb
+from chat_logic import UNAVAILABLE_MESSAGE, build_messages, validate_message
 from chromadb.config import Settings
 from dotenv import load_dotenv
 from flask import Flask, Response, jsonify, request
 from flask_cors import CORS
 from groq import Groq
 from sentence_transformers import SentenceTransformer
-
-from chat_logic import UNAVAILABLE_MESSAGE, build_messages, validate_message
 
 load_dotenv()
 DB_PATH = "./chroma_db"
@@ -75,7 +74,7 @@ try:
     groq_client = Groq(api_key=os.environ["GROQ_API_KEY"])
 except KeyError:
     app.logger.error("GROQ_API_KEY is not set")
-except Exception:  # noqa: BLE001
+except Exception:
     app.logger.exception("Could not initialize the Groq client")
 
 
@@ -123,7 +122,7 @@ def chat():
                 if delta and delta.content:
                     yield f"data: {json.dumps({'token': delta.content})}\n\n"
             yield "data: [DONE]\n\n"
-        except Exception:  # noqa: BLE001
+        except Exception:
             app.logger.exception("Groq API error")
             yield f"data: {json.dumps({'error': UNAVAILABLE_MESSAGE})}\n\n"
 
