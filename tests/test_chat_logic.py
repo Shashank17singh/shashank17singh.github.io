@@ -2,7 +2,9 @@ import pytest
 from chat_logic import (
     MAX_HISTORY_CONTENT_LENGTH,
     MAX_MESSAGE_LENGTH,
+    RateLimiter,
     build_messages,
+    client_id,
     validate_message,
 )
 
@@ -59,3 +61,38 @@ def test_long_history_entries_are_cut() -> None:
     history = [{"role": "user", "content": "x" * (MAX_HISTORY_CONTENT_LENGTH + 50)}]
 
     assert len(build_messages("S", "C", "M", history, 6)[1]["content"]) == MAX_HISTORY_CONTENT_LENGTH
+
+
+def test_one_client_cannot_use_the_whole_allowance() -> None:
+    limiter = RateLimiter(per_client=2, overall=10, window_seconds=60)
+
+    assert [limiter.allow("a", now=0) for _ in range(3)] == [True, True, False]
+    assert limiter.allow("b", now=0)
+
+
+def test_the_overall_limit_holds_when_clients_change_their_address() -> None:
+    limiter = RateLimiter(per_client=1, overall=3, window_seconds=60)
+
+    results = [limiter.allow(f"forged-{n}", now=0) for n in range(5)]
+
+    assert results == [True, True, True, False, False]
+
+
+def test_limits_recover_after_the_window() -> None:
+    limiter = RateLimiter(per_client=1, overall=1, window_seconds=60)
+
+    assert limiter.allow("a", now=0)
+    assert not limiter.allow("a", now=59)
+    assert limiter.allow("a", now=60)
+
+
+@pytest.mark.parametrize(
+    ("forwarded", "peer", "expected"),
+    [
+        ("203.0.113.9, 10.0.0.1", "10.0.0.2", "203.0.113.9"),
+        (None, "10.0.0.2", "10.0.0.2"),
+        ("", None, "unknown"),
+    ],
+)
+def test_client_id(forwarded: str | None, peer: str | None, expected: str) -> None:
+    assert client_id(forwarded, peer) == expected
