@@ -1,6 +1,10 @@
 import pytest
-
-from chat_logic import MAX_HISTORY_CONTENT_LENGTH, MAX_MESSAGE_LENGTH, build_messages, validate_message
+from chat_logic import (
+    MAX_HISTORY_CONTENT_LENGTH,
+    MAX_MESSAGE_LENGTH,
+    build_messages,
+    validate_message,
+)
 
 
 @pytest.mark.parametrize("message", [None, "", "   ", 5, ["hi"], {"a": 1}])
