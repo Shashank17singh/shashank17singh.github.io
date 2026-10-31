@@ -11,7 +11,14 @@ import json
 import os
 
 import chromadb
-from chat_logic import UNAVAILABLE_MESSAGE, build_messages, validate_message
+from chat_logic import (
+    BUSY_MESSAGE,
+    UNAVAILABLE_MESSAGE,
+    RateLimiter,
+    build_messages,
+    client_id,
+    validate_message,
+)
 from chromadb.config import Settings
 from dotenv import load_dotenv
 from flask import Flask, Response, jsonify, request
@@ -26,6 +33,9 @@ EMBED_MODEL = "all-MiniLM-L6-v2"
 GROQ_MODEL = "openai/gpt-oss-20b"
 TOP_K = 6
 MAX_HISTORY_TURNS = 6
+CHAT_LIMIT_PER_CLIENT = 10
+CHAT_LIMIT_OVERALL = 30
+CHAT_LIMIT_WINDOW_SECONDS = 60
 
 ALLOWED_ORIGINS = os.environ.get(
     "ALLOWED_ORIGINS", "https://shashank17singh.github.io"
@@ -56,6 +66,9 @@ Rules:
 
 app = Flask(__name__)
 CORS(app, origins=ALLOWED_ORIGINS)
+chat_limiter = RateLimiter(
+    CHAT_LIMIT_PER_CLIENT, CHAT_LIMIT_OVERALL, CHAT_LIMIT_WINDOW_SECONDS
+)
 
 try:
     embed_model = SentenceTransformer(EMBED_MODEL)
@@ -99,6 +112,9 @@ def chat():
     error = validate_message(message)
     if error:
         return jsonify(error=error), 400
+    client = client_id(request.headers.get("X-Forwarded-For"), request.remote_addr)
+    if not chat_limiter.allow(client):
+        return jsonify(error=BUSY_MESSAGE), 429
     message = message.strip()
     context = retrieve_context(message)
     messages = build_messages(
