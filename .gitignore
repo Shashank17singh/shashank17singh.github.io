@@ -7,3 +7,9 @@ api/.env
 # OS
 .DS_Store
 Thumbs.db
+
+# Local AI assistant configuration
+.agents/
+
+# Editor settings
+.vscode/
