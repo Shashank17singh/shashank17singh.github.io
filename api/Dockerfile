@@ -5,6 +5,7 @@ COPY api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2')"
 COPY api/app.py .
+COPY api/chat_logic.py .
 COPY api/ingest.py .
 COPY api/portfolio_knowledge.md .
 RUN python ingest.py
