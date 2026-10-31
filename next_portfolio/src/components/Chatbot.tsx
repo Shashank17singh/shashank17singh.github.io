@@ -109,7 +109,7 @@ export function Chatbot() {
   return (
     <div className="fixed bottom-7 right-7 z-50">
       {open && (
-        <div className="absolute bottom-20 right-0 flex h-[32.5rem] w-[min(22.5rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-slate-700 bg-slate-950 shadow-[0_24px_70px_rgba(0,0,0,0.55)]">
+        <div className="absolute bottom-20 right-0 flex h-[32.5rem] w-[min(22.5rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-slate-700 bg-slate-950 shadow-[0_24px_70px_var(--shadow-panel)]">
           <div className="flex items-center gap-3 border-b border-slate-800 bg-slate-900 px-4 py-4">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 text-sm font-bold text-slate-950">
               SS
@@ -188,7 +188,7 @@ export function Chatbot() {
       )}
       <button
         onClick={() => setOpen((value) => !value)}
-        className="grid h-[58px] w-[58px] place-items-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 text-slate-950 shadow-[0_8px_28px_rgba(59,130,246,0.4)] transition hover:-translate-y-1 hover:scale-105"
+        className="grid h-[58px] w-[58px] place-items-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 text-slate-950 shadow-[0_8px_28px_var(--shadow-button)] transition hover:-translate-y-1 hover:scale-105"
         aria-label="Open chat assistant"
       >
         <MessageCircle className="h-6 w-6" />

@@ -24,7 +24,7 @@ export default function RootLayout({
       <head>
         <meta name="darkreader-lock" content="" />
       </head>
-      <body className="antialiased bg-[#020617] text-slate-50" suppressHydrationWarning>
+      <body className="antialiased bg-[var(--page-bg)] text-slate-50" suppressHydrationWarning>
         <Navbar />
         {children}
       </body>

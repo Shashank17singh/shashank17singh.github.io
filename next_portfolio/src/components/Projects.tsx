@@ -89,7 +89,7 @@ export function Projects() {
         viewport={{ once: true, margin: "-100px" }}
         className="flex items-center gap-4 mb-16"
       >
-        <div className="w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.8)]"></div>
+        <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
         <h2 className="text-4xl font-bold tracking-tight">
           Featured{" "}
           <span className="text-cyan-400 font-mono italic">Projects</span>
@@ -110,7 +110,7 @@ export function Projects() {
               className={`absolute inset-0 bg-linear-to-br ${project.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`}
             ></div>
             <div
-              className={`relative h-full bg-slate-900/80 border border-slate-700/50 backdrop-blur-sm rounded-2xl p-8 flex flex-col transition-all duration-500 ${project.hoverColor} group-hover:-translate-y-2`}
+              className={`relative h-full bg-slate-900/80 border border-slate-700/50 backdrop-blur-sm rounded-2xl p-8 flex flex-col transition duration-500 ${project.hoverColor} group-hover:-translate-y-2`}
             >
               <div className="mb-6">
                 <div className="p-3 bg-slate-800/50 rounded-xl border border-slate-700/50">

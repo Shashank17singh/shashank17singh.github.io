@@ -77,7 +77,7 @@ export function Skills() {
         viewport={{ once: true, margin: "-100px" }}
         className="flex items-center gap-4 mb-16"
       >
-        <div className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.8)]"></div>
+        <div className="w-2 h-2 rounded-full bg-purple-500"></div>
         <h2 className="text-4xl font-bold tracking-tight">
           Technical{" "}
           <span className="text-purple-400 font-mono italic">Arsenal</span>
@@ -94,7 +94,7 @@ export function Skills() {
             transition={{ delay: idx * 0.1 }}
             className="group relative"
           >
-            <div className="absolute inset-0 bg-linear-to-b from-purple-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+            <div className="absolute inset-0 bg-linear-to-b from-blue-500/10 to-blue-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
             <div className="relative h-full bg-slate-900/50 border border-slate-700/50 hover:border-purple-500/50 backdrop-blur-sm rounded-2xl p-6 transition-colors duration-500">
               <h3 className="text-lg font-semibold text-white mb-6 font-mono border-b border-slate-700/50 pb-4">
                 {skillGroup.category}

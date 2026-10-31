@@ -28,7 +28,7 @@ export function Experience() {
         viewport={{ once: true, margin: "-100px" }}
         className="flex items-center gap-4 mb-16"
       >
-        <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></div>
+        <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
         <h2 className="text-4xl font-bold tracking-tight">
           Work{" "}
           <span className="text-emerald-400 font-mono italic">Experience</span>
@@ -45,7 +45,7 @@ export function Experience() {
             transition={{ delay: idx * 0.2 }}
             className="relative pl-8 md:pl-12"
           >
-            <div className="absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></div>
+            <div className="absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
 
             <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2 gap-2">
               <h3 className="text-2xl font-bold text-white">{exp.role}</h3>
