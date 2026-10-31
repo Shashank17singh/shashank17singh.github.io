@@ -21,7 +21,7 @@
 
 ## Overview
 
-This repository contains the source code for my personal portfolio, where I showcase my experience, skills, and featured projects across systems programming, ML/AI, and full-stack development.
+This repository contains the source code for my personal portfolio, covering my experience, skills, and featured projects across systems programming, ML/AI, and full-stack development.
 
 The site is a **Next.js** app exported as static files and hosted on **GitHub Pages**. Deployment is automated with **GitHub Actions** on every push to `main`. A separate **Flask + ChromaDB + Groq** backend (hosted on Render) powers an AI chat assistant that gives grounded answers about my background.
 
@@ -65,7 +65,7 @@ graph TD
 | Feature                  | Description                                                           |
 | ------------------------ | --------------------------------------------------------------------- |
 | **Responsive Design**    | Fluid layout that scales across mobile, tablet, and desktop           |
-| **Project Showcase**     | Grid of featured projects with tech stack pills and live links        |
+| **Featured Projects**    | Grid of featured projects with tech stack pills and live links        |
 | **Dynamic Interactions** | Scroll-reveal animations and interactive hover states                 |
 | **Dark-Themed UI**       | Dark-mode aesthetic with consistent theming                           |
 | **AI Assistant**         | RAG chatbot that answers questions based on my resume and experience  |
@@ -176,7 +176,7 @@ python app.py
 
 ## Connect with Me
 
-- **LinkedIn**: [Shashank Singh](https://www.linkedin.com/in/shashank-singh-152014282/)
+- **LinkedIn**: [Shashank Singh](https://www.linkedin.com/in/shashank17singh/)
 - **GitHub**: [@Shashank17singh](https://github.com/Shashank17singh)
 - **Email**: [shashanksingh1709@gmail.com](mailto:shashanksingh1709@gmail.com)
 
