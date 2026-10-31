@@ -18,6 +18,8 @@ from flask_cors import CORS
 from groq import Groq
 from sentence_transformers import SentenceTransformer
 
+from chat_logic import UNAVAILABLE_MESSAGE, build_messages, validate_message
+
 load_dotenv()
 DB_PATH = "./chroma_db"
 COLLECTION_NAME = "portfolio_knowledge"
@@ -33,7 +35,6 @@ ALLOWED_ORIGINS = os.environ.get(
     "http://127.0.0.1:8080",
     "http://localhost:5500",
     "http://127.0.0.1:5500",
-    "null",
 ]
 
 SYSTEM_PROMPT = """You are the AI assistant for Shashank Singh's professional portfolio website.
@@ -70,22 +71,12 @@ except Exception as e:  # noqa: BLE001
     collection = None
 
 groq_client = None
-groq_error = ""
-
 try:
-    env_keys = list(os.environ.keys())
-    if "GROQ_API_KEY" not in os.environ:
-        groq_error = "GROQ_API_KEY is completely missing from os.environ!"
-    elif not os.environ["GROQ_API_KEY"]:
-        groq_error = "GROQ_API_KEY is present but empty!"
-    else:
-        api_key = os.environ["GROQ_API_KEY"]
-        if api_key.startswith("gsk_"):
-            groq_client = Groq(api_key=api_key)
-        else:
-            groq_error = f"GROQ_API_KEY does not start with gsk_. It starts with: {api_key[:4]}..."
-except Exception as e:  # noqa: BLE001
-    groq_error = f"Exception while initializing Groq: {e}"
+    groq_client = Groq(api_key=os.environ["GROQ_API_KEY"])
+except KeyError:
+    app.logger.error("GROQ_API_KEY is not set")
+except Exception:  # noqa: BLE001
+    app.logger.exception("Could not initialize the Groq client")
 
 
 def retrieve_context(query: str, k: int = TOP_K) -> str:
@@ -105,28 +96,19 @@ def health():
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json(silent=True) or {}
-    message = (data.get("message") or "").strip()
-    history = data.get("history") or []
-    if not message:
-        return jsonify(error="message is required"), 400
-    if len(message) > 1000:
-        return jsonify(error="message too long"), 400
+    message = data.get("message")
+    error = validate_message(message)
+    if error:
+        return jsonify(error=error), 400
+    message = message.strip()
     context = retrieve_context(message)
-    messages = [
-        {"role": "system", "content": f"{SYSTEM_PROMPT}\n\nContext:\n{context}"}
-    ]
-    for turn in history[-MAX_HISTORY_TURNS:]:
-        role, content = turn.get("role"), turn.get("content")
-        if role in ("user", "assistant") and content:
-            messages.append({"role": role, "content": content})
-    messages.append({"role": "user", "content": message})
+    messages = build_messages(
+        SYSTEM_PROMPT, context, message, data.get("history"), MAX_HISTORY_TURNS
+    )
 
     def generate():
-        if groq_client is None:
-            yield f'data: {{"error": "Groq Init Failed: {groq_error}"}}\n\n'
-            return
-        if collection is None or embed_model is None:
-            yield 'data: {"error": "Backend misconfigured. AI models failed to load."}\n\n'
+        if groq_client is None or collection is None or embed_model is None:
+            yield f"data: {json.dumps({'error': UNAVAILABLE_MESSAGE})}\n\n"
             return
         try:
             stream = groq_client.chat.completions.create(
@@ -141,9 +123,9 @@ def chat():
                 if delta and delta.content:
                     yield f"data: {json.dumps({'token': delta.content})}\n\n"
             yield "data: [DONE]\n\n"
-        except Exception as e:  # noqa: BLE001
-            app.logger.error("Groq API error: %s", e)
-            yield f"data: {json.dumps({'error': f'generation failed: {e}'})}\n\n"
+        except Exception:  # noqa: BLE001
+            app.logger.exception("Groq API error")
+            yield f"data: {json.dumps({'error': UNAVAILABLE_MESSAGE})}\n\n"
 
     return Response(
         generate(),
