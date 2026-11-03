@@ -1,10 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Epilogue, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
-
-const epilogue = Epilogue({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-epilogue", display: "swap" });
-const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400"], variable: "--font-plex-mono", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Shashank Singh",
@@ -21,7 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${epilogue.variable} ${plexMono.variable}`} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preload" href="/fonts/epilogue-700.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/epilogue-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body suppressHydrationWarning>
         <a className="skip" href="#main">Skip to content</a>
         <Navbar />
