@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { MessageCircle, Send, X } from "lucide-react";
+import { Send, X } from "lucide-react";
 
 type Message = { role: "user" | "assistant"; content: string };
 
@@ -26,12 +26,10 @@ export function Chatbot() {
   ]);
   const messagesRef = useRef<HTMLDivElement>(null);
 
-  // NEW: Silently wake up the Render backend as soon as the portfolio loads
+  // Wakes the sleeping Render backend as soon as the portfolio loads.
   useEffect(() => {
-    fetch(HEALTH_URL).catch(() => console.log("Waking up AI backend..."));
+    fetch(HEALTH_URL).catch(() => undefined);
   }, []);
-
-
 
   useEffect(() => {
     messagesRef.current?.scrollTo({
@@ -107,56 +105,30 @@ export function Chatbot() {
   }
 
   return (
-    <div className="fixed bottom-7 right-7 z-50">
+    <div className="chat">
       {open && (
-        <div className="absolute bottom-20 right-0 flex h-[32.5rem] w-[min(22.5rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-slate-700 bg-slate-950 shadow-[0_24px_70px_var(--shadow-panel)]">
-          <div className="flex items-center gap-3 border-b border-slate-800 bg-slate-900 px-4 py-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 text-sm font-bold text-slate-950">
-              SS
-            </div>
+        <div className="chat__panel" role="dialog" aria-label="Ask about Shashank">
+          <div className="chat__head">
             <div>
-              <p className="font-semibold text-white">Ask about Shashank</p>
-              <p className="flex items-center gap-1 text-xs text-slate-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                AI assistant
-              </p>
+              <p>Ask about Shashank</p>
+              <p className="small">An AI assistant that answers from his portfolio</p>
             </div>
-            <button
-              onClick={() => setOpen(false)}
-              className="ml-auto rounded-md p-1 text-slate-400 transition hover:bg-slate-800 hover:text-white"
-              aria-label="Close chat"
-            >
-              <X className="h-5 w-5" />
+            <button type="button" onClick={() => setOpen(false)} className="chat__close" aria-label="Close chat">
+              <X className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
-          <div
-            ref={messagesRef}
-            className="flex-1 space-y-3 overflow-y-auto p-4"
-          >
+          <div ref={messagesRef} className="chat__log" aria-live="polite">
             {messages.map((message, index) => (
-              <p
-                key={`${message.role}-${index}`}
-                className={`max-w-[84%] whitespace-pre-wrap rounded-xl px-3.5 py-2.5 text-sm leading-relaxed ${message.role === "user" ? "ml-auto rounded-br-sm bg-gradient-to-br from-blue-500 to-cyan-400 font-medium text-slate-950" : "rounded-bl-sm border border-slate-800 bg-slate-900 text-slate-200"}`}
-              >
+              <p key={`${message.role}-${index}`} className={message.role === "user" ? "chat__msg chat__msg--user" : "chat__msg"}>
                 {message.content || "…"}
               </p>
             ))}
-            {loading && (
-              <div className="flex w-fit gap-1 rounded-xl rounded-bl-sm border border-slate-800 bg-slate-900 px-4 py-3">
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-slate-400" />
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-slate-400 [animation-delay:150ms]" />
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-slate-400 [animation-delay:300ms]" />
-              </div>
-            )}
+            {loading && <p className="chat__msg" role="status">Thinking…</p>}
           </div>
           {messages.length <= 1 && (
-            <div className="flex flex-wrap gap-2 px-4 pb-3">
+            <div className="chat__suggest">
               {suggestions.map((question) => (
-                <button
-                  key={question}
-                  onClick={() => void send(question)}
-                  className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300 transition hover:border-blue-400 hover:text-blue-300"
-                >
+                <button type="button" key={question} onClick={() => void send(question)}>
                   {question
                     .replace("What projects has Shashank built?", "Projects?")
                     .replace("What are Shashank's skills?", "Skills?")
@@ -165,33 +137,22 @@ export function Chatbot() {
               ))}
             </div>
           )}
-          <form
-            onSubmit={submit}
-            className="flex gap-2 border-t border-slate-800 bg-slate-900 p-3"
-          >
+          <form onSubmit={submit} className="chat__form">
             <input
               value={input}
               onChange={(event) => setInput(event.target.value)}
               maxLength={500}
-              placeholder="Ask a question..."
-              className="min-w-0 flex-1 rounded-full border border-slate-700 bg-slate-950 px-4 py-2.5 text-sm text-white outline-none transition focus:border-blue-400"
+              placeholder="Ask a question"
+              aria-label="Your question"
             />
-            <button
-              disabled={loading}
-              className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 text-slate-950 transition hover:scale-105 disabled:opacity-50"
-              aria-label="Send message"
-            >
-              <Send className="h-4 w-4" />
+            <button type="submit" disabled={loading} className="btn btn--primary" aria-label="Send message">
+              <Send className="h-4 w-4" aria-hidden="true" />
             </button>
           </form>
         </div>
       )}
-      <button
-        onClick={() => setOpen((value) => !value)}
-        className="grid h-[58px] w-[58px] place-items-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 text-slate-950 shadow-[0_8px_28px_var(--shadow-button)] transition hover:-translate-y-1 hover:scale-105"
-        aria-label="Open chat assistant"
-      >
-        <MessageCircle className="h-6 w-6" />
+      <button type="button" onClick={() => setOpen((value) => !value)} className="chat__open" aria-expanded={open}>
+        Ask about my work
       </button>
     </div>
   );

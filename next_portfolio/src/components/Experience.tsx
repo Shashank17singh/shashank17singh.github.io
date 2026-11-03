@@ -1,78 +1,56 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const experiences = [
   {
-    role: "Python & Data Science Trainee",
-    company: "NIELIT, Gorakhpur (Government of India) · Remote",
-    duration: "Jun 2025 – Jul 2025",
+    role: "Python and data science trainee",
+    company: "NIELIT, Gorakhpur (Government of India), remote",
+    duration: "Jun 2025 to Jul 2025",
     points: [
-      "Mastered data science fundamentals through a comprehensive government-certified program covering Python, Pandas, NumPy, Matplotlib, SQLite, and Machine Learning algorithms.",
-      "Built an end-to-end House Price Predictor with dual machine learning models (Random Forest and Linear Regression) trained on 76,000+ property records.",
-      "Designed an interactive Streamlit web application and a Tkinter desktop GUI to serve predictions, with SQLite integrated to persistently log user queries.",
+      "Completed a government-certified programme in Python, Pandas, NumPy, Matplotlib, SQLite and machine learning.",
+      "Built a house price predictor with Random Forest and Linear Regression, trained on 76,000+ property records.",
+      "Served predictions through a Streamlit app and a Tkinter desktop GUI, logging queries to SQLite.",
     ],
     tech: ["Python", "Scikit-learn", "Streamlit", "Tkinter", "SQLite"],
   },
 ];
 
+const certificates = [
+  { name: "Samsung Innovation Campus", what: "Artificial Intelligence certificate", href: "https://github.com/Shashank17singh/SIC-Project/blob/master/SIC%20Certificate.pdf" },
+  { name: "NIELIT, Gorakhpur", what: "Industrial training in data science and ML", href: "https://github.com/Shashank17singh/NIELIT-Project/blob/main/NIELIT%20Certificate.pdf" },
+  { name: "AWS Academy", what: "Fundamentals of ML and AI", href: "https://drive.google.com/file/d/1BIk7_Sc7RUaW5huU4AEgFMzN3jCe4OmH/view?usp=sharing" },
+];
+
 export function Experience() {
   return (
-    <section
-      id="experience"
-      className="py-32 px-4 sm:px-6 md:px-16 max-w-4xl mx-auto w-full relative"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="flex items-center gap-4 mb-16"
-      >
-        <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-        <h2 className="text-4xl font-bold tracking-tight">
-          Work{" "}
-          <span className="text-emerald-400 font-mono italic">Experience</span>
-        </h2>
-      </motion.div>
-
-      <div className="relative border-l border-slate-700/50 ml-3 md:ml-4 space-y-12">
-        {experiences.map((exp, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.2 }}
-            className="relative pl-8 md:pl-12"
-          >
-            <div className="absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2 gap-2">
-              <h3 className="text-2xl font-bold text-white">{exp.role}</h3>
-              <span className="text-emerald-400 font-mono text-sm">
-                {exp.duration}
-              </span>
-            </div>
-
-            <p className="text-slate-400 font-medium mb-4">{exp.company}</p>
-            <ul className="list-disc list-outside ml-5 text-slate-300 leading-relaxed mb-6 space-y-2 marker:text-emerald-500">
-              {exp.points.map((point, i) => (
-                <li key={i}>{point}</li>
+    <section id="experience" className="section">
+      <div className="container">
+        <div className="head">
+          <h2>Experience and training</h2>
+        </div>
+        <div className="two-col">
+          <div>
+            {experiences.map((exp) => (
+              <article key={exp.role}>
+                <h3 className="block-title">{exp.role}</h3>
+                <p className="muted">{exp.company}</p>
+                <p className="when">{exp.duration}</p>
+                <ul className="points">
+                  {exp.points.map((point) => <li key={point}>{point}</li>)}
+                </ul>
+                <p className="small muted" style={{ marginTop: "var(--space-md)" }}>{exp.tech.join(", ")}</p>
+              </article>
+            ))}
+          </div>
+          <div>
+            <h3 className="block-title">Certificates</h3>
+            <ul className="ruled">
+              {certificates.map((cert) => (
+                <li key={cert.name} style={{ paddingBlock: "var(--space-md)" }}>
+                  <a href={cert.href} target="_blank" rel="noopener noreferrer">{cert.name}</a>
+                  <p className="small muted">{cert.what}</p>
+                </li>
               ))}
             </ul>
-
-            <div className="flex flex-wrap gap-2">
-              {exp.tech.map((t) => (
-                <span
-                  key={t}
-                  className="px-3 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full text-xs font-medium"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+          </div>
+        </div>
       </div>
     </section>
   );
