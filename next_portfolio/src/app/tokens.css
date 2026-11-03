@@ -29,14 +29,19 @@
   --color-accent-soft: oklch(93% 0.05 190);
   --color-accent-soft-ink: oklch(27% 0.045 190);
   --color-focus: oklch(50% 0.095 188);
-  --font-display: var(--font-epilogue), "Epilogue", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Epilogue", ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-display);
-  --font-outlier: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  --font-outlier: "IBM Plex Mono", ui-monospace, monospace;
   --radius-card: 12px;
   --radius-pill: 999px;
   --shadow-card: 0 20px 40px oklch(20% 0 0 / 0.16);
   --tracking-display: -0.04em;
 }
+/* Self-hosted under the SIL Open Font License (public/fonts/OFL-*.txt), so the build needs no font service. */
+@font-face { font-family: "Epilogue"; src: url("/fonts/epilogue-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Epilogue"; src: url("/fonts/epilogue-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Epilogue"; src: url("/fonts/epilogue-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("/fonts/ibm-plex-mono-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 :root {
   color-scheme: light;
   --space-3xs: 2px;
