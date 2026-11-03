@@ -1,8 +1,7 @@
+const EMAIL = "https://mail.google.com/mail/u/0/?fs=1&to=shashanksingh1709@gmail.com&tf=cm";
+
 const socialLinks = [
-  [
-    "Email",
-    "https://mail.google.com/mail/u/0/?fs=1&to=shashanksingh1709@gmail.com&tf=cm",
-  ],
+  ["Email", EMAIL],
   ["LinkedIn", "https://www.linkedin.com/in/shashank17singh/"],
   ["GitHub", "https://github.com/Shashank17singh"],
   ["Codolio", "https://codolio.com/profile/Shashank17singh"],
@@ -25,52 +24,41 @@ const codingLinks = [
   ["GeeksforGeeks", "https://www.geeksforgeeks.org/user/Shashank17Singh"],
   ["HackerRank", "https://www.hackerrank.com/profile/shashanksingh172"],
   ["InterviewBit", "https://www.interviewbit.com/profile/shashank-singh_401"],
-  [
-    "CodeStudio",
-    "https://www.naukri.com/code360/profile/66d93f30-c8d5-4bf2-b875-84ca0e8ac742",
-  ],
+  ["CodeStudio", "https://www.naukri.com/code360/profile/66d93f30-c8d5-4bf2-b875-84ca0e8ac742"],
   ["AtCoder", "https://atcoder.jp/users/shashank17singh"],
 ];
 
 function LinkGroup({ title, links }: { title: string; links: string[][] }) {
   return (
-    <div className="mt-9">
-      <p className="mb-4 text-xs font-semibold text-slate-500">
-        {title}
-      </p>
-      <div className="flex flex-wrap justify-center gap-3">
+    <div>
+      <h3>{title}</h3>
+      <ul>
         {links.map(([label, href]) => (
-          <a
-            key={label}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-slate-700 bg-slate-950 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-blue-500 hover:text-blue-300"
-          >
-            {label}
-          </a>
+          <li key={label}>
+            <a href={href} target="_blank" rel="noopener noreferrer">{label}</a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="mx-auto w-full max-w-7xl px-6 py-24 md:px-16"
-    >
-      <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center md:p-12">
-        <h2 className="text-4xl font-bold tracking-tight text-white">
-          Get in touch
-        </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-slate-400">
-          I am actively pursuing software engineering and data science
-          opportunities, research collaborations, and impactful AI/ML projects.
-        </p>
-        <LinkGroup title="Social & Professional" links={socialLinks} />
-        <LinkGroup title="Coding Profiles" links={codingLinks} />
+    <section id="contact" className="section close">
+      <div className="container close__grid">
+        <div style={{ display: "grid", gap: "var(--space-lg)", alignContent: "start" }}>
+          <h2>Get in touch</h2>
+          <p>
+            I am looking for software engineering and data science roles, research collaborations and AI and ML
+            projects.
+          </p>
+          <a className="close__mail" href={EMAIL} target="_blank" rel="noopener noreferrer">shashanksingh1709@gmail.com</a>
+        </div>
+        <div className="profiles">
+          <LinkGroup title="Social and professional" links={socialLinks} />
+          <LinkGroup title="Coding profiles" links={codingLinks} />
+        </div>
       </div>
     </section>
   );
