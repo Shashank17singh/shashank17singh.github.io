@@ -73,7 +73,7 @@ const cases: Case[] = [
     image: "/work/upi-mesh.png",
     width: 2880,
     height: 1800,
-    alt: "The UPI Mesh live demo's home screen",
+    alt: "The UPI Mesh dashboard after one payment settled: the three demo steps, the mesh devices and updated balances",
   },
   {
     title: "DPI Engine",
@@ -90,9 +90,9 @@ const cases: Case[] = [
     text: "Search the same vectors three ways and compare them, then ask a local model about the documents behind them.",
     facts: [["Indexes", "HNSW, KD-Tree, brute force"], ["Model", "Ollama, run locally"], ["Built in", "C++ with CMake"]],
     image: "/work/your-own-ai.png",
-    width: 1280,
-    height: 800,
-    alt: "The Your Own AI dashboard: query controls, a 2D PCA plot of vectors in four clusters, and HNSW graph layers",
+    width: 2880,
+    height: 1800,
+    alt: "The Your Own AI dashboard after an HNSW search for \"binary tree\": the query on a 2D PCA plot, five nearest matches and a 40 microsecond latency",
   },
 ];
 
