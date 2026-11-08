@@ -35,20 +35,20 @@ const projects: Project[] = [
     live: false,
   },
   {
-    title: "CampusMind",
-    description: "A college assistant that answers from official documents with citations, and plans study schedules and reminders through agents.",
-    tech: ["Python", "FastAPI", "LangGraph", "React", "PostgreSQL", "Qdrant"],
-    github: "https://github.com/Shashank17singh/CampusMind",
-    demo: null,
-    live: false,
-  },
-  {
     title: "DPI Engine",
     description: "A C++17 deep packet inspection engine that rebuilds TCP and UDP flows from PCAP captures and classifies traffic by TLS SNI and HTTP Host.",
     tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
     github: "https://github.com/Shashank17singh/DPI-Engine",
     demo: "https://github.com/Shashank17singh/DPI-Engine/blob/main/dpi-engine.png",
     demoLabel: "View output",
+    live: false,
+  },
+  {
+    title: "CampusMind",
+    description: "A college assistant that answers from official documents with citations, and plans study schedules and reminders through agents.",
+    tech: ["Python", "FastAPI", "LangGraph", "React", "PostgreSQL", "Qdrant"],
+    github: "https://github.com/Shashank17singh/CampusMind",
+    demo: null,
     live: false,
   },
   {
@@ -64,15 +64,16 @@ const projects: Project[] = [
 
 type Case = { title: string; text: string; facts: [string, string][]; image: string; width: number; height: number; alt: string; tall?: boolean };
 
+// Same order as the list above.
 const cases: Case[] = [
   {
-    title: "Your Own AI",
-    text: "Search the same vectors three ways and compare them, then ask a local model about the documents behind them.",
-    facts: [["Indexes", "HNSW, KD-Tree, brute force"], ["Model", "Ollama, run locally"], ["Built in", "C++ with CMake"]],
-    image: "/work/your-own-ai.png",
-    width: 1280,
-    height: 800,
-    alt: "The Your Own AI dashboard: query controls, a 2D PCA plot of vectors in four clusters, and HNSW graph layers",
+    title: "UPI Mesh",
+    text: "A payment made offline is encrypted on the phone, passed along a mesh, and settled once, even if it arrives twice.",
+    facts: [["Encryption", "RSA-2048 with AES-256-GCM"], ["Replay guard", "Ciphertext-hash idempotency"], ["Built in", "Python and FastAPI"]],
+    image: "/work/upi-mesh.png",
+    width: 2880,
+    height: 1800,
+    alt: "The UPI Mesh live demo's home screen",
   },
   {
     title: "DPI Engine",
@@ -85,13 +86,13 @@ const cases: Case[] = [
     tall: true,
   },
   {
-    title: "UPI Mesh",
-    text: "A payment made offline is encrypted on the phone, passed along a mesh, and settled once, even if it arrives twice.",
-    facts: [["Encryption", "RSA-2048 with AES-256-GCM"], ["Replay guard", "Ciphertext-hash idempotency"], ["Built in", "Python and FastAPI"]],
-    image: "/work/upi-mesh.png",
-    width: 2880,
-    height: 1800,
-    alt: "The UPI Mesh live demo's home screen",
+    title: "Your Own AI",
+    text: "Search the same vectors three ways and compare them, then ask a local model about the documents behind them.",
+    facts: [["Indexes", "HNSW, KD-Tree, brute force"], ["Model", "Ollama, run locally"], ["Built in", "C++ with CMake"]],
+    image: "/work/your-own-ai.png",
+    width: 1280,
+    height: 800,
+    alt: "The Your Own AI dashboard: query controls, a 2D PCA plot of vectors in four clusters, and HNSW graph layers",
   },
 ];
 
@@ -125,6 +126,9 @@ export function Projects() {
         </ul>
 
         <div style={{ marginTop: "var(--space-3xl)" }}>
+          <div className="head">
+            <h2>Three up close</h2>
+          </div>
           {cases.map((item, index) => (
             <article key={item.title} className={index === 0 ? "case" : "case case--even"}>
               <div className="case__text">

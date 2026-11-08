@@ -14,7 +14,7 @@ Programming: Python, C++, SQL, HTML, CSS, JavaScript, TypeScript, React, Next.js
 
 ## Projects Summary
 
-Shashank has built 18 distinct projects spanning AI, ML, systems, and backend engineering:
+His portfolio features six projects, in this order: Hotseat, UPI Mesh, CodeSync, DPI Engine, CampusMind, and Your Own AI. Hotseat and UPI Mesh are live. His other projects:
 - Code Sentinel (Evidence-based integrity triage system for coding assessments)
 - Customer Churn Prediction (Interactive telecom churn predictor with an ANN classifier)
 - DPI Engine (Deep packet inspection in C++)
@@ -33,6 +33,19 @@ Shashank has built 18 distinct projects spanning AI, ML, systems, and backend en
 - Sports Person Classifier (Computer vision classification)
 - Posture Checker (MediaPipe real-time pose estimation)
 - House Price Predictor (Random Forest regression for property prices)
+
+## Hotseat
+
+Hotseat is a spoken mock interview built with Next.js and TypeScript. It reads your resume, asks questions built from it, follows up on your answers, and scores each one. Speech is transcribed with Whisper and the questions run on Groq. GitHub: https://github.com/Shashank17singh/Hotseat. Live demo: https://hotseat-black-chi.vercel.app/.
+
+## CodeSync
+
+CodeSync is a browser code editor where a whole room types in one file at once, with live cursors, chat, history, sandboxed code runs, and an online judge. It is built with React, TypeScript, Yjs, Fastify, PostgreSQL, Redis, and gVisor for the sandbox. GitHub: https://github.com/Shashank17singh/CodeSync.
+
+## CampusMind
+
+CampusMind is a college assistant that answers questions from official documents with citations, and plans study schedules and reminders through agents. It is built with Python, FastAPI, LangGraph, React, PostgreSQL, and Qdrant. GitHub: https://github.com/Shashank17singh/CampusMind.
+
 ## DPI Engine
 
 DPI Engine is a C++17 deep packet inspection engine that analyzes PCAP captures, reconstructs TCP and UDP flows, classifies traffic using TLS SNI and HTTP Host inspection, and supports configurable blocking rules. GitHub: https://github.com/Shashank17singh/DPI-Engine.

@@ -4,28 +4,13 @@ const socialLinks = [
   ["Email", EMAIL],
   ["LinkedIn", "https://www.linkedin.com/in/shashank17singh/"],
   ["GitHub", "https://github.com/Shashank17singh"],
-  ["Codolio", "https://codolio.com/profile/Shashank17singh"],
-  ["X", "https://x.com/Shashank_017"],
-  ["WhatsApp", "https://wa.me/917905851722"],
-  ["Telegram", "https://t.me/Shashank17singh"],
-  ["YouTube", "https://youtube.com/@Shashank17Singh"],
-  ["Instagram", "https://instagram.com/shashank.17singh"],
-  ["Facebook", "https://www.facebook.com/shashank17singh"],
-  ["Discord", "https://discord.gg/F82y2p7sp"],
-  ["Reddit", "https://reddit.com/user/u/Ok-Jelly-6146"],
-  ["Quora", "https://quora.com/profile/Shashank-Singh-1352"],
-  ["Pinterest", "https://pinterest.com/shashank17singh"],
 ];
 
+// Recruiters check two or three of these; the rest are on Codolio.
 const codingLinks = [
   ["LeetCode", "https://leetcode.com/u/Shashank17singh/"],
   ["Codeforces", "https://codeforces.com/profile/shashank17singh"],
-  ["CodeChef", "https://www.codechef.com/users/Shashank7Singh"],
-  ["GeeksforGeeks", "https://www.geeksforgeeks.org/user/Shashank17Singh"],
-  ["HackerRank", "https://www.hackerrank.com/profile/shashanksingh172"],
-  ["InterviewBit", "https://www.interviewbit.com/profile/shashank-singh_401"],
-  ["CodeStudio", "https://www.naukri.com/code360/profile/66d93f30-c8d5-4bf2-b875-84ca0e8ac742"],
-  ["AtCoder", "https://atcoder.jp/users/shashank17singh"],
+  ["Codolio", "https://codolio.com/profile/Shashank17singh"],
 ];
 
 function LinkGroup({ title, links }: { title: string; links: string[][] }) {
@@ -56,7 +41,7 @@ export function Contact() {
           <a className="close__mail" href={EMAIL} target="_blank" rel="noopener noreferrer">shashanksingh1709@gmail.com</a>
         </div>
         <div className="profiles">
-          <LinkGroup title="Social and professional" links={socialLinks} />
+          <LinkGroup title="Elsewhere" links={socialLinks} />
           <LinkGroup title="Coding profiles" links={codingLinks} />
         </div>
       </div>
