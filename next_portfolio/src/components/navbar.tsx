@@ -1,6 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import { Moon, Sun } from "lucide-react";
+
+// The theme lives on <html data-theme>; CSS picks the icon, so the server render never mismatches.
+function ThemeToggle() {
+  function toggle() {
+    const root = document.documentElement;
+    const dark = root.dataset.theme
+      ? root.dataset.theme === "dark"
+      : matchMedia("(prefers-color-scheme: dark)").matches;
+    const next = dark ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch {}
+  }
+
+  return (
+    <button type="button" onClick={toggle} className="theme-toggle" aria-label="Toggle dark mode">
+      <Moon size={18} aria-hidden="true" className="theme-toggle__moon" />
+      <Sun size={18} aria-hidden="true" className="theme-toggle__sun" />
+    </button>
+  );
+}
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -26,6 +47,7 @@ export function Navbar() {
         <div className="container bar__row">
           <a href="#hero" className="wordmark" aria-label="Shashank Singh, back to the top">Shashank Singh</a>
 
+          <div className="bar__end">
           <ul className="bar__links">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -33,6 +55,8 @@ export function Navbar() {
               </li>
             ))}
           </ul>
+
+          <ThemeToggle />
 
           <button
             type="button"
@@ -44,6 +68,7 @@ export function Navbar() {
           >
             {menuOpen ? "Close" : "Menu"}
           </button>
+          </div>
         </div>
 
         <div id="mobile-menu" className="menu" hidden={!menuOpen}>

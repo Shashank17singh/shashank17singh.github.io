@@ -15,7 +15,7 @@ export default function Home() {
           <div className="container hero__grid">
             <div className="hero__text">
               <h1>Shashank Singh</h1>
-              <p className="lead">I build C++ engines, Python backends and applied AI tools.</p>
+              <p className="lead">Final-year CS student. I build C++ engines, Python backends and applied AI tools.</p>
               <div className="actions">
                 <a href="#projects" className="btn btn--primary">View work</a>
                 <a href={EMAIL} target="_blank" rel="noopener noreferrer" className="btn">Contact me</a>
@@ -46,7 +46,7 @@ export default function Home() {
       <footer className="colophon">
         <div className="container">
           <p suppressHydrationWarning>
-            © {new Date().getFullYear()} Shashank Singh, University of Lucknow. Set in Epilogue.
+            © {new Date().getFullYear()} Shashank Singh
           </p>
           <ul>
             <li><a href="https://github.com/shashank17singh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
