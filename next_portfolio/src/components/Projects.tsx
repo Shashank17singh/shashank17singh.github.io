@@ -31,7 +31,8 @@ const projects: Project[] = [
     description: "A browser code editor where a whole room types in one file, with live cursors, chat, history, sandboxed runs and an online judge.",
     tech: ["React", "TypeScript", "Yjs", "Fastify", "PostgreSQL", "Redis", "gVisor"],
     github: "https://github.com/Shashank17singh/CodeSync",
-    demo: null,
+    demo: "https://github.com/Shashank17singh/CodeSync/blob/main/codesync.png",
+    demoLabel: "View interface",
     live: false,
   },
   {
