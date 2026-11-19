@@ -5,14 +5,14 @@ import { Navbar } from "@/components/navbar";
 export const metadata: Metadata = {
   metadataBase: new URL("https://shashank17singh.github.io"),
   title: "Shashank Singh | Systems & Applied AI Engineer",
-  description: "Shashank Singh builds C++ engines, Python backends and applied AI tools. Seven projects across systems, ML and full-stack, three of them live.",
+  description: "Shashank Singh builds C++ engines, Python backends and applied AI tools. Seven projects across systems, ML and full-stack, four of them live.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/favicon.ico",
   },
   openGraph: {
     title: "Shashank Singh | Systems & Applied AI Engineer",
-    description: "C++ engines, Python backends and applied AI tools. Seven projects, three of them live.",
+    description: "C++ engines, Python backends and applied AI tools. Seven projects, four of them live.",
     url: "https://shashank17singh.github.io",
     siteName: "Shashank Singh Portfolio",
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Shashank Singh | Systems & Applied AI Engineer",
-    description: "C++ engines, Python backends and applied AI tools. Seven projects, three of them live.",
+    description: "C++ engines, Python backends and applied AI tools. Seven projects, four of them live.",
     images: ["/work/hotseat.png"],
   },
 };

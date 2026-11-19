@@ -39,9 +39,8 @@ const projects: Project[] = [
     description: "A browser code editor where a whole room types in one file, with live cursors, chat, history, sandboxed runs and an online judge.",
     tech: ["React", "TypeScript", "Yjs", "Fastify", "PostgreSQL", "Redis", "gVisor"],
     github: "https://github.com/Shashank17singh/CodeSync",
-    demo: "https://github.com/Shashank17singh/CodeSync/blob/main/codesync.png",
-    demoLabel: "View output",
-    live: false,
+    demo: "https://code-sync-vert.vercel.app/",
+    live: true,
   },
   {
     title: "DPI Engine",
@@ -120,7 +119,7 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <div className="head">
-          <h2>Seven projects, three of them live</h2>
+          <h2>Seven projects, four of them live</h2>
         </div>
 
         <ul className="ruled">
