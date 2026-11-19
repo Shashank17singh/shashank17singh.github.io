@@ -1,11 +1,3 @@
-/* Hallmark · shape: Split Studio · genre: editorial · theme: Ink (deal 3/3, seed portfolio-final-year-computer-science-9955·c905a2f7·2026-11-03·r0) · redesign: full · draw: e71b72 · job: hire
- * hero: Banner · nav: banner over a bar (kept static, Ink moves nothing) · footer: colophon block · imagery: screenshots 4 (the user's own projects) · signature: the work as a ruled list, live projects tagged in teal · ink: paper
- * axes: light/grotesk-sans/chromatic-teal · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, a student portfolio reads like many; led with the six projects as a list a recruiter can scan, with the two live ones marked */
-/* Hallmark · waive 22 · ink and greys at zero chroma · a notice board is printed in plain black, and Ink's black has no hue */
-/* Hallmark · dismissed 28a · the lazy image is the first case study, far below the fold; the LCP is the hero capture, which carries fetchpriority high */
-/* Hallmark · dismissed kept · the email and three certificate links now come from constants, and the built index.html carries every one of them */
-/* Hallmark · dropped the typing headline, the stat card ("6+ Top Projects", "3 Credentials", "AI Specialization") and Restaurant Agent, YouTube Scrapper and Code Sentinel · the owner asked for six projects, and the stat card restated the list */
 @import "tailwindcss";
 @import "./tokens.css";
 @import "./base.css" layer(base);

@@ -28,9 +28,11 @@ const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
 ];
 
-const EMAIL = "https://mail.google.com/mail/u/0/?fs=1&to=shashanksingh1709@gmail.com&tf=cm";
+const EMAIL = "mailto:shashanksingh1709@gmail.com";
+const PHONE_TEL = "tel:+917905851722";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,12 +42,16 @@ export function Navbar() {
       <div className="notice">
         <div className="container">
           <p>Open to software engineering and data science roles.</p>
-          <a href={EMAIL} target="_blank" rel="noopener noreferrer">Email me</a>
+          <div style={{ display: "flex", gap: "var(--space-md)", alignItems: "center" }}>
+            <a href={PHONE_TEL} aria-label="Call +91 79058 51722">+91 79058 51722</a>
+            <span aria-hidden="true" style={{ color: "var(--color-rule)" }}>•</span>
+            <a href={EMAIL} aria-label="Send email to shashanksingh1709@gmail.com">Email me</a>
+          </div>
         </div>
       </div>
       <nav className="bar" aria-label="Main">
         <div className="container bar__row">
-          <a href="#hero" className="wordmark" aria-label="Shashank Singh, back to the top">Shashank Singh</a>
+          <a href="/#hero" className="wordmark" aria-label="Shashank Singh, back to the top">Shashank Singh</a>
 
           <div className="bar__end">
           <ul className="bar__links">
@@ -78,6 +84,12 @@ export function Navbar() {
                 <a href={link.href} onClick={() => setMenuOpen(false)} className="navlink">{link.label}</a>
               </li>
             ))}
+            <li style={{ borderTop: "var(--rule-hair) solid var(--color-rule)", marginTop: "var(--space-2xs)", paddingTop: "var(--space-2xs)" }}>
+              <a href={EMAIL} onClick={() => setMenuOpen(false)} className="navlink">Email: shashanksingh1709@gmail.com</a>
+            </li>
+            <li>
+              <a href={PHONE_TEL} onClick={() => setMenuOpen(false)} className="navlink">Phone: +91 79058 51722</a>
+            </li>
           </ul>
         </div>
       </nav>

@@ -145,7 +145,7 @@ export function Chatbot() {
               placeholder="Ask a question"
               aria-label="Your question"
             />
-            <button type="submit" disabled={loading} className="btn btn--primary" aria-label="Send message">
+            <button type="submit" disabled={loading || !input.trim()} className="btn btn--primary" aria-label="Send message">
               <Send className="h-4 w-4" aria-hidden="true" />
             </button>
           </form>

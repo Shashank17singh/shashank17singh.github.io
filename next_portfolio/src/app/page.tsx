@@ -5,7 +5,7 @@ import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Chatbot } from "@/components/Chatbot";
 
-const EMAIL = "https://mail.google.com/mail/u/0/?fs=1&to=shashanksingh1709@gmail.com&tf=cm";
+const EMAIL = "mailto:shashanksingh1709@gmail.com";
 
 export default function Home() {
   return (
@@ -48,9 +48,13 @@ export default function Home() {
           <p suppressHydrationWarning>
             © {new Date().getFullYear()} Shashank Singh
           </p>
-          <ul>
+          <ul style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-md) var(--space-lg)" }}>
             <li><a href="https://github.com/Shashank17singh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://linkedin.com/in/shashank17singh" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://codolio.com/profile/Shashank17singh" target="_blank" rel="noopener noreferrer">Codolio</a></li>
+            <li><a href="https://leetcode.com/u/Shashank17singh/" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
+            <li><a href="mailto:shashanksingh1709@gmail.com">Email</a></li>
+            <li><a href="tel:+917905851722">Phone</a></li>
           </ul>
         </div>
       </footer>
