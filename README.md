@@ -2,17 +2,20 @@
 
 A fast, responsive developer portfolio built with Next.js, featuring a RAG-powered AI chatbot that answers questions about my experience and projects.
 
-**Live site:** [shashank17singh.github.io](https://shashank17singh.github.io/)
-
-## Overview
-
-This repository contains the source code for my personal portfolio, covering my experience, skills, and featured projects across systems programming, ML/AI, and full-stack development.
-
-The site is a **Next.js** app exported as static files and hosted on **GitHub Pages**. Deployment is automated with **GitHub Actions** on every push to `main`. A separate **Flask + ChromaDB + Groq** backend (hosted on Render) powers an AI chat assistant that gives grounded answers about my background.
+> **Live Deployments:**
+> * **Interactive Portfolio:** [shashank17singh.github.io](https://shashank17singh.github.io/)
 
 ---
 
-## Architecture
+## Overview
+
+This repository contains the source code for my personal developer portfolio, detailing my engineering experience, technical skills, and featured open-source systems across machine learning, systems programming, and distributed systems.
+
+The portfolio is architected as a Next.js single-page application statically exported to GitHub Pages. Continuous Integration and deployment are automated via GitHub Actions on every push to `main`. An integrated Retrieval-Augmented Generation (RAG) assistant, hosted on Render, allows visitors to chat with an AI agent grounded strictly in my verified resume and project artifacts.
+
+---
+
+## Architecture Overview
 
 ```mermaid
 graph TD
@@ -47,29 +50,30 @@ graph TD
 
 ## Features
 
-| Feature                  | Description                                                           |
-| ------------------------ | --------------------------------------------------------------------- |
-| **Responsive Design**    | Fluid layout that scales across mobile, tablet, and desktop           |
-| **Featured Projects**    | Grid of featured projects with tech stack pills and live links        |
-| **Dynamic Interactions** | Scroll-reveal animations and interactive hover states                 |
-| **Dark-Themed UI**       | Dark-mode aesthetic with consistent theming                           |
-| **AI Assistant**         | RAG chatbot that answers questions based on my resume and experience  |
-| **Automated Deploys**    | Every push to `main` builds and publishes the site via GitHub Actions |
+| Feature | Description |
+| ------- | ----------- |
+| **Responsive Design** | Fluid typography and layout scaling seamlessly across mobile, tablet, and widescreen viewports |
+| **Featured Projects Grid** | Filterable project showcase displaying architecture badges, technical summaries, and live deployment links |
+| **Interactive Animations** | Smooth scroll-reveal states, hardware-accelerated transitions, and micro-interactions |
+| **Refined Dark Aesthetic** | Consistent slate and sapphire theme engineered for low eye fatigue |
+| **Grounded AI Assistant** | RAG-backed chatbot providing verifiable answers about technical projects and work experience |
+| **Automated Publishing** | Automated GitHub Actions workflow compiling static Next.js assets to GitHub Pages on push |
 
 ---
 
-## Tech Stack
+## Technology Stack
 
-| Component           | Technology                       |
-| ------------------- | -------------------------------- |
-| **Frontend**        | Next.js, React (static export)   |
-| **Hosting**         | GitHub Pages                     |
-| **CI/CD**           | GitHub Actions                   |
-| **API Framework**   | Flask                            |
-| **LLM Inference**   | Groq (`openai/gpt-oss-20b`)      |
-| **Embeddings**      | HuggingFace (`all-MiniLM-L6-v2`) |
-| **Vector Store**    | ChromaDB                         |
-| **Backend Hosting** | Render                           |
+| Component | Technology |
+| --------- | ---------- |
+| Frontend Framework | Next.js 16 (Static Export), React 19, TypeScript |
+| Web Hosting | GitHub Pages |
+| CI/CD Pipeline | GitHub Actions |
+| Backend API | Python 3.11+, Flask |
+| LLM Inference | Groq API (`openai/gpt-oss-20b`) |
+| Embeddings | Hugging Face (`sentence-transformers/all-MiniLM-L6-v2`) |
+| Vector Store | ChromaDB |
+| API Hosting | Render |
+| Testing & Linting | pytest, ruff, ESLint |
 
 ---
 
@@ -77,17 +81,21 @@ graph TD
 
 ```
 shashank17singh.github.io/
+├── next_portfolio/         # Next.js frontend application
+│   ├── app/                # Pages, layout, and UI components
+│   ├── components/         # Chat widget, project cards, navigation
+│   └── package.json        # Frontend dependencies
+├── api/                    # Flask backend service
+│   ├── app.py              # Flask server and /chat endpoint
+│   ├── ingest.py           # Document chunker and ChromaDB ingestion pipeline
+│   ├── Dockerfile          # Container configuration for Render
+│   └── requirements.txt    # Python backend dependencies
+├── tests/
+│   ├── conftest.py
+│   └── test_chat_logic.py  # Unit tests for RAG chat processing
 ├── .github/workflows/
-│   └── deploy.yml         # Build & deploy to GitHub Pages
-├── next_portfolio/        # Next.js frontend (source of the live site)
-├── api/
-│   ├── app.py             # Flask application & /chat endpoint
-│   ├── ingest.py          # Populates ChromaDB with portfolio knowledge
-│   ├── requirements.txt   # Python dependencies
-│   └── Dockerfile         # Docker configuration for API deployment
-├── sync_repos.py          # Utility script
-├── render.yaml            # Render deployment config for the API
-├── LICENSE
+│   └── deploy.yml          # Automated static export and GitHub Pages deployment
+├── render.yaml             # Render infrastructure blueprint
 └── README.md
 ```
 
@@ -103,15 +111,15 @@ npm install
 npm run dev
 ```
 
-The app runs at `http://localhost:3000`.
+The application starts locally at `http://localhost:3000`.
 
-To create the static production build locally:
+To generate the static production export:
 
 ```bash
-npm run build   # outputs static files to next_portfolio/out
+npm run build
 ```
 
-Set the chatbot backend URL via an environment variable, for example in `next_portfolio/.env.local`:
+Configure the backend URL in `next_portfolio/.env.local`:
 
 ```bash
 NEXT_PUBLIC_API_URL=http://localhost:5000
@@ -119,43 +127,46 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 
 ### Backend (Chatbot API)
 
-1. Navigate to the API directory:
-
 ```bash
 cd api
-```
-
-2. Install dependencies:
-
-```bash
 pip install -r requirements.txt
-```
-
-3. Set your Groq API key:
-
-```bash
 echo "GROQ_API_KEY=your_api_key_here" > .env
-```
-
-4. (Optional) Re-ingest portfolio knowledge into ChromaDB:
-
-```bash
-python ingest.py
-```
-
-5. Run the server:
-
-```bash
 python app.py
+```
+
+The Flask API listens locally at `http://localhost:5000`.
+
+---
+
+## Running the Tests
+
+Execute automated Python backend tests:
+
+```bash
+pytest tests/
+```
+
+Run static code analysis:
+
+```bash
+ruff check .
 ```
 
 ---
 
 ## Deployment
 
-**Frontend:** Deployed automatically to GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`. In the repository settings, **Pages -> Source** must be set to **GitHub Actions**. The Next.js config uses `output: 'export'` so the site builds to static files.
+- **Frontend:** Automatically built and published to GitHub Pages via `.github/workflows/deploy.yml` on pushes to `main`.
+- **Backend:** Packaged via Docker and deployed on Render with scoped CORS origins.
 
-**Backend:** Deployed on Render using `render.yaml` / the `Dockerfile` in `api/`. Make sure CORS allows `https://shashank17singh.github.io`.
+Live production URL: [shashank17singh.github.io](https://shashank17singh.github.io/)
+
+---
+
+## Known Limitations
+
+- Static GitHub Pages hosting requires client-side search execution; the interactive chat assistant communicates with a remote API that may spin down during prolonged cold inactivity on free-tier hosting.
+- The assistant's answers are strictly bounded by indexed resume paragraphs to avoid hallucinations regarding unlisted proficiencies.
 
 ---
 
@@ -169,4 +180,4 @@ python app.py
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
