@@ -32,7 +32,7 @@ const projects: Project[] = [
     tech: ["PyTorch", "ONNX Runtime", "FastAPI", "React", "TypeScript", "Celery"],
     github: "https://github.com/Shashank17singh/TruthLens",
     demo: "https://github.com/Shashank17singh/TruthLens/blob/main/truthlens.png",
-    demoLabel: "View platform",
+    demoLabel: "View output",
     live: false,
   },
   {
@@ -41,7 +41,7 @@ const projects: Project[] = [
     tech: ["React", "TypeScript", "Yjs", "Fastify", "PostgreSQL", "Redis", "gVisor"],
     github: "https://github.com/Shashank17singh/CodeSync",
     demo: "https://github.com/Shashank17singh/CodeSync/blob/main/codesync.png",
-    demoLabel: "View interface",
+    demoLabel: "View output",
     live: false,
   },
   {
@@ -58,7 +58,8 @@ const projects: Project[] = [
     description: "A college assistant that answers from official documents with citations, and plans study schedules and reminders through agents.",
     tech: ["Python", "FastAPI", "LangGraph", "React", "PostgreSQL", "Qdrant"],
     github: "https://github.com/Shashank17singh/CampusMind",
-    demo: null,
+    demo: "https://github.com/Shashank17singh/CampusMind/blob/main/docs/screenshots/home.png",
+    demoLabel: "View output",
     live: false,
   },
   {
@@ -67,7 +68,7 @@ const projects: Project[] = [
     tech: ["C++", "HNSW", "KD-Tree", "RAG", "Ollama"],
     github: "https://github.com/Shashank17singh/Your-Own-AI",
     demo: "https://github.com/Shashank17singh/Your-Own-AI/blob/main/Your-Own-AI.png",
-    demoLabel: "View architecture",
+    demoLabel: "View output",
     live: false,
   },
 ];
@@ -137,7 +138,6 @@ export function Projects() {
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">{project.demoLabel ?? "Live demo"}</a>
                   )}
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </li>
