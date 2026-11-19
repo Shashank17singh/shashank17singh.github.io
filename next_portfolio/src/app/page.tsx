@@ -49,7 +49,7 @@ export default function Home() {
             © {new Date().getFullYear()} Shashank Singh
           </p>
           <ul>
-            <li><a href="https://github.com/shashank17singh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://github.com/Shashank17singh" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://linkedin.com/in/shashank17singh" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>

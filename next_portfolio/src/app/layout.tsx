@@ -3,8 +3,35 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
-  title: "Shashank Singh",
-  description: "Shashank Singh builds C++ engines, Python backends and applied AI tools. Six projects, two of them live.",
+  metadataBase: new URL("https://shashank17singh.github.io"),
+  title: "Shashank Singh | Systems & Applied AI Engineer",
+  description: "Shashank Singh builds C++ engines, Python backends and applied AI tools. Seven projects across systems, ML and full-stack, two of them live.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Shashank Singh | Systems & Applied AI Engineer",
+    description: "C++ engines, Python backends and applied AI tools. Seven projects, two of them live.",
+    url: "https://shashank17singh.github.io",
+    siteName: "Shashank Singh Portfolio",
+    images: [
+      {
+        url: "/work/hotseat.png",
+        width: 2880,
+        height: 1800,
+        alt: "Shashank Singh Portfolio - Featured Projects",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shashank Singh | Systems & Applied AI Engineer",
+    description: "C++ engines, Python backends and applied AI tools. Seven projects, two of them live.",
+    images: ["/work/hotseat.png"],
+  },
 };
 
 export const viewport: Viewport = {
