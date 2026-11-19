@@ -8,7 +8,7 @@ type Project = {
   live: boolean;
 };
 
-// The six the owner chose to show. "Live" means a running deployment a visitor can open today.
+// Seven projects across systems, ML and full-stack. "Live" means a running deployment a visitor can open today.
 const projects: Project[] = [
   {
     title: "Hotseat",
@@ -25,6 +25,15 @@ const projects: Project[] = [
     github: "https://github.com/Shashank17singh/UPI-Mesh",
     demo: "https://upi-mesh.duckdns.org/",
     live: true,
+  },
+  {
+    title: "TruthLens",
+    description: "A multi-modal deepfake detection platform explaining visual, acoustic and text manipulations with Grad-CAM heatmaps, DCT spectra and HMAC-SHA256 signed PDF audit trails.",
+    tech: ["PyTorch", "ONNX Runtime", "FastAPI", "React", "TypeScript", "Celery"],
+    github: "https://github.com/Shashank17singh/TruthLens",
+    demo: "https://github.com/Shashank17singh/TruthLens/blob/main/truthlens.png",
+    demoLabel: "View platform",
+    live: false,
   },
   {
     title: "CodeSync",
@@ -68,6 +77,15 @@ type Case = { title: string; text: string; facts: [string, string][]; image: str
 // Same order as the list above.
 const cases: Case[] = [
   {
+    title: "TruthLens",
+    text: "Detects multi-modal deepfakes with spatial Grad-CAM heatmaps, 2D DCT spectral energy curves and HMAC-SHA256 signed PDF audit trails.",
+    facts: [["Modality", "Image, audio and text"], ["Inference", "CPU-optimized ONNX Runtime"], ["Audit trail", "HMAC-SHA256 signed PDF"]],
+    image: "/work/truthlens.png",
+    width: 2880,
+    height: 1800,
+    alt: "The TruthLens forensic platform interface showing multi-modal inspection, probability gauges and explainability evidence",
+  },
+  {
     title: "UPI Mesh",
     text: "A payment made offline is encrypted on the phone, passed along a mesh, and settled once, even if it arrives twice.",
     facts: [["Encryption", "RSA-2048 with AES-256-GCM"], ["Replay guard", "Ciphertext-hash idempotency"], ["Built in", "Python and FastAPI"]],
@@ -102,7 +120,7 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <div className="head">
-          <h2>Six projects, two of them live</h2>
+          <h2>Seven projects, two of them live</h2>
         </div>
 
         <ul className="ruled">
@@ -128,7 +146,7 @@ export function Projects() {
 
         <div style={{ marginTop: "var(--space-3xl)" }}>
           <div className="head">
-            <h2>Three up close</h2>
+            <h2>Four up close</h2>
           </div>
           {cases.map((item, index) => (
             <article key={item.title} className={index === 0 ? "case" : "case case--even"}>

@@ -14,7 +14,8 @@ Programming: Python, C++, SQL, HTML, CSS, JavaScript, TypeScript, React, Next.js
 
 ## Projects Summary
 
-His portfolio features six projects, in this order: Hotseat, UPI Mesh, CodeSync, DPI Engine, CampusMind, and Your Own AI. Hotseat and UPI Mesh are live. His other projects:
+His portfolio features seven projects, in this order: Hotseat, UPI Mesh, TruthLens, CodeSync, DPI Engine, CampusMind, and Your Own AI. Hotseat and UPI Mesh are live. His other projects:
+- TruthLens (Multi-modal deepfake detection and explainability evidence platform)
 - Code Sentinel (Evidence-based integrity triage system for coding assessments)
 - Customer Churn Prediction (Interactive telecom churn predictor with an ANN classifier)
 - DPI Engine (Deep packet inspection in C++)
@@ -57,6 +58,10 @@ Your Own AI is a C++ vector database with HNSW, KD-Tree, and brute-force search,
 ## UPI Mesh
 
 UPI Mesh is an offline-first FastAPI backend for UPI-style transactions using RSA-2048 and AES-256-GCM cryptography, a simulated Bluetooth mesh network, and ciphertext-hash idempotency. GitHub: https://github.com/Shashank17singh/UPI-Mesh. Live demo: https://upi-mesh.duckdns.org/.
+
+## TruthLens
+
+TruthLens is a multi-modal AI detection and forensic attribution platform designed for newsrooms, academic integrity, and intelligence analysis. It detects visual, acoustic, and text deepfakes with spatial Grad-CAM heatmaps, 2D Discrete Cosine Transform (DCT) radial spectral energy falloff, LFCC speech window timelines, and sentence burstiness metrics. Built with PyTorch, ONNX Runtime (CPU-first inference), FastAPI, Celery, React 18, and a Manifest V3 Chrome extension. It generates cryptographically tamper-evident PDF reports verifiable via HMAC-SHA256 signatures and public QR code endpoints. GitHub: https://github.com/Shashank17singh/TruthLens.
 
 ## Learning Analytics Engine
 
