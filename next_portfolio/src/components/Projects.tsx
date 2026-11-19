@@ -31,9 +31,8 @@ const projects: Project[] = [
     description: "A multi-modal deepfake detection platform explaining visual, acoustic and text manipulations with Grad-CAM heatmaps, DCT spectra and HMAC-SHA256 signed PDF audit trails.",
     tech: ["PyTorch", "ONNX Runtime", "FastAPI", "React", "TypeScript", "Celery"],
     github: "https://github.com/Shashank17singh/TruthLens",
-    demo: "https://github.com/Shashank17singh/TruthLens/blob/main/truthlens.png",
-    demoLabel: "View output",
-    live: false,
+    demo: "https://truth-lens-two-self.vercel.app/",
+    live: true,
   },
   {
     title: "CodeSync",
@@ -121,7 +120,7 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <div className="head">
-          <h2>Seven projects, two of them live</h2>
+          <h2>Seven projects, three of them live</h2>
         </div>
 
         <ul className="ruled">
