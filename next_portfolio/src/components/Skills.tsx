@@ -2,9 +2,9 @@ const skills = [
   { category: "Languages", items: ["Python", "C++", "TypeScript", "SQL"] },
   {
     category: "AI and machine learning",
-    items: ["PyTorch", "ONNX Runtime", "Scikit-learn", "XGBoost", "LangChain", "LangGraph", "Hugging Face", "ChromaDB", "Qdrant", "Ollama", "Faster-Whisper", "OpenCV"],
+    items: ["PyTorch", "ONNX Runtime", "Scikit-learn", "XGBoost", "LangChain", "LangGraph", "Hugging Face", "ChromaDB", "Qdrant", "pgvector", "Ollama", "Faster-Whisper", "OpenCV"],
   },
-  { category: "Systems and backend", items: ["C++17", "Multithreading", "FastAPI", "Flask", "Celery", "REST APIs", "PostgreSQL", "Supabase"] },
+  { category: "Systems and backend", items: ["C++17", "Multithreading", "FastAPI", "Flask", "Celery", "REST APIs", "PostgreSQL", "Supabase", "Neon"] },
   { category: "Cloud and DevOps", items: ["Docker", "AWS", "CI/CD", "GitHub Actions", "Nginx"] },
   { category: "Architecture and security", items: ["Microservices", "Distributed systems", "TCP/UDP", "TLS/SNI", "Cryptography (RSA/AES)", "Zero-Trust"] },
   { category: "Frontend and data", items: ["Next.js", "React", "Tailwind CSS", "Pandas", "NumPy"] },

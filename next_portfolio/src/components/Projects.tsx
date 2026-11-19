@@ -37,7 +37,7 @@ const projects: Project[] = [
   {
     title: "CodeSync",
     description: "A browser code editor where a whole room types in one file, with live cursors, chat, history, sandboxed runs and an online judge.",
-    tech: ["React", "TypeScript", "Yjs", "Fastify", "PostgreSQL", "Redis", "gVisor"],
+    tech: ["React", "TypeScript", "Yjs", "Fastify", "Neon Postgres", "Redis", "gVisor"],
     github: "https://github.com/Shashank17singh/CodeSync",
     demo: "https://code-sync-vert.vercel.app/",
     live: true,
@@ -54,7 +54,7 @@ const projects: Project[] = [
   {
     title: "CampusMind",
     description: "A college assistant that answers from official documents with citations, and plans study schedules and reminders through agents.",
-    tech: ["Python", "FastAPI", "LangGraph", "React", "PostgreSQL", "Qdrant"],
+    tech: ["Python", "FastAPI", "LangGraph", "React", "Supabase", "pgvector"],
     github: "https://github.com/Shashank17singh/CampusMind",
     demo: "https://campus-mind-delta.vercel.app/",
     live: true,
