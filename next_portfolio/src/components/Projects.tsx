@@ -56,9 +56,8 @@ const projects: Project[] = [
     description: "A college assistant that answers from official documents with citations, and plans study schedules and reminders through agents.",
     tech: ["Python", "FastAPI", "LangGraph", "React", "PostgreSQL", "Qdrant"],
     github: "https://github.com/Shashank17singh/CampusMind",
-    demo: "https://github.com/Shashank17singh/CampusMind/blob/main/docs/screenshots/home.png",
-    demoLabel: "View output",
-    live: false,
+    demo: "https://campus-mind-delta.vercel.app/",
+    live: true,
   },
   {
     title: "Your Own AI",
@@ -119,7 +118,7 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <div className="head">
-          <h2>Seven projects, four of them live</h2>
+          <h2>Seven projects, five of them live</h2>
         </div>
 
         <ul className="ruled">
