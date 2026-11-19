@@ -9,6 +9,9 @@ COPY api/chat_logic.py .
 COPY api/ingest.py .
 COPY api/portfolio_knowledge.md .
 RUN python ingest.py
-RUN mkdir -p /app/cache && chmod -R 777 /app/cache /app/chroma_db
+RUN useradd -m -u 1000 appuser && \
+    mkdir -p /app/cache /app/chroma_db && \
+    chown -R appuser:appuser /app
+USER 1000:1000
 EXPOSE 5000
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "300", "app:app"]
