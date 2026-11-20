@@ -1,0 +1,10 @@
+next_portfolio/
+.git/
+.github/
+.vscode/
+.hallmark/
+.claude/
+.agents/
+api/venv/
+api/__pycache__/
+api/*.pyc

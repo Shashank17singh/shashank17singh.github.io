@@ -6,4 +6,4 @@ __pycache__/
 .gitignore
 README.md
 widget-snippet.html
-*.md
+!portfolio_knowledge.md
