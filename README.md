@@ -163,10 +163,10 @@ Live production URL: [shashank17singh.github.io](https://shashank17singh.github.
 
 ---
 
-## Known Limitations
+## Operational Considerations & Limitations
 
-- Static GitHub Pages hosting requires client-side search execution; the interactive chat assistant communicates with a remote API that may spin down during prolonged cold inactivity on free-tier hosting.
-- The assistant's answers are strictly bounded by indexed resume paragraphs to avoid hallucinations regarding unlisted proficiencies.
+- **Static Edge Distribution**: The portfolio web client is statically pre-rendered for instant global edge delivery via GitHub Pages / Vercel; live interactive AI services connect to decoupled microservice APIs.
+- **RAG Grounding Invariants**: Portfolio assistant responses are strictly grounded in verified career milestones and technical competencies to prevent model hallucinations.
 
 ---
 
