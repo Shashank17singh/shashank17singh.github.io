@@ -113,6 +113,74 @@ const cases: Case[] = [
   },
 ];
 
+const PROJECT_ICONS: Record<string, React.ReactNode> = {
+  Hotseat: (
+    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#0b0f1a" />
+      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(249,115,22,0.25)" strokeWidth="1.5" />
+      <path d="M6.5 23L12.5 18.5L18 20.5L25.5 9" stroke="#f97316" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="25.5" cy="9" r="2.5" fill="#f97316" />
+    </svg>
+  ),
+  "UPI Mesh": (
+    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#18181b" />
+      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(16,185,129,0.25)" strokeWidth="1.5" />
+      <circle cx="16" cy="16" r="3.5" fill="#10b981" />
+      <circle cx="9" cy="10" r="2.5" fill="#8b5cf6" />
+      <circle cx="23" cy="10" r="2.5" fill="#8b5cf6" />
+      <circle cx="9" cy="22" r="2.5" fill="#8b5cf6" />
+      <circle cx="23" cy="22" r="2.5" fill="#8b5cf6" />
+      <path d="M11 11.5L14 14M21 11.5L18 14M11 20.5L14 18M21 20.5L18 18" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+  TruthLens: (
+    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#0b1120" />
+      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(56,189,248,0.25)" strokeWidth="1.5" />
+      <path d="M16 6.5L8.5 10V15.5C8.5 20.5 11.8 24.8 16 26C20.2 24.8 23.5 20.5 23.5 15.5V10L16 6.5Z" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12.5 15.5L15 18L20 13" stroke="#10b981" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  CodeSync: (
+    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#1c1a17" />
+      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" />
+      <path d="M11 10L5.5 16L11 22M21 10L26.5 16L21 22M18 9L14 23" stroke="#d29a3c" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  "DPI Engine": (
+    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#0c1524" />
+      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(6,182,212,0.25)" strokeWidth="1.5" />
+      <path d="M7 11L16 6.5L25 11L16 15.5L7 11Z" stroke="#06b6d4" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M7 16.5L16 21L25 16.5" stroke="#3b82f6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M7 21.5L16 26L25 21.5" stroke="#06b6d4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  CampusMind: (
+    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#0f172a" />
+      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(56,189,248,0.25)" strokeWidth="1.5" />
+      <path d="M16 7L6.5 11.5L16 16L25.5 11.5L16 7Z" fill="#38bdf8" />
+      <path d="M10 13.5V19C10 21.2 12.5 23 16 23C19.5 23 22 21.2 22 19V13.5L16 16.2L10 13.5Z" fill="#0284c7" />
+      <path d="M25.5 12.5V18" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  ),
+  "Your Own AI": (
+    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#181126" />
+      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(168,85,247,0.25)" strokeWidth="1.5" />
+      <circle cx="16" cy="16" r="3.5" fill="#a855f7" />
+      <circle cx="8" cy="14" r="2" fill="#e879f9" />
+      <circle cx="24" cy="12" r="2" fill="#e879f9" />
+      <circle cx="13" cy="24" r="2" fill="#e879f9" />
+      <circle cx="23" cy="22" r="2" fill="#c084fc" />
+      <path d="M9.8 14.5L13.2 15.5M18.8 15.5L22.2 12.8M15 19L13.8 22.2M18.2 17.8L21.5 20.8" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  ),
+};
+
 export function Projects() {
   return (
     <section id="projects" className="section">
@@ -124,7 +192,12 @@ export function Projects() {
         <ul className="ruled">
           {projects.map((project) => (
             <li key={project.title} className="work-row">
-              <h3><a href={project.github} target="_blank" rel="noopener noreferrer">{project.title}</a></h3>
+              <h3 className="work-row__title">
+                <span className="project-badge" aria-hidden="true">
+                  {PROJECT_ICONS[project.title]}
+                </span>
+                <a href={project.github} target="_blank" rel="noopener noreferrer">{project.title}</a>
+              </h3>
               <div>
                 <p className="work-row__what">{project.description}</p>
                 <p className="work-row__stack">{project.tech.join(", ")}</p>
@@ -148,7 +221,12 @@ export function Projects() {
           {cases.map((item, index) => (
             <article key={item.title} className={index === 0 ? "case" : "case case--even"}>
               <div className="case__text">
-                <h3>{item.title}</h3>
+                <h3 className="case__title">
+                  <span className="project-badge" aria-hidden="true">
+                    {PROJECT_ICONS[item.title]}
+                  </span>
+                  <span>{item.title}</span>
+                </h3>
                 <p>{item.text}</p>
                 <dl className="facts">
                   {item.facts.map(([term, value]) => (
