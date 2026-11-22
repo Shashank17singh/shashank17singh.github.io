@@ -5,7 +5,7 @@ import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Chatbot } from "@/components/Chatbot";
 
-const EMAIL = "mailto:shashanksingh1709@gmail.com";
+const EMAIL = "https://mail.google.com/mail/?view=cm&fs=1&to=shashanksingh1709@gmail.com";
 
 export default function Home() {
   return (
@@ -53,7 +53,7 @@ export default function Home() {
             <li><a href="https://linkedin.com/in/shashank17singh" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://codolio.com/profile/Shashank17singh" target="_blank" rel="noopener noreferrer">Codolio</a></li>
             <li><a href="https://leetcode.com/u/Shashank17singh/" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
-            <li><a href="mailto:shashanksingh1709@gmail.com">Email</a></li>
+            <li><a href={EMAIL} target="_blank" rel="noopener noreferrer">Email</a></li>
             <li><a href="tel:+917905851722">Phone</a></li>
           </ul>
         </div>

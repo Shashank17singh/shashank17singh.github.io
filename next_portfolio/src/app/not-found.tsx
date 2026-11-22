@@ -26,7 +26,7 @@ export default function NotFound() {
           <Link href="/#projects" className="btn">
             View Projects
           </Link>
-          <a href="mailto:shashanksingh1709@gmail.com" className="btn">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shashanksingh1709@gmail.com" target="_blank" rel="noopener noreferrer" className="btn">
             Contact Shashank
           </a>
         </div>

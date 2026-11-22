@@ -1,4 +1,4 @@
-const EMAIL = "mailto:shashanksingh1709@gmail.com";
+const EMAIL = "https://mail.google.com/mail/?view=cm&fs=1&to=shashanksingh1709@gmail.com";
 const PHONE = "+91 79058 51722";
 const PHONE_TEL = "tel:+917905851722";
 
@@ -42,7 +42,7 @@ export function Contact() {
             projects.
           </p>
           <div style={{ display: "grid", gap: "var(--space-xs)" }}>
-            <a className="close__mail" href={EMAIL}>shashanksingh1709@gmail.com</a>
+            <a className="close__mail" href={EMAIL} target="_blank" rel="noopener noreferrer">shashanksingh1709@gmail.com</a>
             <a className="close__phone" href={PHONE_TEL} style={{ fontSize: "var(--text-lg)", color: "var(--color-ink-2)", textDecoration: "none" }}>{PHONE}</a>
           </div>
         </div>

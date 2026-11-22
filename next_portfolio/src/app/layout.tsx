@@ -7,8 +7,12 @@ export const metadata: Metadata = {
   title: "Shashank Singh | Systems & Applied AI Engineer",
   description: "Shashank Singh builds C++ engines, Python backends and applied AI tools. Seven projects across systems, ML and full-stack, five of them live.",
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
     shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Shashank Singh | Systems & Applied AI Engineer",
