@@ -174,7 +174,7 @@ Live production URL: [shashank17singh.github.io](https://shashank17singh.github.
 
 - **LinkedIn**: [Shashank Singh](https://www.linkedin.com/in/shashank17singh/)
 - **GitHub**: [@Shashank17singh](https://github.com/Shashank17singh)
-- **Email**: [shashanksingh1709@gmail.com](mailto:shashanksingh1709@gmail.com)
+- **Email**: [shashanksingh1709@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=shashanksingh1709@gmail.com)
 
 ---
 
