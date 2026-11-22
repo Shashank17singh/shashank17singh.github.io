@@ -12,7 +12,7 @@ const socialLinks = [
 // Recruiters check two or three of these; the rest are on Codolio.
 const codingLinks = [
   ["LeetCode", "https://leetcode.com/u/Shashank17singh/"],
-  ["Codeforces", "https://codeforces.com/profile/shashank17singh"],
+  ["GeeksforGeeks", "https://www.geeksforgeeks.org/user/Shashank17Singh/"],
   ["Codolio", "https://codolio.com/profile/Shashank17singh"],
 ];
 
