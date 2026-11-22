@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 api/venv/
 api/__pycache__/
 *.pyc

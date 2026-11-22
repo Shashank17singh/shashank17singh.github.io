@@ -41,11 +41,11 @@ Hotseat is a spoken mock interview built with Next.js and TypeScript. It reads y
 
 ## CodeSync
 
-CodeSync is a browser code editor where a whole room types in one file at once, with live cursors, chat, history, sandboxed code runs, and an online judge. It is built with React, TypeScript, Yjs, Fastify, PostgreSQL, Redis, and gVisor for the sandbox. GitHub: https://github.com/Shashank17singh/CodeSync.
+CodeSync is a browser code editor where a whole room types in one file at once, with live cursors, chat, history, sandboxed code runs, and an online judge. It is built with React, TypeScript, Yjs, Fastify, PostgreSQL, Redis, and gVisor for the sandbox. GitHub: https://github.com/Shashank17singh/CodeSync. Live demo: https://codesync-team.vercel.app (Demo account: demo@codesync.dev / DemoPassword123!).
 
 ## CampusMind
 
-CampusMind is a college assistant that answers questions from official documents with citations, and plans study schedules and reminders through agents. It is built with Python, FastAPI, LangGraph, React, PostgreSQL, and Qdrant. GitHub: https://github.com/Shashank17singh/CampusMind.
+CampusMind is an enterprise academic AI assistant and RAG platform deployed for the University of Lucknow across 7 faculties and 60+ departments. It answers questions from official university documents with citations, and plans study schedules and reminders through specialized LangGraph agents. Built with Python, FastAPI, LangGraph, React, Supabase PostgreSQL 17 (pgvector), and Qdrant. GitHub: https://github.com/Shashank17singh/CampusMind. Live demo: https://campusmind-uol.vercel.app/ (Demo accounts: student@college.edu, faculty@college.edu, admin@college.edu / DemoPassword123!).
 
 ## DPI Engine
 
@@ -61,7 +61,7 @@ UPI Mesh is an offline-first FastAPI backend for UPI-style transactions using RS
 
 ## TruthLens
 
-TruthLens is a multi-modal AI detection and forensic attribution platform designed for newsrooms, academic integrity, and intelligence analysis. It detects visual, acoustic, and text deepfakes with spatial Grad-CAM heatmaps, 2D Discrete Cosine Transform (DCT) radial spectral energy falloff, LFCC speech window timelines, and sentence burstiness metrics. Built with PyTorch, ONNX Runtime (CPU-first inference), FastAPI, Celery, React 18, and a Manifest V3 Chrome extension. It generates cryptographically tamper-evident PDF reports verifiable via HMAC-SHA256 signatures and public QR code endpoints. GitHub: https://github.com/Shashank17singh/TruthLens.
+TruthLens is a multi-modal AI detection and forensic attribution platform designed for newsrooms, academic integrity, and intelligence analysis. It detects visual, acoustic, and text deepfakes with spatial Grad-CAM heatmaps, 2D Discrete Cosine Transform (DCT) radial spectral energy falloff, LFCC speech window timelines, and sentence burstiness metrics. Built with PyTorch, ONNX Runtime (CPU-first inference), FastAPI, Celery, React 18, and a Manifest V3 Chrome extension. It generates cryptographically tamper-evident PDF reports verifiable via HMAC-SHA256 signatures and public QR code endpoints. GitHub: https://github.com/Shashank17singh/TruthLens. Live demo: https://truthlens-forensic.vercel.app/ (Demo account: demo@truthlens.ai / DemoPassword123!).
 
 ## Learning Analytics Engine
 

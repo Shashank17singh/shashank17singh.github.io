@@ -31,7 +31,7 @@ const projects: Project[] = [
     description: "A multi-modal deepfake detection platform explaining visual, acoustic and text manipulations with Grad-CAM heatmaps, DCT spectra and HMAC-SHA256 signed PDF audit trails.",
     tech: ["PyTorch", "ONNX Runtime", "FastAPI", "React", "TypeScript", "Celery"],
     github: "https://github.com/Shashank17singh/TruthLens",
-    demo: "https://truth-lens-two-self.vercel.app/",
+    demo: "https://truthlens-forensic.vercel.app/",
     live: true,
   },
   {
@@ -39,7 +39,7 @@ const projects: Project[] = [
     description: "A browser code editor where a whole room types in one file, with live cursors, chat, history, sandboxed runs and an online judge.",
     tech: ["React", "TypeScript", "Yjs", "Fastify", "Neon Postgres", "Redis", "gVisor"],
     github: "https://github.com/Shashank17singh/CodeSync",
-    demo: "https://code-sync-vert.vercel.app/",
+    demo: "https://codesync-team.vercel.app",
     live: true,
   },
   {
@@ -56,7 +56,7 @@ const projects: Project[] = [
     description: "A college assistant that answers from official documents with citations, and plans study schedules and reminders through agents.",
     tech: ["Python", "FastAPI", "LangGraph", "React", "Supabase", "pgvector"],
     github: "https://github.com/Shashank17singh/CampusMind",
-    demo: "https://campus-mind-delta.vercel.app/",
+    demo: "https://campusmind-uol.vercel.app/",
     live: true,
   },
   {
