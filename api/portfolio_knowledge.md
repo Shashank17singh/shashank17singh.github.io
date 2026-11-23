@@ -14,7 +14,7 @@ Programming: Python, C++, SQL, HTML, CSS, JavaScript, TypeScript, React, Next.js
 
 ## Projects Summary
 
-His portfolio features seven projects, in this order: Hotseat, UPI Mesh, TruthLens, CodeSync, DPI Engine, CampusMind, and Your Own AI. Hotseat and UPI Mesh are live. His other projects:
+His portfolio features eight projects, in this order: Agentic Fraud Sentinel, CodeSync, Hotseat, TruthLens, CampusMind, UPI Mesh, DPI Engine, and Your Own AI. The first six have live demos; DPI Engine and Your Own AI link to output screenshots. His other projects:
 - TruthLens (Multi-modal deepfake detection and explainability evidence platform)
 - Code Sentinel (Evidence-based integrity triage system for coding assessments)
 - Customer Churn Prediction (Interactive telecom churn predictor with an ANN classifier)
@@ -30,7 +30,7 @@ His portfolio features seven projects, in this order: Hotseat, UPI Mesh, TruthLe
 - Conversational RAG Chatbot (Multi-turn PDF chat)
 - AI Resume Screener (Automated resume scoring)
 - Home Price Suite (End-to-end ML REST API)
-- SolarWind Forecaster (Renewable energy prediction)
+- SolarWind Forecaster (Geomagnetic storm forecasting from NASA and NOAA data)
 - Sports Person Classifier (Computer vision classification)
 - Posture Checker (MediaPipe real-time pose estimation)
 - House Price Predictor (Random Forest regression for property prices)
@@ -85,7 +85,7 @@ Hire Me AI is a FastAPI application that parses PDF resumes into Pydantic schema
 
 ## Agentic Fraud Sentinel
 
-Agentic Fraud Sentinel is a financial fraud-detection system that uses an Optuna-tuned XGBoost model, temporal feature engineering, SMOTE balancing, and SHAP explainability. GitHub: https://github.com/Shashank17singh/Agentic-Fraud-Sentinel. Live demo: https://agentic-fraud-sentinel.streamlit.app/.
+Agentic Fraud Sentinel is a card fraud-detection system trained on the IEEE-CIS dataset (590K real transactions). An Optuna-tuned XGBoost model with a chronological split and SMOTE on training rows scores 0.8875 ROC-AUC and 0.5110 PR-AUC on later, unseen transactions, catching 47% of fraud at 55% precision. A LangGraph workflow explains each score with SHAP, applies policy rules and pauses risky cases for an analyst to approve or deny. The FastAPI service tracks drift, latency and live precision and recall from outcome feedback; replaying 1,000 real labelled transactions gave 50% precision and 40% recall. GitHub: https://github.com/Shashank17singh/Agentic-Fraud-Sentinel. Live demo: https://agentic-fraud-sentinel.streamlit.app/.
 
 ## Conversational RAG Chatbot
 

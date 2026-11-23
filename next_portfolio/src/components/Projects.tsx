@@ -8,30 +8,14 @@ type Project = {
   live: boolean;
 };
 
-// Seven projects across systems, ML and full-stack. "Live" means a running deployment a visitor can open today.
+// Eight projects across ML, full-stack and systems, strongest first. "Live" means a running deployment a visitor can open today.
 const projects: Project[] = [
   {
-    title: "Hotseat",
-    description: "A spoken mock interview that builds questions from your resume, follows up on your answers and scores each one.",
-    tech: ["Next.js", "TypeScript", "Groq", "Whisper"],
-    github: "https://github.com/Shashank17singh/Hotseat",
-    demo: "https://hotseat-black-chi.vercel.app/",
-    live: true,
-  },
-  {
-    title: "UPI Mesh",
-    description: "An offline-first payments backend with hybrid RSA-2048 and AES-256-GCM encryption, relayed over a simulated Bluetooth mesh.",
-    tech: ["Python", "FastAPI", "RSA-2048", "AES-256-GCM"],
-    github: "https://github.com/Shashank17singh/UPI-Mesh",
-    demo: "https://upi-mesh.duckdns.org/",
-    live: true,
-  },
-  {
-    title: "TruthLens",
-    description: "A multi-modal deepfake detection platform explaining visual, acoustic and text manipulations with Grad-CAM heatmaps, DCT spectra and HMAC-SHA256 signed PDF audit trails.",
-    tech: ["PyTorch", "ONNX Runtime", "FastAPI", "React", "TypeScript", "Celery"],
-    github: "https://github.com/Shashank17singh/TruthLens",
-    demo: "https://truthlens-forensic.vercel.app/",
+    title: "Agentic Fraud Sentinel",
+    description: "Card fraud detection on 590K real transactions: a tuned XGBoost model, SHAP reasons for every score, and a LangGraph flow that pauses risky cases for an analyst.",
+    tech: ["Python", "XGBoost", "LangGraph", "SHAP", "FastAPI", "Docker"],
+    github: "https://github.com/Shashank17singh/Agentic-Fraud-Sentinel",
+    demo: "https://agentic-fraud-sentinel.streamlit.app/",
     live: true,
   },
   {
@@ -43,13 +27,20 @@ const projects: Project[] = [
     live: true,
   },
   {
-    title: "DPI Engine",
-    description: "A C++17 deep packet inspection engine that rebuilds TCP and UDP flows from PCAP captures and classifies traffic by TLS SNI and HTTP Host.",
-    tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
-    github: "https://github.com/Shashank17singh/DPI-Engine",
-    demo: "https://github.com/Shashank17singh/DPI-Engine/blob/main/dpi-engine.png",
-    demoLabel: "View output",
-    live: false,
+    title: "Hotseat",
+    description: "A spoken mock interview that builds questions from your resume, follows up on your answers and scores each one.",
+    tech: ["Next.js", "TypeScript", "Groq", "Whisper"],
+    github: "https://github.com/Shashank17singh/Hotseat",
+    demo: "https://hotseat-black-chi.vercel.app/",
+    live: true,
+  },
+  {
+    title: "TruthLens",
+    description: "A multi-modal deepfake detection platform explaining visual, acoustic and text manipulations with Grad-CAM heatmaps, DCT spectra and HMAC-SHA256 signed PDF audit trails.",
+    tech: ["PyTorch", "ONNX Runtime", "FastAPI", "React", "TypeScript", "Celery"],
+    github: "https://github.com/Shashank17singh/TruthLens",
+    demo: "https://truthlens-forensic.vercel.app/",
+    live: true,
   },
   {
     title: "CampusMind",
@@ -58,6 +49,23 @@ const projects: Project[] = [
     github: "https://github.com/Shashank17singh/CampusMind",
     demo: "https://campusmind-uol.vercel.app/",
     live: true,
+  },
+  {
+    title: "UPI Mesh",
+    description: "An offline-first payments backend with hybrid RSA-2048 and AES-256-GCM encryption, relayed over a simulated Bluetooth mesh.",
+    tech: ["Python", "FastAPI", "RSA-2048", "AES-256-GCM"],
+    github: "https://github.com/Shashank17singh/UPI-Mesh",
+    demo: "https://upi-mesh.duckdns.org/",
+    live: true,
+  },
+  {
+    title: "DPI Engine",
+    description: "A C++17 deep packet inspection engine that rebuilds TCP and UDP flows from PCAP captures and classifies traffic by TLS SNI and HTTP Host.",
+    tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
+    github: "https://github.com/Shashank17singh/DPI-Engine",
+    demo: "https://github.com/Shashank17singh/DPI-Engine/blob/main/dpi-engine.png",
+    demoLabel: "View output",
+    live: false,
   },
   {
     title: "Your Own AI",
@@ -114,6 +122,15 @@ const cases: Case[] = [
 ];
 
 const PROJECT_ICONS: Record<string, React.ReactNode> = {
+  "Agentic Fraud Sentinel": (
+    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#0d0d0f" />
+      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(239,68,68,0.25)" strokeWidth="1.5" />
+      <rect x="6.5" y="10" width="19" height="12.5" rx="2" stroke="#ef4444" strokeWidth="2" />
+      <path d="M6.5 14H25.5" stroke="#ef4444" strokeWidth="2" />
+      <path d="M10 19H14" stroke="rgba(255,255,255,0.5)" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  ),
   Hotseat: (
     <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="32" height="32" rx="7" fill="#0b0f1a" />
@@ -186,7 +203,7 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <div className="head">
-          <h2>Seven projects, five of them live</h2>
+          <h2>Eight projects, six of them live</h2>
         </div>
 
         <ul className="ruled">
