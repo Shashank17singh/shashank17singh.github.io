@@ -14,7 +14,8 @@ Programming: Python, C++, SQL, HTML, CSS, JavaScript, TypeScript, React, Next.js
 
 ## Projects Summary
 
-His portfolio features eight projects, in this order: Agentic Fraud Sentinel, CodeSync, Hotseat, TruthLens, CampusMind, UPI Mesh, DPI Engine, and Your Own AI. The first six have live demos; DPI Engine and Your Own AI link to output screenshots. His other projects:
+His portfolio features six projects, one per domain, in this order: Agentic Fraud Sentinel (machine learning), CodeSync (real-time full-stack), Hotseat (LLM apps), TruthLens (deep learning), UPI Mesh (security and payments) and DPI Engine (C++ systems). All but DPI Engine have live demos; DPI Engine links to an output screenshot. His other projects:
+- CampusMind (Campus assistant with cited answers from college documents)
 - TruthLens (Multi-modal deepfake detection and explainability evidence platform)
 - Code Sentinel (Evidence-based integrity triage system for coding assessments)
 - Customer Churn Prediction (Interactive telecom churn predictor with an ANN classifier)

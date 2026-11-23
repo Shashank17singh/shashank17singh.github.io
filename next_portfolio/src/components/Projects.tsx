@@ -8,7 +8,7 @@ type Project = {
   live: boolean;
 };
 
-// Eight projects across ML, full-stack and systems, strongest first. "Live" means a running deployment a visitor can open today.
+// One project per domain, strongest first. "Live" means a running deployment a visitor can open today.
 const projects: Project[] = [
   {
     title: "Agentic Fraud Sentinel",
@@ -43,14 +43,6 @@ const projects: Project[] = [
     live: true,
   },
   {
-    title: "CampusMind",
-    description: "A college assistant that answers from official documents with citations, and plans study schedules and reminders through agents.",
-    tech: ["Python", "FastAPI", "LangGraph", "React", "Supabase", "pgvector"],
-    github: "https://github.com/Shashank17singh/CampusMind",
-    demo: "https://campusmind-uol.vercel.app/",
-    live: true,
-  },
-  {
     title: "UPI Mesh",
     description: "An offline-first payments backend with hybrid RSA-2048 and AES-256-GCM encryption, relayed over a simulated Bluetooth mesh.",
     tech: ["Python", "FastAPI", "RSA-2048", "AES-256-GCM"],
@@ -64,15 +56,6 @@ const projects: Project[] = [
     tech: ["C++17", "libpcap", "TLS/SNI", "Multithreading"],
     github: "https://github.com/Shashank17singh/DPI-Engine",
     demo: "https://github.com/Shashank17singh/DPI-Engine/blob/main/dpi-engine.png",
-    demoLabel: "View output",
-    live: false,
-  },
-  {
-    title: "Your Own AI",
-    description: "A vector database with HNSW, KD-Tree and brute-force search, a local RAG pipeline on Ollama, and a 2D PCA view.",
-    tech: ["C++", "HNSW", "KD-Tree", "RAG", "Ollama"],
-    github: "https://github.com/Shashank17singh/Your-Own-AI",
-    demo: "https://github.com/Shashank17singh/Your-Own-AI/blob/main/Your-Own-AI.png",
     demoLabel: "View output",
     live: false,
   },
@@ -109,15 +92,6 @@ const cases: Case[] = [
     height: 1000,
     alt: "DPI Engine terminal output: 77 packets read, all forwarded, and per-thread dispatch counts",
     tall: true,
-  },
-  {
-    title: "Your Own AI",
-    text: "Search the same vectors three ways and compare them, then ask a local model about the documents behind them.",
-    facts: [["Indexes", "HNSW, KD-Tree, brute force"], ["Model", "Ollama, run locally"], ["Built in", "C++ with CMake"]],
-    image: "/work/your-own-ai.png",
-    width: 2880,
-    height: 1800,
-    alt: "The Your Own AI dashboard after an HNSW search for \"binary tree\": the query on a 2D PCA plot, five nearest matches and a 40 microsecond latency",
   },
 ];
 
@@ -175,27 +149,6 @@ const PROJECT_ICONS: Record<string, React.ReactNode> = {
       <path d="M7 21.5L16 26L25 21.5" stroke="#06b6d4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
-  CampusMind: (
-    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="7" fill="#0f172a" />
-      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(56,189,248,0.25)" strokeWidth="1.5" />
-      <path d="M16 7L6.5 11.5L16 16L25.5 11.5L16 7Z" fill="#38bdf8" />
-      <path d="M10 13.5V19C10 21.2 12.5 23 16 23C19.5 23 22 21.2 22 19V13.5L16 16.2L10 13.5Z" fill="#0284c7" />
-      <path d="M25.5 12.5V18" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  ),
-  "Your Own AI": (
-    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="7" fill="#181126" />
-      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="rgba(168,85,247,0.25)" strokeWidth="1.5" />
-      <circle cx="16" cy="16" r="3.5" fill="#a855f7" />
-      <circle cx="8" cy="14" r="2" fill="#e879f9" />
-      <circle cx="24" cy="12" r="2" fill="#e879f9" />
-      <circle cx="13" cy="24" r="2" fill="#e879f9" />
-      <circle cx="23" cy="22" r="2" fill="#c084fc" />
-      <path d="M9.8 14.5L13.2 15.5M18.8 15.5L22.2 12.8M15 19L13.8 22.2M18.2 17.8L21.5 20.8" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  ),
 };
 
 export function Projects() {
@@ -203,7 +156,7 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <div className="head">
-          <h2>Eight projects, six of them live</h2>
+          <h2>Six projects, five of them live</h2>
         </div>
 
         <ul className="ruled">
@@ -233,7 +186,7 @@ export function Projects() {
 
         <div style={{ marginTop: "var(--space-3xl)" }}>
           <div className="head">
-            <h2>Four up close</h2>
+            <h2>Three up close</h2>
           </div>
           {cases.map((item, index) => (
             <article key={item.title} className={index === 0 ? "case" : "case case--even"}>
