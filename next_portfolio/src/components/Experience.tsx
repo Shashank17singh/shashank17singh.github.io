@@ -2,12 +2,12 @@ const experiences = [
   {
     role: "AI trainer: coding, generalist and STEM",
     company: "Handshake AI, AfterQuery, Outlier, Ethara AI, remote",
-    duration: "Jan 2026 to present",
+    duration: "Apr 2026 to present",
     points: [
       "Handshake AI (Jul 2026 to present): wrote RLHF coding prompts, reference solutions and tests in Python and C++, and multi-turn engineering prompts that need visual reasoning from technical diagrams.",
       "AfterQuery (Nov 2026): wrote image-grounded STEM problems with worked derivations and ground truth.",
       "Outlier (Aug to Sep 2026): compared paired AI-generated audio answers to a prompt on multiple quality criteria.",
-      "Ethara AI (Jan to Mar 2026): compared paired AI-generated images for a prompt on multiple quality criteria.",
+      "Ethara AI (Apr to May 2026): compared paired AI-generated images for a prompt on multiple quality criteria.",
     ],
     tech: ["Python", "C++", "RLHF", "LLM evaluation"],
   },

@@ -10,7 +10,7 @@ Shashank is pursuing B.Tech Computer Science (Artificial Intelligence) at the Un
 
 ## Experience
 
-Since January 2026 Shashank has worked remotely as an AI trainer on coding, generalist and STEM projects. At Handshake AI (July 2026 to present) he writes coding prompts, reference solutions and tests in Python and C++ for RLHF, and multi-turn engineering prompts that need visual reasoning from technical diagrams. At AfterQuery (November 2026) he wrote image-grounded STEM problems with step-by-step derivations and ground truth. At Outlier (August to September 2026) he listened to two AI-generated audio answers to the same prompt and compared them on several quality criteria. At Ethara AI (January to March 2026) he did the same comparison for pairs of AI-generated images.
+Since April 2026 Shashank has worked remotely as an AI trainer on coding, generalist and STEM projects. At Handshake AI (July 2026 to present) he writes coding prompts, reference solutions and tests in Python and C++ for RLHF, and multi-turn engineering prompts that need visual reasoning from technical diagrams. At AfterQuery (November 2026) he wrote image-grounded STEM problems with step-by-step derivations and ground truth. At Outlier (August to September 2026) he listened to two AI-generated audio answers to the same prompt and compared them on several quality criteria. At Ethara AI (April to May 2026) he did the same comparison for pairs of AI-generated images.
 
 ## Skills
 
