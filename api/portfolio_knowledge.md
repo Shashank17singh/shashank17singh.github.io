@@ -8,6 +8,10 @@ Shashank Singh is a final-year B.Tech Computer Science (Artificial Intelligence)
 
 Shashank is pursuing B.Tech Computer Science (Artificial Intelligence) at the University of Lucknow. He completed a 60-hour NIELIT Gorakhpur industrial training in Python, NumPy, Pandas, Matplotlib, and introductory machine learning from June to July 2025. His credentials include Samsung Innovation Campus Artificial Intelligence, NIELIT industrial training, and AWS Fundamentals of ML and AI.
 
+## Experience
+
+Since January 2026 Shashank has worked remotely as an AI trainer on coding, generalist and STEM projects. At Handshake AI (July 2026 to present) he writes coding prompts, reference solutions and tests in Python and C++ for RLHF, and multi-turn engineering prompts that need visual reasoning from technical diagrams. At AfterQuery (November 2026) he wrote image-grounded STEM problems with step-by-step derivations and ground truth. At Outlier (August to September 2026) he listened to two AI-generated audio answers to the same prompt and compared them on several quality criteria. At Ethara AI (January to March 2026) he did the same comparison for pairs of AI-generated images.
+
 ## Skills
 
 Programming: Python, C++, SQL, HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS, and Framer Motion. AI and ML: Scikit-learn, XGBoost, Random Forest, RAG, LangChain, LangGraph, ChromaDB, Ollama, OpenCV, and MediaPipe. Systems and security: C++17, multithreading, libpcap, TCP/UDP, TLS/SNI, HNSW, KD-Tree, RSA-2048, AES-256-GCM, zero-trust, idempotency, and MITM protection. Backend and cloud: Flask, FastAPI, REST APIs, PostgreSQL, Supabase, SQLite, SQLAlchemy, Docker, Nginx, AWS, GitHub Actions, Git, Vercel, and Streamlit.

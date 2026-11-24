@@ -1,14 +1,16 @@
 const experiences = [
   {
-    role: "Python and data science trainee",
-    company: "NIELIT, Gorakhpur (Government of India), remote",
-    duration: "Jun 2025 to Jul 2025",
+    role: "AI trainer: coding, generalist and STEM",
+    company: "Handshake AI, AfterQuery, Outlier, Ethara AI, remote",
+    duration: "Jan 2026 to present",
     points: [
-      "Completed a government-certified programme in Python, Pandas, NumPy, Matplotlib, SQLite and machine learning.",
-      "Built a house price predictor with Random Forest and Linear Regression, trained on 76,000+ property records.",
-      "Served predictions through a Streamlit app and a Tkinter desktop GUI, logging queries to SQLite.",
+      "Handshake AI (Jul 2026 to present): wrote coding prompts, reference solutions and tests in Python and C++ for RLHF.",
+      "Handshake AI: created multi-turn engineering prompts that need visual reasoning from technical diagrams.",
+      "AfterQuery (Nov 2026): wrote image-grounded STEM problems with step-by-step derivations and ground truth.",
+      "Outlier (Aug to Sep 2026): listened to two AI-generated audio answers to the same prompt and compared them on several quality criteria.",
+      "Ethara AI (Jan to Mar 2026): compared two AI-generated images for the same prompt and rated each on several quality criteria.",
     ],
-    tech: ["Python", "Scikit-learn", "Streamlit", "Tkinter", "SQLite"],
+    tech: ["Python", "C++", "RLHF", "LLM evaluation"],
   },
 ];
 
